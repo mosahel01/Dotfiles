@@ -15,6 +15,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
 export BROWSER=brave-browser
 
+alias la="ls -a"
+alias lt="ls -tree"
+
 alias ps="sudo pacman -S "
 alias pss="pacman -Ss "
 alias prunsc="pacman -Runsc "
