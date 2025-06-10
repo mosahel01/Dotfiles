@@ -36,6 +36,97 @@ alias C="cd ~/personal/react && nvim "
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias config='nvim ~/.config'
+
+
+alias c="clear"
+alias e="exit"
+alias yt="yt-dlp -f bestvideo+bestaudio/best"
+
+alias N="cd ~/.config/nvim/lua/theprimeagen/ && nvim . "
+alias H="cd ~/.config/hypr/ && nvim . "
+alias R="cd ~/personal/ && nvim . "
+alias C="cd ~/personal/react && nvim . "
+
+# Tmux
+alias tn="tmux new -s "
+alias tk="tmux kill-session "
+alias tq="tmux kill-session -t "
+alias ts="tmux ls "
+alias tt="tmux a -t"
+alias ta="tmux attach"
+
+# Hyprland
+# alias hyprcfg='nvim ~/.config/hypr/hyprland.conf'
+# alias hreload='hyprctl reload'
+# alias reloadhypr='killall Hyprland && Hyprland'
+
+# System
+alias update='sudo pacman -Syu'
+alias cleanup='sudo pacman -Rns $(pacman -Qdtq)'
+
+alias ps="sudo pacman -S "
+alias pss="pacman -Ss "
+alias prunsc="sudo pacman -Runsc "
+alias ys="yay -S "
+alias yss="yay -Ss "
+alias yrunsc="yay -Runsc "
+
+# Git
+alias gs='git status'
+alias gc='git commit -m'
+alias ga='git add .'
+alias gpl='git pull'
+alias gps='git push -u origin main'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # This set of line would come right after ZSH_THEME="robbyrussell"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
