@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DOTDIR=/home/hoywd/personal/dotfiles
-TARGET=/home/hoywd
+DOTDIR=/home/mos/personal/dotfiles
+TARGET=/home/mos
 
 cd "$DOTDIR" || exit 1
 
-for pkg in bin ghostty hypr nvim rofi waybar zsh ; do
+for pkg in bash bin BraveSoftware ghostty hypr kitty nvim tmux zsh; do
 	stow --dir="$DOTDIR" --target="$TARGET" "$pkg"
 done
