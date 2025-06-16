@@ -1,16 +1,7 @@
-configuration{
-    modi: "run,window,combi";
-    icon-theme: "Oranchelo";
+configuration  {
+    font: "JetBrainsMono Nerd Font 12";
+    location : 0;
+    width : 50;
+    lines: 10;
     show-icons: true;
-    terminal: "ghostty";
-    drun-display-format: "{icon} {name}";
-    location: 0;
-    disable-history: false;
-    hide-scrollbar: true;
-    display-combi: " 🖥️  All ";
-    display-run: " 🏃  Run ";
-    display-window: " 🪟  Window";
-    sidebar-mode: true;
 }
-
-@theme "catppuccin-mocha"
