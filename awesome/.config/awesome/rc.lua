@@ -270,9 +270,12 @@ awful.screen.connect_for_each_screen(function(s)
     -- Autostart Applications
     awful.spawn.once("picom")
     awful.spawn.once("copyq")
+    awful.spawn.once("flameshot")
     awful.spawn.once("setxkbmap -option caps:swapescape")
     awful.spawn.once("brightnessctl set 70%")
     awful.spawn.once("betterlockscreen -u ~/.config/awesome/themes/default/custom_wallpapers/001.png")
+    awful.spawn.with_shell("xset r rate 200 50")
+    awful.spawn.with_shell("xrandr --output eDP-1 --mode 1920x1080")
 
 
     -- Each screen has its own tag table.
@@ -374,6 +377,8 @@ globalkeys = gears.table.join(
         { description = "open browser", group = "launcher" }),
     awful.key({ modkey }, "d", function() awful.spawn("discord") end,
         { description = "open discord", group = "launcher" }),
+    awful.key({ modkey }, "e", function() awful.spawn("nautilus") end,
+        { description = "open files", group = "launcher" }),
     -- awful.key({ modkey }, "s", function () awful.spawn("visual-studio-code-bin") end,
     --       {description = "open VS Code", group = "launcher"}),
     awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
@@ -389,6 +394,10 @@ globalkeys = gears.table.join(
         { description = "decrease master width factor", group = "layout" }),
     awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(1) end,
         { description = "select next", group = "layout" }),
+    awful.key({ modkey, "Mod1" }, "s", function ()
+    awful.client.swap.byidx(1) end,
+        {description = "swap with next window", group = "client"}),
+
 
 
     -- Keybinds
