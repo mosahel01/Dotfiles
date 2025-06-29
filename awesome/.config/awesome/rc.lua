@@ -4,9 +4,11 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+
 -- Widget and Layout Library
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+
 -- Notification Library
 local naughty = require("naughty")
 local menubar = require("menubar")
