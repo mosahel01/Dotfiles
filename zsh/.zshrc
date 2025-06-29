@@ -1,156 +1,118 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# ~/.zshrc - Clean, Fast, Functional for Oh My Zsh
 
-# Path to your Oh My Zsh installation.
+# ========================
+# Environment Setup
+# ========================
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
-# Customization Begins Here...
 export PATH="$HOME/.local/bin:$PATH"
-export EDITOR=nvim
-export BROWSER=brave-browser
-
-alias la="ls -a"
-alias lt="ls -tree"
-
-alias ps="sudo pacman -S "
-alias pss="pacman -Ss "
-alias prunsc="pacman -Runsc "
-alias ys="yay -S "
-alias yss="yay -Ss "
-alias yrunsc="yay -Runsc "
-
-alias c="clear"
-alias e="exit"
-alias yt="yt-dlp -f bestvideo+bestaudio/best ~/imgs/screenrecordings/"
-
-alias N="cd ~/personal/dotfiles/nvim/.config/nvim/ && nvim . "
-alias H="cd ~/personal/dotfiles/hypr/.config/hypr/ && nvim . "
-alias D="cd ~/personal/dotfiles/ && nvim ."
-alias C="cd ~/personal/react && nvim "
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias config='nvim ~/.config'
-
-
-alias c="clear"
-alias e="exit"
-alias yt="yt-dlp -f bestvideo+bestaudio/best"
-
-alias N="cd ~/.config/nvim/lua/theprimeagen/ && nvim . "
-alias H="cd ~/.config/hypr/ && nvim . "
-alias R="cd ~/personal/ && nvim . "
-alias C="cd ~/personal/react && nvim . "
-
-# Tmux
-alias tn="tmux new -s "
-alias tk="tmux kill-session "
-alias tq="tmux kill-session -t "
-alias ts="tmux ls "
-alias tt="tmux a -t"
-alias ta="tmux attach"
-
-# Hyprland
-# alias hyprcfg='nvim ~/.config/hypr/hyprland.conf'
-# alias hreload='hyprctl reload'
-# alias reloadhypr='killall Hyprland && Hyprland'
-
-# System
-alias update='sudo pacman -Syu'
-alias cleanup='sudo pacman -Rns $(pacman -Qdtq)'
-
-alias ps="sudo pacman -S "
-alias pss="pacman -Ss "
-alias prunsc="sudo pacman -Runsc "
-alias ys="yay -S "
-alias yss="yay -Ss "
-alias yrunsc="yay -Runsc "
-
-# Git
-alias gs='git status'
-alias gc='git commit -m'
-alias ga='git add .'
-alias gpl='git pull'
-alias gps='git push -u origin main'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# This set of line would come right after ZSH_THEME="robbyrussell"
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SUDO_EDITOR="nvim"
+
+# ========================
+# Theme Configuration
+# ========================
+ZSH_THEME="robbyrussell"  # You can change this to "agnoster" or any other theme if needed
+
+# ========================
+# Add Plugin Paths
+# ========================
+fpath+=("/usr/share/zsh/plugins/zsh-autosuggestions")
+fpath+=("/usr/share/zsh/plugins/zsh-syntax-highlighting")  # Ensure this is correct after installation
+
+# ========================
+# Plugins
+# ========================
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions )
+
+# Load Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# Load plugins
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # Ensure this path is correct
+
+# ========================
+# Prompt (Starship)
+# ========================
+# eval "$(starship init zsh)"
+
+# ========================
+# History Settings
+# ========================
+HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=10000
+setopt APPEND_HISTORY             # Don’t overwrite history
+setopt SHARE_HISTORY              # Share history across terminals
+setopt HIST_IGNORE_ALL_DUPS       # Remove older duplicate entries
+setopt HIST_REDUCE_BLANKS         # Remove superfluous blanks
+
+# Enable ↑ / ↓ search for previous commands
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+
+# ========================
+# Completion
+# ========================
+autoload -Uz compinit && compinit
+
+# Optional Git completion (zsh style)
+[[ -f /usr/share/zsh/site-functions/_git ]] && fpath+=(/usr/share/zsh/site-functions)
+
+# ========================
+# FZF (Fuzzy Finder)
+# ========================
+if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+    source /usr/share/fzf/key-bindings.zsh
+fi
+
+if [[ -f /usr/share/fzf/completion.zsh ]]; then
+    source /usr/share/fzf/completion.zsh
+fi
+
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+
+# ========================
+# Aliases
+# ========================
+alias l='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first'
+alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
+alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -l --git -h'
+alias la='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a'
+alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a -l --git -h'
+
+# Common tools
+# alias cat='bat'
+alias grep="grep --color=auto"
+alias mkdir="mkdir -pv"
+alias SS="sudo systemctl "
+
+# Shortcuts
+alias v='nvim'
+alias c='clear'
+alias e='exit'
+alias y='yazi'
+
+# File/image viewer
+alias img="nsxiv ."
+alias gif="nsxiv -a"
+
+# Package management
+alias ps='sudo pacman -S'
+alias pss='pacman -Ss'
+alias ys='yay -S'
+alias yss='yay -Ss'
+alias prunsc='sudo pacman -Rns'
+alias yrunsc='yay -Rns'
+
+# ========================
+# Optional Settings
+# ========================
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -158,65 +120,9 @@ alias gps='git push -u origin main'
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="false"
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Uncomment the following line to change the auto-update behavior
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz
