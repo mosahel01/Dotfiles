@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
 # Load plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # Ensure this path is correct
+source /usr/share/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh # Add more below to add plugins
 
 # ========================
 # Prompt (Starship)
