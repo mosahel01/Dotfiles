@@ -8,7 +8,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
 
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 shopt -s autocd # Allows cd into directory merely by typing the directory name.
 
 # Only run for interactive shells

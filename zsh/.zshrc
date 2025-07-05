@@ -8,6 +8,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
+export QT_QPA_PLATFORM=wayland
 
 # ========================
 # Theme Configuration
@@ -23,7 +24,8 @@ fpath+=("/usr/share/zsh/plugins/zsh-syntax-highlighting")  # Ensure this is corr
 # ========================
 # Plugins
 # ========================
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions )
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions )
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
@@ -91,15 +93,18 @@ alias grep="grep --color=auto"
 alias mkdir="mkdir -pv"
 alias SS="sudo systemctl "
 
+# Pain in ASS
+alias whatsapp="QT_QPA_PLATFORM=wayland whatsie"
+
 # Shortcuts
 alias v='nvim'
 alias c='clear'
 alias e='exit'
 alias y='yazi'
 
-# File/image viewer
-alias img="nsxiv ."
-alias gif="nsxiv -a"
+# # File/image viewer
+# alias img="nsxiv ."
+# alias gif="nsxiv -a"
 
 # Package management
 alias ps='sudo pacman -S'
