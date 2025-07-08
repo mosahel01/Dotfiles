@@ -13,7 +13,12 @@ export QT_QPA_PLATFORM=wayland
 # ========================
 # Theme Configuration
 # ========================
-ZSH_THEME="robbyrussell"  # You can change this to "agnoster" or any other theme if needed
+# ZSH_THEME="robbyrussell"  # You can change this to "agnoster" or any other theme if needed
+# ZSH_THEME="agnoster"  # You can change this to "agnoster" or any other theme if needed
+# ZSH_THEME="daveverwer"  # You can change this to "agnoster" or any other theme if needed
+# ZSH_THEME="fishy"  # You can change this to "agnoster" or any other theme if needed
+ZSH_THEME="frontcube"  # You can change this to "agnoster" or any other theme if needed
+# ZSH_THEME="nanotech"  # You can change this to "agnoster" or any other theme if needed
 
 # ========================
 # Add Plugin Paths
@@ -24,16 +29,24 @@ fpath+=("/usr/share/zsh/plugins/zsh-syntax-highlighting")  # Ensure this is corr
 # ========================
 # Plugins
 # ========================
+# Use this when Git Cloning Plugins
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions )
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
 # Load plugins
+# Use these when Installing with Pacman
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # Ensure this path is correct
-source /usr/share/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh # Add more below to add plugins
+# source /usr/share/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh # Add more below to add plugins
+
+bindkey '^w' autosuggest-execute
+bindkey '^e' autosuggest-accept
+bindkey '^u' autosuggest-toggle
+bindkey '^L' vi-forward-word
+bindkey '^j' up-line-or-search
+bindkey '^k' down-line-or-search
 
 # ========================
 # Prompt (Starship)
@@ -81,14 +94,19 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 # ========================
 # Aliases
 # ========================
-alias l='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first'
-alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
-alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -l --git -h'
+alias l="eza -l --icons --git -a"
+alias ll='eza  -ls --icons--git -h'
 alias la='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a'
-alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a -l --git -h'
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ltree="eza --tree --level=2  --icons --git"
+# alias l='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first'
+# alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
+# alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -l --git -h'
+# alias la='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a'
+# alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a -l --git -h'
 
 # Common tools
-# alias cat='bat'
+alias cat='bat'
 alias grep="grep --color=auto"
 alias mkdir="mkdir -pv"
 alias SS="sudo systemctl "
@@ -113,6 +131,8 @@ alias ys='yay -S'
 alias yss='yay -Ss'
 alias prunsc='sudo pacman -Rns'
 alias yrunsc='yay -Rns'
+
+alias H="cd ~/.config/hypr/ && nvim ."
 
 # ========================
 # Optional Settings
