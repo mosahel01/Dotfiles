@@ -100,7 +100,7 @@ vim.keymap.set("n", "<M-s>", "<C-W>-")
 
 
 
--- theprimeagen keymaps
+-- old keymaps
 
 -- vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
