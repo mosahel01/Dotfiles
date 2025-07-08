@@ -72,17 +72,17 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 # ========================
 
 
-alias l='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first'
-alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
-alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -l --git -h'
-alias la='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a'
-alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a -l --git -h'
+# alias l='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first'
+# alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
+# alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -l --git -h'
+# alias la='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a'
+# alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a -l --git -h'
 
 
 
 ## Common tools
 # alias vim='nvim'
-alias cat='bat'
+# alias cat='bat'
 alias grep="grep --color=auto"
 alias mkdir="mkdir -pv"
 alias SS="sudo systemctl "
