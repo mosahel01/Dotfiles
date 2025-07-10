@@ -1,18 +1,31 @@
 {
-    "layer": "top",
-    "position": "top",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": [
-        "pulseaudio",
-        "backlight",
-        "battery",
-        "network",
-        "memory",
-        "cpu",
-        "tray",
-        "custom/lock",
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/nightlight" // Add this line
   ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "network",
+    "memory",
+    "cpu",
+    "tray",
+    "custom/lock"
+  ],
+  "custom/nightlight": {
+    // Add this new module
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/yellowlight.sh",
+    "on-click": "~/.config/waybar/scripts/yellowlight.sh toggle",
+    "on-scroll-up": "~/.config/waybar/scripts/yellowlight.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/yellowlight.sh down",
+    "tooltip": false,
+    "interval": 5
+  },
   "hyprland/workspaces": {
     "format": "{name}: {icon}",
     "format-icons": {
@@ -69,4 +82,3 @@
     "format": ""
   }
 }
-
