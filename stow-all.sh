@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DOTDIR=/home/mos/Dotfiles
-TARGET=/home/mos
+DOTDIR=$HOME/Dotfiles
+TARGET=$HOME
 
 cd "$DOTDIR" || exit 1
 
