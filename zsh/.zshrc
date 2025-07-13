@@ -133,6 +133,7 @@ alias prunsc='sudo pacman -Rns'
 alias yrunsc='yay -Rns'
 
 alias H="cd ~/.config/hypr/ && nvim ."
+alias yt="yt-dlp *bestvideo" # Not complete
 
 # ========================
 # Optional Settings

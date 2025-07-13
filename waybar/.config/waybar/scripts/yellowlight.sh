@@ -42,6 +42,7 @@ case $1 in
         ;;
 esac
 
+
 # Output for Waybar
 if [ "$state" = "on" ]; then 
     echo " $current_temp"K

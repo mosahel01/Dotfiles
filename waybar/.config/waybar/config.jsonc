@@ -3,9 +3,12 @@
   "position": "top",
   "modules-left": [
     "hyprland/workspaces",
-    "custom/nightlight" // Add this line
+    "custom/nightlight", // Add this line
+    "custom/music",
   ],
-  "modules-center": ["clock"],
+  "modules-center": [
+    "clock",
+  ],
   "modules-right": [
     "pulseaudio",
     "backlight",
@@ -42,9 +45,9 @@
     "escape": true,
     "interval": 5,
     "tooltip": false,
-    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+    // "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
     "on-click": "playerctl play-pause",
-    "max-length": 50
+    "max-length": 200
   },
   "clock": {
     "timezone": "Asia/Kolkata",
