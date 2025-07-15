@@ -1,0 +1,1257 @@
+{
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:i}: number = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript for loop"
+  },
+  "For...of Loop": {
+    "prefix": "forof",
+    "body": [
+      "for (const ${1:item} of ${2:array}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript for...of loop"
+  },
+  "For...in Loop": {
+    "prefix": "forin",
+    "body": [
+      "for (const ${1:key} in ${2:object}) {",
+      "  if (${2:object}.hasOwnProperty(${1:key})) {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "TypeScript for...in loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript while loop"
+  },
+  "Do While Loop": {
+    "prefix": "dowhile",
+    "body": [
+      "do {",
+      "  ${0}",
+      "} while (${1:condition});"
+    ],
+    "description": "TypeScript do...while loop"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript if statement"
+  },
+  "If Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition}) {",
+      "  ${2}",
+      "} else {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript if...else statement"
+  },
+  "If Else If Statement": {
+    "prefix": "ifelseif",
+    "body": [
+      "if (${1:condition}) {",
+      "  ${2}",
+      "} else if (${3:condition}) {",
+      "  ${4}",
+      "} else {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript if...else if...else statement"
+  },
+  "Switch Statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "  case ${2:value}:",
+      "    ${3}",
+      "    break;",
+      "  case ${4:value}:",
+      "    ${5}",
+      "    break;",
+      "  default:",
+      "    ${0}",
+      "    break;",
+      "}"
+    ],
+    "description": "TypeScript switch statement"
+  },
+  "Function Declaration": {
+    "prefix": "fn",
+    "body": [
+      "function ${1:functionName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript function declaration"
+  },
+  "Arrow Function": {
+    "prefix": "af",
+    "body": [
+      "const ${1:functionName} = (${2:param}: ${3:string}): ${4:void} => {",
+      "  ${0}",
+      "};"
+    ],
+    "description": "TypeScript arrow function"
+  },
+  "Async Arrow Function": {
+    "prefix": "aaf",
+    "body": [
+      "const ${1:functionName} = async (${2:param}: ${3:string}): Promise<${4:void}> => {",
+      "  ${0}",
+      "};"
+    ],
+    "description": "TypeScript async arrow function"
+  },
+  "Anonymous Function": {
+    "prefix": "anonfn",
+    "body": [
+      "function(${1:param}: ${2:string}): ${3:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript anonymous function"
+  },
+  "Object Literal": {
+    "prefix": "obj",
+    "body": [
+      "const ${1:objectName}: ${2:ObjectType} = {",
+      "  ${3:key}: ${4:value},",
+      "  ${5:anotherKey}: ${6:anotherValue}",
+      "};"
+    ],
+    "description": "TypeScript object literal"
+  },
+  "Array Literal": {
+    "prefix": "arr",
+    "body": [
+      "const ${1:arrayName}: ${2:string}[] = [${3:value1}, ${4:value2}, ${5:value3}];"
+    ],
+    "description": "TypeScript array literal"
+  },
+  "Object Destructuring": {
+    "prefix": "dest",
+    "body": [
+      "const { ${1:property1}, ${2:property2} }: ${3:ObjectType} = ${4:object};"
+    ],
+    "description": "TypeScript object destructuring"
+  },
+  "Array Destructuring": {
+    "prefix": "desta",
+    "body": [
+      "const [${1:first}, ${2:second}]: ${3:string}[] = ${4:array};"
+    ],
+    "description": "TypeScript array destructuring"
+  },
+  "Spread Operator": {
+    "prefix": "spread",
+    "body": [
+      "...${1:array}"
+    ],
+    "description": "TypeScript spread operator"
+  },
+  "Rest Parameters": {
+    "prefix": "rest",
+    "body": [
+      "function ${1:functionName}(...${2:args}: ${3:string}[]): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript rest parameters"
+  },
+  "Template Literal": {
+    "prefix": "template",
+    "body": [
+      "`${1:text} ${${2:variable}} ${3:more text}`"
+    ],
+    "description": "TypeScript template literal"
+  },
+  "Class Declaration": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "  private ${2:property}: ${3:string};",
+      "",
+      "  constructor(${2:property}: ${3:string}) {",
+      "    this.${2:property} = ${2:property};",
+      "  }",
+      "",
+      "  public ${4:methodName}(): ${5:void} {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "TypeScript class declaration"
+  },
+  "Class Constructor": {
+    "prefix": "constructor",
+    "body": [
+      "constructor(${1:param}: ${2:string}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript class constructor"
+  },
+  "Class Method": {
+    "prefix": "method",
+    "body": [
+      "public ${1:methodName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript class method"
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:InterfaceName} {",
+      "  ${2:property}: ${3:string};",
+      "  ${4:optionalProperty}?: ${5:number};",
+      "  ${6:method}(${7:param}: ${8:string}): ${9:void};",
+      "}"
+    ],
+    "description": "TypeScript interface"
+  },
+  "Type Alias": {
+    "prefix": "type",
+    "body": [
+      "type ${1:TypeName} = {",
+      "  ${2:property}: ${3:string};",
+      "  ${4:anotherProperty}: ${5:number};",
+      "};"
+    ],
+    "description": "TypeScript type alias"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:EnumName} {",
+      "  ${2:VALUE1} = '${3:value1}',",
+      "  ${4:VALUE2} = '${5:value2}',",
+      "  ${6:VALUE3} = '${7:value3}',",
+      "}"
+    ],
+    "description": "TypeScript enum"
+  },
+  "Union Type": {
+    "prefix": "union",
+    "body": [
+      "type ${1:UnionType} = '${2:option1}' | '${3:option2}' | '${4:option3}';"
+    ],
+    "description": "TypeScript union type"
+  },
+  "Generic Function": {
+    "prefix": "generic",
+    "body": [
+      "function ${1:functionName}<T>(${2:param}: T): T {",
+      "  return ${2:param};",
+      "}"
+    ],
+    "description": "TypeScript generic function"
+  },
+  "Generic Arrow Function": {
+    "prefix": "genaf",
+    "body": [
+      "const ${1:functionName} = <T>(${2:param}: T): T => {",
+      "  return ${2:param};",
+      "};"
+    ],
+    "description": "TypeScript generic arrow function"
+  },
+  "Try Catch Block": {
+    "prefix": "tc",
+    "body": [
+      "try {",
+      "  ${1:// Try block}",
+      "} catch (${2:error}: unknown) {",
+      "  ${3:// Catch block}",
+      "}"
+    ],
+    "description": "TypeScript try-catch block"
+  },
+  "Console Log": {
+    "prefix": "cl",
+    "body": [
+      "console.log('${1:message}', ${2:variable});"
+    ],
+    "description": "TypeScript console log"
+  },
+  "Console Error": {
+    "prefix": "ce",
+    "body": [
+      "console.error('${1:error message}', ${2:error});"
+    ],
+    "description": "TypeScript console error"
+  },
+  "Async Function": {
+    "prefix": "async",
+    "body": [
+      "async function ${1:functionName}(${2:param}: ${3:string}): Promise<${4:void}> {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript async function"
+  },
+  "Async/Await": {
+    "prefix": "aa",
+    "body": [
+      "const ${1:functionName} = async (): Promise<${2:void}> => {",
+      "  try {",
+      "    const ${3:result} = await ${4:asyncFunction}();",
+      "    ${0}",
+      "  } catch (${5:error}: unknown) {",
+      "    console.error(${5:error});",
+      "  }",
+      "};"
+    ],
+    "description": "TypeScript async/await with try-catch"
+  },
+  "Promise": {
+    "prefix": "prom",
+    "body": [
+      "const ${1:promiseName} = new Promise<${2:string}>((resolve, reject) => {",
+      "  ${3:// Promise logic}",
+      "  if (${4:condition}) {",
+      "    resolve(${5:value});",
+      "  } else {",
+      "    reject(${6:error});",
+      "  }",
+      "});"
+    ],
+    "description": "TypeScript promise"
+  },
+  "Fetch API Call": {
+    "prefix": "fetch",
+    "body": [
+      "interface ${1:ApiResponse} {",
+      "  ${2:data}: ${3:string};",
+      "}",
+      "",
+      "const ${4:fetchData} = async (): Promise<${1:ApiResponse}> => {",
+      "  try {",
+      "    const response = await fetch('${5:url}');",
+      "    if (!response.ok) {",
+      "      throw new Error(`HTTP error! status: ${response.status}`);",
+      "    }",
+      "    const data: ${1:ApiResponse} = await response.json();",
+      "    return data;",
+      "  } catch (error: unknown) {",
+      "    console.error('Fetch error:', error);",
+      "    throw error;",
+      "  }",
+      "};"
+    ],
+    "description": "TypeScript fetch API call"
+  },
+  "Map Function": {
+    "prefix": "map",
+    "body": [
+      "${1:array}.map((${2:item}: ${3:string}) => {",
+      "  return ${4:item};",
+      "})"
+    ],
+    "description": "TypeScript array map function"
+  },
+  "Filter Function": {
+    "prefix": "filter",
+    "body": [
+      "${1:array}.filter((${2:item}: ${3:string}) => {",
+      "  return ${4:condition};",
+      "})"
+    ],
+    "description": "TypeScript array filter function"
+  },
+  "Reduce Function": {
+    "prefix": "reduce",
+    "body": [
+      "${1:array}.reduce((${2:accumulator}: ${3:string}, ${4:current}: ${5:string}) => {",
+      "  return ${6:accumulator};",
+      "}, ${7:initialValue})"
+    ],
+    "description": "TypeScript array reduce function"
+  },
+  "Array Find": {
+    "prefix": "find",
+    "body": [
+      "${1:array}.find((${2:item}: ${3:string}) => ${4:condition})"
+    ],
+    "description": "TypeScript array find"
+  },
+  "Array FindIndex": {
+    "prefix": "findindex",
+    "body": [
+      "${1:array}.findIndex((${2:item}: ${3:string}) => ${4:condition})"
+    ],
+    "description": "TypeScript array findIndex"
+  },
+  "Array Some": {
+    "prefix": "some",
+    "body": [
+      "${1:array}.some((${2:item}: ${3:string}) => ${4:condition})"
+    ],
+    "description": "TypeScript array some"
+  },
+  "Array Every": {
+    "prefix": "every",
+    "body": [
+      "${1:array}.every((${2:item}: ${3:string}) => ${4:condition})"
+    ],
+    "description": "TypeScript array every"
+  },
+  "Import Statement": {
+    "prefix": "imp",
+    "body": [
+      "import ${1:module} from '${2:path}';"
+    ],
+    "description": "TypeScript import statement"
+  },
+  "Named Import": {
+    "prefix": "imn",
+    "body": [
+      "import { ${1:namedImport} } from '${2:path}';"
+    ],
+    "description": "TypeScript named import"
+  },
+  "Import Type": {
+    "prefix": "impt",
+    "body": [
+      "import type { ${1:TypeName} } from '${2:path}';"
+    ],
+    "description": "TypeScript import type"
+  },
+  "Export Default": {
+    "prefix": "exp",
+    "body": [
+      "export default ${1:value};"
+    ],
+    "description": "TypeScript export default"
+  },
+  "Named Export": {
+    "prefix": "exn",
+    "body": [
+      "export const ${1:name}: ${2:string} = ${3:value};"
+    ],
+    "description": "TypeScript named export"
+  },
+  "Export Type": {
+    "prefix": "expt",
+    "body": [
+      "export type { ${1:TypeName} };"
+    ],
+    "description": "TypeScript export type"
+  },
+  "Namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace ${1:NamespaceName} {",
+      "  export interface ${2:InterfaceName} {",
+      "    ${3:property}: ${4:string};",
+      "  }",
+      "",
+      "  export const ${5:functionName} = (${6:param}: ${4:string}): ${2:InterfaceName} => {",
+      "    return { ${3:property}: ${6:param} };",
+      "  };",
+      "}"
+    ],
+    "description": "TypeScript namespace"
+  },
+  "Type Guard": {
+    "prefix": "guard",
+    "body": [
+      "function is${1:TypeName}(value: unknown): value is ${2:TypeName} {",
+      "  return typeof value === '${3:object}' && value !== null && '${4:property}' in value;",
+      "}"
+    ],
+    "description": "TypeScript type guard"
+  },
+  "Utility Types": {
+    "prefix": "util",
+    "body": [
+      "type ${1:PartialType} = Partial<${2:OriginalType}>;",
+      "type ${3:RequiredType} = Required<${2:OriginalType}>;",
+      "type ${4:PickType} = Pick<${2:OriginalType}, '${5:key1}' | '${6:key2}'>;",
+      "type ${7:OmitType} = Omit<${2:OriginalType}, '${8:key1}' | '${9:key2}'>;"
+    ],
+    "description": "TypeScript utility types"
+  },
+  "Mapped Type": {
+    "prefix": "mapped",
+    "body": [
+      "type ${1:MappedType}<T> = {",
+      "  [K in keyof T]: ${2:string};",
+      "};"
+    ],
+    "description": "TypeScript mapped type"
+  },
+  "Conditional Type": {
+    "prefix": "conditional",
+    "body": [
+      "type ${1:ConditionalType}<T> = T extends ${2:string} ? ${3:string} : ${4:never};"
+    ],
+    "description": "TypeScript conditional type"
+  },
+  "Abstract Class": {
+    "prefix": "abstract",
+    "body": [
+      "abstract class ${1:AbstractClassName} {",
+      "  protected ${2:property}: ${3:string};",
+      "",
+      "  constructor(${2:property}: ${3:string}) {",
+      "    this.${2:property} = ${2:property};",
+      "  }",
+      "",
+      "  abstract ${4:abstractMethod}(): ${5:void};",
+      "",
+      "  protected ${6:concreteMethod}(): ${7:void} {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "TypeScript abstract class"
+  },
+  "Private Method": {
+    "prefix": "private",
+    "body": [
+      "private ${1:methodName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript private method"
+  },
+  "Protected Method": {
+    "prefix": "protected",
+    "body": [
+      "protected ${1:methodName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript protected method"
+  },
+  "Static Method": {
+    "prefix": "static",
+    "body": [
+      "static ${1:methodName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript static method"
+  },
+  "Getter": {
+    "prefix": "get",
+    "body": [
+      "get ${1:propertyName}(): ${2:string} {",
+      "  return this.${3:_propertyName};",
+      "}"
+    ],
+    "description": "TypeScript getter"
+  },
+  "Setter": {
+    "prefix": "set",
+    "body": [
+      "set ${1:propertyName}(${2:value}: ${3:string}) {",
+      "  this.${4:_propertyName} = ${2:value};",
+      "}"
+    ],
+    "description": "TypeScript setter"
+  },
+  "SetTimeout": {
+    "prefix": "timeout",
+    "body": [
+      "setTimeout(() => {",
+      "  ${0}",
+      "}, ${1:1000});"
+    ],
+    "description": "TypeScript setTimeout"
+  },
+  "SetInterval": {
+    "prefix": "interval",
+    "body": [
+      "const ${1:intervalId} = setInterval(() => {",
+      "  ${0}",
+      "}, ${2:1000});"
+    ],
+    "description": "TypeScript setInterval"
+  },
+  "JSON Parse": {
+    "prefix": "jsonparse",
+    "body": [
+      "JSON.parse(${1:jsonString}) as ${2:Type}"
+    ],
+    "description": "TypeScript JSON parse with type assertion"
+  },
+  "JSON Stringify": {
+    "prefix": "jsonstr",
+    "body": [
+      "JSON.stringify(${1:object})"
+    ],
+    "description": "TypeScript JSON stringify"
+  },
+  "LocalStorage Set": {
+    "prefix": "lsset",
+    "body": [
+      "localStorage.setItem('${1:key}', JSON.stringify(${2:value}));"
+    ],
+    "description": "TypeScript localStorage set"
+  },
+  "LocalStorage Get": {
+    "prefix": "lsget",
+    "body": [
+      "const ${1:value} = JSON.parse(localStorage.getItem('${2:key}') || '${3:defaultValue}') as ${4:Type};"
+    ],
+    "description": "TypeScript localStorage get with type assertion"
+  },
+  "Regular Expression": {
+    "prefix": "regex",
+    "body": [
+      "const ${1:regex}: RegExp = /${2:pattern}/${3:flags};"
+    ],
+    "description": "TypeScript regular expression"
+  },
+  "Object Keys": {
+    "prefix": "keys",
+    "body": [
+      "Object.keys(${1:object})"
+    ],
+    "description": "TypeScript Object.keys"
+  },
+  "Object Values": {
+    "prefix": "values",
+    "body": [
+      "Object.values(${1:object})"
+    ],
+    "description": "TypeScript Object.values"
+  },
+  "Object Entries": {
+    "prefix": "entries",
+    "body": [
+      "Object.entries(${1:object})"
+    ],
+    "description": "TypeScript Object.entries"
+  },
+  "Typeof": {
+    "prefix": "typeof",
+    "body": [
+      "typeof ${1:variable}"
+    ],
+    "description": "TypeScript typeof operator"
+  },
+  "Instanceof": {
+    "prefix": "instanceof",
+    "body": [
+      "${1:object} instanceof ${2:Constructor}"
+    ],
+    "description": "TypeScript instanceof operator"
+  },
+  "Type Assertion": {
+    "prefix": "as",
+    "body": [
+      "${1:value} as ${2:Type}"
+    ],
+    "description": "TypeScript type assertion"
+  },
+  "Const Assertion": {
+    "prefix": "const",
+    "body": [
+      "${1:value} as const"
+    ],
+    "description": "TypeScript const assertion"
+  },
+  "Keyof": {
+    "prefix": "keyof",
+    "body": [
+      "keyof ${1:Type}"
+    ],
+    "description": "TypeScript keyof operator"
+  },
+  "Never": {
+    "prefix": "never",
+    "body": [
+      "never"
+    ],
+    "description": "TypeScript never type"
+  },
+  "Unknown": {
+    "prefix": "unknown",
+    "body": [
+      "unknown"
+    ],
+    "description": "TypeScript unknown type"
+  },
+  "Void": {
+    "prefix": "void",
+    "body": [
+      "void"
+    ],
+    "description": "TypeScript void type"
+  },
+  "Any": {
+    "prefix": "any",
+    "body": [
+      "any"
+    ],
+    "description": "TypeScript any type"
+  },
+  "Heading 1": {
+    "prefix": "h1",
+    "body": [
+      "<h1 class=\"${1:className}\">${0}</h1>"
+    ],
+    "description": "Heading 1"
+  },
+  "Heading 2": {
+    "prefix": "h2",
+    "body": [
+      "<h2 class=\"${1:className}\">${0}</h2>"
+    ],
+    "description": "Heading 2"
+  },
+  "Heading 3": {
+    "prefix": "h3",
+    "body": [
+      "<h3 class=\"${1:className}\">${0}</h3>"
+    ],
+    "description": "Heading 3"
+  },
+  "Heading 4": {
+    "prefix": "h4",
+    "body": [
+      "<h4 class=\"${1:className}\">${0}</h4>"
+    ],
+    "description": "Heading 4"
+  },
+  "Heading 5": {
+    "prefix": "h5",
+    "body": [
+      "<h5 class=\"${1:className}\">${0}</h5>"
+    ],
+    "description": "Heading 5"
+  },
+  "Heading 6": {
+    "prefix": "h6",
+    "body": [
+      "<h6 class=\"${1:className}\">${0}</h6>"
+    ],
+    "description": "Heading 6"
+  },
+  "JSX Div": {
+    "prefix": "divjsx",
+    "body": [
+      "<div className=\"${1:className}\">",
+      "  ${0}",
+      "</div>"
+    ],
+    "description": "JSX div element"
+  },
+  "JSX Div with ID": {
+    "prefix": "divid",
+    "body": [
+      "<div id=\"${1:id}\" className=\"${2:className}\">",
+      "  ${0}",
+      "</div>"
+    ],
+    "description": "JSX div with ID"
+  },
+  "JSX Button": {
+    "prefix": "button",
+    "body": [
+      "<button",
+      "  type=\"${1:button}\"",
+      "  className=\"${2:className}\"",
+      "  onClick={${3:handleClick}}",
+      ">",
+      "  ${0}",
+      "</button>"
+    ],
+    "description": "JSX button with onClick"
+  },
+  "JSX Input": {
+    "prefix": "input",
+    "body": [
+      "<input",
+      "  type=\"${1:text}\"",
+      "  name=\"${2:name}\"",
+      "  value={${3:value}}",
+      "  onChange={${4:handleChange}}",
+      "  placeholder=\"${5:placeholder}\"",
+      "  className=\"${6:className}\"",
+      "/>"
+    ],
+    "description": "JSX input element"
+  },
+  "JSX Input with Label": {
+    "prefix": "input.label",
+    "body": [
+      "<div className=\"${1:inputGroup}\">",
+      "  <label htmlFor=\"${2:id}\" className=\"${3:labelClass}\">",
+      "    ${4:Label}",
+      "  </label>",
+      "  <input",
+      "    type=\"${5:text}\"",
+      "    id=\"${2:id}\"",
+      "    name=\"${6:name}\"",
+      "    value={${7:value}}",
+      "    onChange={${8:handleChange}}",
+      "    placeholder=\"${9:placeholder}\"",
+      "    className=\"${10:inputClass}\"",
+      "  />",
+      "</div>"
+    ],
+    "description": "JSX input with label"
+  },
+  "JSX Textarea": {
+    "prefix": "textarea",
+    "body": [
+      "<textarea",
+      "  name=\"${1:name}\"",
+      "  value={${2:value}}",
+      "  onChange={${3:handleChange}}",
+      "  placeholder=\"${4:placeholder}\"",
+      "  rows={${5:4}}",
+      "  className=\"${6:className}\"",
+      "/>"
+    ],
+    "description": "JSX textarea element"
+  },
+  "JSX Select": {
+    "prefix": "select",
+    "body": [
+      "<select",
+      "  name=\"${1:name}\"",
+      "  value={${2:value}}",
+      "  onChange={${3:handleChange}}",
+      "  className=\"${4:className}\"",
+      ">",
+      "  <option value=\"\">${5:Select an option}</option>",
+      "  {${6:options}.map(option => (",
+      "    <option key={option.value} value={option.value}>",
+      "      {option.label}",
+      "    </option>",
+      "  ))}",
+      "</select>"
+    ],
+    "description": "JSX select dropdown"
+  },
+  "JSX Checkbox": {
+    "prefix": "checkbox",
+    "body": [
+      "<input",
+      "  type=\"input.checkbox\"",
+      "  name=\"${1:name}\"",
+      "  checked={${2:checked}}",
+      "  onChange={${3:handleChange}}",
+      "  className=\"${4:className}\"",
+      "/>"
+    ],
+    "description": "JSX checkbox input"
+  },
+  "JSX Radio": {
+    "prefix": "input.radio",
+    "body": [
+      "<input",
+      "  type=\"radio\"",
+      "  name=\"${1:name}\"",
+      "  value=\"${2:value}\"",
+      "  checked={${3:checked}}",
+      "  onChange={${4:handleChange}}",
+      "  className=\"${5:className}\"",
+      "/>"
+    ],
+    "description": "JSX radio input"
+  },
+  "JSX Form": {
+    "prefix": "form",
+    "body": [
+      "<form onSubmit={${1:handleSubmit}} className=\"${2:className}\">",
+      "  ${0}",
+      "</form>"
+    ],
+    "description": "JSX form element"
+  },
+  "JSX Image": {
+    "prefix": "image",
+    "body": [
+      "<img",
+      "  src={${1:src}}",
+      "  alt=\"${2:alt}\"",
+      "  className=\"${3:className}\"",
+      "  ${4:onClick={${5:handleClick}}}",
+      "/>"
+    ],
+    "description": "JSX image element"
+  },
+  "JSX Link": {
+    "prefix": "a.link",
+    "body": [
+      "<a",
+      "  href={${1:href}}",
+      "  className=\"${2:className}\"",
+      "  ${3:target=\"_blank\"}",
+      "  ${4:rel=\"noopener noreferrer\"}",
+      "  ${5:onClick={${6:handleClick}}}",
+      ">",
+      "  ${0}",
+      "</a>"
+    ],
+    "description": "JSX anchor link"
+  },
+  "JSX Unordered List": {
+    "prefix": "ul",
+    "body": [
+      "<ul className=\"${1:className}\">",
+      "  {${2:items}.map((${3:item}, ${4:index}) => (",
+      "    <li key={${5:item.id || index}} className=\"${6:itemClass}\">",
+      "      {${7:item.text}}",
+      "    </li>",
+      "  ))}",
+      "</ul>"
+    ],
+    "description": "JSX unordered list with map"
+  },
+  "JSX Ordered List": {
+    "prefix": "ol",
+    "body": [
+      "<ol className=\"${1:className}\">",
+      "  {${2:items}.map((${3:item}, ${4:index}) => (",
+      "    <li key={${5:item.id || index}} className=\"${6:itemClass}\">",
+      "      {${7:item.text}}",
+      "    </li>",
+      "  ))}",
+      "</ol>"
+    ],
+    "description": "JSX ordered list with map"
+  },
+  "JSX Table": {
+    "prefix": "table",
+    "body": [
+      "<table className=\"${1:className}\">",
+      "  <thead>",
+      "    <tr>",
+      "      <th className=\"${2:headerClass}\">${3:Header 1}</th>",
+      "      <th className=\"${2:headerClass}\">${4:Header 2}</th>",
+      "    </tr>",
+      "  </thead>",
+      "  <tbody>",
+      "    {${5:data}.map((${6:row}, ${7:index}) => (",
+      "      <tr key={${8:row.id || index}} className=\"${9:rowClass}\">",
+      "        <td className=\"${10:cellClass}\">{${11:row.column1}}</td>",
+      "        <td className=\"${10:cellClass}\">{${12:row.column2}}</td>",
+      "      </tr>",
+      "    ))}",
+      "  </tbody>",
+      "</table>"
+    ],
+    "description": "JSX table with dynamic rows"
+  },
+  "JSX Header": {
+    "prefix": "header",
+    "body": [
+      "<header className=\"${1:className}\">",
+      "  ${0}",
+      "</header>"
+    ],
+    "description": "JSX header element"
+  },
+  "JSX Navbar": {
+    "prefix": "nav",
+    "body": [
+      "<nav className=\"${1:className}\">",
+      "</nav>"
+    ]
+  },
+  "JSX Nav": {
+    "prefix": "navbar",
+    "body": [
+      "<nav className=\"${1:className}\">",
+      "  <ul className=\"${2:navList}\">",
+      "    {${3:navItems}.map((${4:item}, ${5:index}) => (",
+      "      <li key={${6:item.id || index}} className=\"${7:navItem}\">",
+      "        <a href={${8:item.href}} className=\"${9:navLink}\">",
+      "          {${10:item.text}}",
+      "        </a>",
+      "      </li>",
+      "    ))}",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "JSX navigation with dynamic items"
+  },
+  "JSX Section": {
+    "prefix": "section",
+    "body": [
+      "<section className=\"${1:className}\">",
+      "  ${0}",
+      "</section>"
+    ],
+    "description": "JSX section element"
+  },
+  "JSX Article": {
+    "prefix": "article",
+    "body": [
+      "<article className=\"${1:className}\">",
+      "  ${0}",
+      "</article>"
+    ],
+    "description": "JSX article element"
+  },
+  "JSX Footer": {
+    "prefix": "footer",
+    "body": [
+      "<footer className=\"${1:className}\">",
+      "  ${0}",
+      "</footer>"
+    ],
+    "description": "JSX footer element"
+  },
+  "JSX Card": {
+    "prefix": "card",
+    "body": [
+      "<div className=\"${1:card}\">",
+      "  <div className=\"${2:cardHeader}\">",
+      "    <h3 className=\"${3:cardTitle}\">${4:Title}</h3>",
+      "  </div>",
+      "  <div className=\"${5:cardBody}\">",
+      "    ${0}",
+      "  </div>",
+      "  <div className=\"${6:cardFooter}\">",
+      "    <button className=\"${7:cardButton}\" onClick={${8:handleClick}}>",
+      "      ${9:Action}",
+      "    </button>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "JSX card component"
+  },
+  "JSX Modal": {
+    "prefix": "modal",
+    "body": [
+      "{${1:isOpen} && (",
+      "  <div className=\"${2:modalOverlay}\" onClick={${3:handleClose}}>",
+      "    <div className=\"${4:modalContent}\" onClick={e => e.stopPropagation()}>",
+      "      <div className=\"${5:modalHeader}\">",
+      "        <h2 className=\"${6:modalTitle}\">${7:Modal Title}</h2>",
+      "        <button className=\"${8:closeButton}\" onClick={${3:handleClose}}>",
+      "          ×",
+      "        </button>",
+      "      </div>",
+      "      <div className=\"${9:modalBody}\">",
+      "        ${0}",
+      "      </div>",
+      "    </div>",
+      "  </div>",
+      ")}"
+    ],
+    "description": "JSX modal component"
+  },
+  "JSX Grid": {
+    "prefix": "grid",
+    "body": [
+      "<div className=\"${1:grid}\">",
+      "  {${2:items}.map((${3:item}, ${4:index}) => (",
+      "    <div key={${5:item.id || index}} className=\"${6:gridItem}\">",
+      "      ${0}",
+      "    </div>",
+      "  ))}",
+      "</div>"
+    ],
+    "description": "JSX grid layout"
+  },
+  "JSX Loading": {
+    "prefix": "loading",
+    "body": [
+      "{${1:isLoading} ? (",
+      "  <div className=\"${2:loadingContainer}\">",
+      "    <div className=\"${3:spinner}\"></div>",
+      "    <p className=\"${4:loadingText}\">${5:Loading...}</p>",
+      "  </div>",
+      ") : (",
+      "  ${0}",
+      ")}"
+    ],
+    "description": "JSX loading state"
+  },
+  "JSX Error": {
+    "prefix": "error",
+    "body": [
+      "{${1:error} && (",
+      "  <div className=\"${2:errorContainer}\">",
+      "    <p className=\"${3:errorMessage}\">{${1:error}.message}</p>",
+      "    <button className=\"${4:retryButton}\" onClick={${5:handleRetry}}>",
+      "      ${6:Retry}",
+      "    </button>",
+      "  </div>",
+      ")}"
+    ],
+    "description": "JSX error display"
+  },
+  "JSX Tabs": {
+    "prefix": "tabs",
+    "body": [
+      "<div className=\"${1:tabsContainer}\">",
+      "  <div className=\"${2:tabList}\">",
+      "    {${3:tabs}.map((${4:tab}, ${5:index}) => (",
+      "      <button",
+      "        key={${6:tab.id || index}}",
+      "        className={`${7:tabButton} ${${8:activeTab} === ${9:tab.id} ? '${10:active}' : ''}`}",
+      "        onClick={() => ${11:setActiveTab}(${9:tab.id})}",
+      "      >",
+      "        {${12:tab.label}}",
+      "      </button>",
+      "    ))}",
+      "  </div>",
+      "  <div className=\"${13:tabContent}\">",
+      "    ${0}",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "JSX tabs component"
+  },
+  "JSX Accordion": {
+    "prefix": "accordion",
+    "body": [
+      "<div className=\"${1:accordion}\">",
+      "  <div className=\"${2:accordionHeader}\" onClick={${3:handleToggle}}>",
+      "    <h3 className=\"${4:accordionTitle}\">${5:Title}</h3>",
+      "    <span className={`${6:accordionIcon} ${${7:isOpen} ? '${8:open}' : ''}`}>",
+      "      ${9:▼}",
+      "    </span>",
+      "  </div>",
+      "  {${7:isOpen} && (",
+      "    <div className=\"${10:accordionContent}\">",
+      "      ${0}",
+      "    </div>",
+      "  )}",
+      "</div>"
+    ],
+    "description": "JSX accordion component"
+  },
+  "JSX Tooltip": {
+    "prefix": "tooltip",
+    "body": [
+      "<div className=\"${1:tooltipContainer}\">",
+      "  <div",
+      "    className=\"${2:tooltipTrigger}\"",
+      "    onMouseEnter={${3:handleMouseEnter}}",
+      "    onMouseLeave={${4:handleMouseLeave}}",
+      "  >",
+      "    ${5:Hover me}",
+      "  </div>",
+      "  {${6:showTooltip} && (",
+      "    <div className=\"${7:tooltip}\">",
+      "      ${0}",
+      "    </div>",
+      "  )}",
+      "</div>"
+    ],
+    "description": "JSX tooltip component"
+  },
+  "JSX Dropdown": {
+    "prefix": "dropdown",
+    "body": [
+      "<div className=\"${1:dropdownContainer}\">",
+      "  <button",
+      "    className=\"${2:dropdownTrigger}\"",
+      "    onClick={${3:handleToggle}}",
+      "  >",
+      "    ${4:Dropdown}",
+      "  </button>",
+      "  {${5:isOpen} && (",
+      "    <div className=\"${6:dropdownMenu}\">",
+      "      {${7:options}.map((${8:option}, ${9:index}) => (",
+      "        <button",
+      "          key={${10:option.id || index}}",
+      "          className=\"${11:dropdownItem}\"",
+      "          onClick={() => ${12:handleSelect}(${8:option})}",
+      "        >",
+      "          {${13:option.label}}",
+      "        </button>",
+      "      ))}",
+      "    </div>",
+      "  )}",
+      "</div>"
+    ],
+    "description": "JSX dropdown component"
+  },
+  "JSX Pagination": {
+    "prefix": "pagination",
+    "body": [
+      "<div className=\"${1:pagination}\">",
+      "  <button",
+      "    className=\"${2:paginationButton}\"",
+      "    onClick={${3:handlePrevious}}",
+      "    disabled={${4:currentPage} === 1}",
+      "  >",
+      "    Previous",
+      "  </button>",
+      "  <span className=\"${5:pageInfo}\">",
+      "    Page {${4:currentPage}} of {${6:totalPages}}",
+      "  </span>",
+      "  <button",
+      "    className=\"${2:paginationButton}\"",
+      "    onClick={${7:handleNext}}",
+      "    disabled={${4:currentPage} === ${6:totalPages}}",
+      "  >",
+      "    Next",
+      "  </button>",
+      "</div>"
+    ],
+    "description": "JSX pagination component"
+  },
+  "JSX Search": {
+    "prefix": "input.search",
+    "body": [
+      "<div className=\"${1:searchContainer}\">",
+      "  <input",
+      "    type=\"text\"",
+      "    className=\"${2:searchInput}\"",
+      "    placeholder=\"${3:Search...}\"",
+      "    value={${4:searchTerm}}",
+      "    onChange={${5:handleSearch}}",
+      "  />",
+      "  <button className=\"${6:searchButton}\" onClick={${7:handleSubmit}}>",
+      "    🔍",
+      "  </button>",
+      "</div>"
+    ],
+    "description": "JSX search component"
+  },
+  "JSX Badge": {
+    "prefix": "span.badge",
+    "body": [
+      "<span className=\"${1:badge} ${2:badgeVariant}\">${0}</span>"
+    ],
+    "description": "JSX badge component"
+  },
+  "JSX Alert": {
+    "prefix": "alert",
+    "body": [
+      "<div className=\"${1:alert} ${2:alertType}\">",
+      "  <span className=\"${3:alertIcon}\">${4:ⓘ}</span>",
+      "  <span className=\"${5:alertMessage}\">${0}</span>",
+      "  <button className=\"${6:alertClose}\" onClick={${7:handleClose}}>",
+      "    ×",
+      "  </button>",
+      "</div>"
+    ],
+    "description": "JSX alert component"
+  }
+}

@@ -1,0 +1,599 @@
+{
+  // =============================================================================
+  // CORE EDITOR SETTINGS
+  // =============================================================================
+  "vim_mode": true,
+  "seed_search_query_from_cursor": "always",
+  "preferred_line_length": 80,
+  "buffer_line_height": "comfortable",
+  "relative_line_numbers": true,
+  "format_on_save": "on",
+  "tab_size": 2,
+  "show_edit_predictions": false,
+  "show_call_status_icon": false,
+  "show_completions_on_input": true,
+  // =============================================================================
+  // THEME AND UI
+  // =============================================================================
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Tokyo Night"
+    // "dark":  "GitHub Dark Default"
+  },
+  "icon_theme": "Icons modern material (Dark)",
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred"
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "fixed",
+    "background_coloring": "disabled"
+  },
+  "centered_layout": {
+    "left_padding": 0.1,
+    "right_padding": 0.1
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  // Alternative theme options (uncomment to use):
+  // "theme": "Catppuccin Mocha",
+  // "icon_theme": "Serendipity Icons",
+  // =============================================================================
+  // FONT SETTINGS
+  // =============================================================================
+  "ui_font_size": 18,
+  "ui_font_weight": 250,
+  // "ui_font_family": "JetBrains Mono NL",
+  "ui_font_family": "Monaspace Argon",
+  "buffer_font_family": "JetBrains Mono NL",
+  // "buffer_font_family": "Monaspace Argon",
+  // "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 16.0,
+  "buffer_font_weight": 300,
+  "agent_font_size": 19,
+  // Alternative font options (uncomment to use):
+  // "buffer_font_family": "Monaspace Neon",
+  // "buffer_font_family": "Monaspace Argon",
+  // "buffer_font_family": "Monaspace Krypton",
+  // "buffer_font_family": "Monaspace Xenon",
+  // "buffer_font_family": "IBM Plex Mono",
+  // =============================================================================
+  // PANEL LAYOUT
+  // =============================================================================
+  "project_panel": {
+    "dock": "right",
+    "default_width": 240
+  },
+  "notification_panel": {
+    "dock": "left"
+  },
+  "chat_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "bottom_dock_layout": "right_aligned",
+  // =============================================================================
+  // PRETTIER CONFIGURATION
+  // =============================================================================
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "printWidth": 120,
+    "jsxSingleQuotes": true,
+    "bracketSameLine": false,
+    "tabWidth": {
+      "TypeScript": 2,
+      "TSX": 2,
+      "JavaScript": 2,
+      "JSON": 2,
+      "Markdown": 2,
+      "html": 4,
+      "css": 2,
+      "scss": 2,
+      "less": 2,
+      "svelte": 2,
+      "python": 4,
+      "ruby": 2,
+      "go": 2,
+      "java": 2,
+      "c": 2,
+      "cpp": 2,
+      "csharp": 2,
+      "php": 2,
+      "rust": 2,
+      "kotlin": 2,
+      "swift": 2,
+      "objective-c": 2,
+      "perl": 2,
+      "shell": 2,
+      "bash": 2,
+      "powershell": 2,
+      // "lua": 2,
+      "sql": 2,
+      "markdown": 2,
+      "json": 2,
+      "json5": 2,
+      "jsonc": 2,
+      "jsonl": 2,
+      "toml": 2,
+      "xml": 2,
+      "yaml": 2,
+      "graphql": 2,
+      "handlebars": 2,
+      "vue": 2
+    },
+    "useTabs": false,
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports",
+      "@trivago/prettier-plugin-sort-exports",
+      "@trivago/prettier-plugin-sort-json",
+      "@trivago/prettier-plugin-sort-css",
+      "@trivago/prettier-plugin-sort-html"
+    ],
+    "importOrder": [
+      "^[./]",
+      "^@?\\w",
+      "^[^./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
+  },
+  "auto_install_extensions": {
+    "git-firefly": true,
+    "fleet-themes": true,
+    "zed-dev": true,
+    "zed-copilot": true,
+    "zed-supermaven": true,
+    "zed-remote": true
+  },
+  "remove_trailing_whitespace_on_save": true,
+  "always_treat_brackets_as_autoclosed": true,
+  // =============================================================================
+  // GIT INTEGRATION
+  // =============================================================================
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 500,
+      "min_column": 80
+    },
+    "gutter_debounce": 300
+  },
+  // =============================================================================
+  // AI AGENT CONFIGURATION
+  // =============================================================================
+  "agent": {
+    "enabled": true,
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-thinking"
+      // "provider": "copilot_chat",
+      // "model": "gpt-4.1"
+    },
+    "model_parameters": [],
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+      // "provider": "copilot_chat",
+      // "model": "gpt-4.1"
+    }
+  },
+  // =============================================================================
+  // EDIT PREDICTIONS & COPILOT
+  // =============================================================================
+  "edit_predictions": {
+    "disabled_globs": [],
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+    // "edit_prediction_provider": "zed"
+    // "edit_prediction_provider": "supermaven"
+    // "edit_prediction_provider": "none"
+  },
+  // =============================================================================
+  // TERMINAL CONFIGURATION
+  // =============================================================================
+  "terminal": {
+    "dock": "bottom",
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": true,
+    "env": {
+      "EDITOR": "zed --wait",
+      "ZED_EDITOR": "zed",
+      "ZED_PROJECT_DIR": "current_project_directory",
+      "ZED_WORKSPACE_DIR": "current_workspace_directory"
+    },
+    "font_family": "Monaspace Argon",
+    "font_size": 14.0,
+    "option_as_meta": false,
+    "working_directory": "current_project_directory"
+  },
+  // =============================================================================
+  // PRIVACY SETTINGS
+  // =============================================================================
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  // =============================================================================
+  // LANGUAGE-SPECIFIC SETTINGS
+  // =============================================================================
+  "languages": {
+    "TypeScript": {
+      "tab_size": 2,
+      "formatter": "prettier",
+      "format_on_save": "prettier",
+      "prettier": {
+        "allowed": true
+        // These can be configured in the Prettier settings above
+        // "singleQuote": true,
+        // "semi": false,
+        // "trailingComma": "es5",
+        // "printWidth": 120,
+        // "jsxSingleQuote": true,
+        // "bracketSameLine": false
+      },
+      "language_servers": [
+        "typescript-language-server",
+        "vtsls",
+        "tree-sitter-typescript",
+        "eslint",
+        "emmet-language-server"
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+      }
+    },
+    "TSX": {
+      "tab_size": 2,
+      // "formatter": "prettier",
+      "format_on_save": "prettier",
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      },
+      "language_servers": [
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "vtsls",
+        "tree-sitter-tsx",
+        "eslint",
+        "emmet-language-server"
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+      }
+    },
+    "JavaScript": {
+      "show_edit_predictions": true,
+      "tab_size": 2,
+      "formatter": "prettier",
+      "format_on_save": "prettier",
+      "language_servers": [
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "tree-sitter-javascript",
+        "typescript-language-server",
+        "vtsls",
+        "vscode-js-debug",
+        "eslint",
+        "emmet-language-server"
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+      }
+    },
+    "JSX": {
+      "tab_size": 2,
+      "show_edit_predictions": true,
+      "formatter": "prettier", // This should be a string, not boolean
+      "format_on_save": "prettier",
+      "language_servers": [
+        "typescript-language-server",
+        "tailwindcss-language-server"
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+      }
+    },
+    "CSS": {
+      "tab_size": 2,
+      "formatter": "prettier",
+      "format_on_save": "prettier",
+      "language_servers": [
+        "vscode-css-language-server",
+        "tailwindcss-language-server",
+        "css-language-server",
+        "tree-sitter-css"
+      ]
+    },
+    "HTML": {
+      "tab_size": 2,
+      "formatter": "prettier",
+      "format_on_save": "prettier",
+      "language_servers": [
+        "vscode-html-language-server",
+        "tree-sitter-html",
+        "html-language-server"
+      ]
+    },
+    "JSON": {
+      "tab_size": 2,
+      "formatter": "prettier",
+      "format_on_save": "prettier",
+      "language_servers": [
+        "tree-sitter-json",
+        "emmet-language-server"
+      ]
+    },
+    "Markdown": {
+      "tab_size": 2,
+      "formatter": "prettier",
+      "format_on_save": "prettier",
+      "remove_trailing_whitespace_on_save": false,
+      "language_servers": [
+        "tree-sitter-markdown"
+      ]
+    },
+    // "Lua": {
+    //   "tab_size": 2,
+    //   "formatter": "prettier",
+    //   // Stylua is not available in Zed yet, so using Prettier for Lua formatting
+    //   // "formatter": {
+    //   //   "external": {
+    //   //     "command": "stylua",
+    //   //     "arguments": [
+    //   //       "--stdin-filepath",
+    //   //       "{buffer_path}"
+    //   //     ]
+    //   //   }
+    //   // },
+    //   "format_on_save": "on",
+    //   "inlay_hints": {
+    //     "enabled": true,
+    //     "show_type_hints": true,
+    //     "show_parameter_hints": true,
+    //     "show_other_hints": true
+    //   },
+    //   "language_servers": [
+    //     "tree-sitter-lua",
+    //     "lua-language-server"
+    //   ]
+    // },
+    "Hyprlang": {
+      "tab_size": 2,
+      "formatter": "prettier",
+      "format_on_save": "prettier",
+      "language_servers": [
+        "tree-sitter-hyprlang",
+        "hyprlang-language-server"
+      ]
+    }
+  },
+  // =============================================================================
+  // LSP CONFIGURATION
+  // =============================================================================
+  "lsp": {
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "includeInlayParameterNameHints": "all",
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayVariableTypeHints": true,
+          "includeInlayPropertyDeclarationTypeHints": true,
+          "includeInlayFunctionLikeReturnTypeHints": true,
+          "includeInlayEnumMemberValueHints": true,
+          "importModuleSpecifierPreference": "shortest",
+          "quotePreference": "single"
+        },
+        "enabledFeatures": {
+          "diagnostics": true,
+          "referencesCodeLens": true,
+          "formatting": true,
+          "semanticHighlighting": true
+        },
+        // "tsserver": {
+        "ts_ls": {
+          "maxTsServerMemory": 8192
+        }
+      }
+    },
+    "emmet-language-server": {
+      "initialization_options": {
+        "includeLanguages": {
+          "typescript": "jsx",
+          "typescriptreact": "jsx",
+          "javascript": "jsx",
+          "javascriptreact": "jsx",
+          "html": "html",
+          "css": "css"
+        },
+        "syntaxProfiles": {
+          "jsx": "jsx"
+        },
+        "enabledFeatures": {
+          "diagnostics": true,
+          "referencesCodeLens": true,
+          "formatting": true,
+          "semanticHighlighting": true
+        },
+        // Additional Emmet settings
+        "jsx.enabled": true,
+        "jsx.profile": "react",
+        "jsx.tagCase": "lower",
+        "jsx.attrCase": "camel",
+        "jsx.attrQuotes": "single"
+      }
+    },
+    "eslint": {
+      "settings": {
+        "workingDirectory": {
+          "mode": "auto"
+        },
+        "formatting": {
+          "enable": true,
+          "options": {
+            "tabWidth": 2,
+            "useTabs": false,
+            "singleQuote": true,
+            "semi": false,
+            "trailingComma": "es5",
+            "printWidth": 120
+          }
+        },
+        "codeActionOnSave": {
+          "rules": [
+            "import/order",
+            "import/first",
+            "import/no-duplicates"
+          ],
+          "severity": "warn"
+        },
+        "problems": {
+          "shortenToSingleLine": true
+          // "severityOverrides": {
+          //   "warning": "error",
+          //   "info": "off",
+          //   "hint": "off"
+          // }
+        }
+      }
+    },
+    // Minimal CSS language server configuration
+    // "vscode-css-language-server": {
+    //   "initialization_options": {
+    //     "css": {
+    //       "validate": true,
+    //       "lint": {
+    //         "validProperties": ["theme", "apply"]
+    //       }
+    //     },
+    //     "scss": {"validate": true},
+    //     "less": {"validate": true}
+    //   }
+    // },
+    // Maximal CSS language server configuration
+    "vscode-css-language-server": {
+      "initialization_options": {
+        "provideFormatter": true,
+        "initlialization_options": {
+          "css": {
+            "validate": true,
+            "format": true,
+            "lint": {
+              "validProperties": [
+                "theme",
+                "apply"
+              ]
+            }
+          },
+          "scss": {
+            "validate": true,
+            "lint": {
+              "validProperties": [
+                "theme",
+                "apply"
+              ]
+            }
+          },
+          "less": {
+            "validate": true,
+            "lint": {
+              "validProperties": [
+                "theme",
+                "apply"
+              ]
+            }
+          },
+          "lint": {
+            "unknownAtRules": "ignore",
+            "duplicateProperties": "ignore",
+            "emptyRules": "ignore",
+            "boxModel": "ignore"
+          },
+          "validate": true,
+          "suggest": {
+            "completePropertyWithSemicolon": true,
+            "completePropertyWithColon": true,
+            "completePropertyWithValue": true
+          }
+        }
+      }
+    },
+    "vscode-html-language-server": {
+      "initialization_options": {
+        "provideFormatter": true,
+        "html": {
+          "suggest": true,
+          "autoClosingTags": true,
+          "format": {
+            "wrapLineLength": 120,
+            "unformatted": "a,abbr,acronym,address,area,article,aside,audio,b,bdi,bdo,big,blockquote,body,br,cite,code,col,colgroup,data,datalist,dd,del,details,dfn,dialog,div,dl,dt,em,font,h1,h2,h3,h4,h5,h6,i,img,input,kbd,label,map,mark,menuitem,meter,noscript,optgroup,option,picture,q,rp,rt,ruby,s,samp,section,small,source,strong,sub,sup,time,u,var,wbr"
+          }
+        }
+      }
+    },
+    "tailwindcss-language-server": {
+      "initialization_options": {
+        // "includeLanguages": {
+        "userLanguages": {
+          "typescript": "javascript",
+          "typescriptreact": "javascript",
+          "javascript": "javascript",
+          "javascriptreact": "javascript",
+          "html": "html",
+          "css": "css"
+        },
+        "lint": {
+          "cssConflict": true,
+          "invalidApply": true,
+          "invalidScreen": true,
+          "invalidVariant": true,
+          "unusedClassRegexes": [
+            "^bg-.*$",
+            "^text-.*$"
+          ]
+        },
+        "experimental": {
+          "configFile": "tailwind.config.js",
+          "classRegex": [
+            "tw`([^`]*)",
+            "tw=\"([^\"]*)",
+            "tw={\"([^\"]*)"
+          ],
+          "classAttributes": [
+            "className",
+            "class"
+          ]
+        }
+      }
+    }
+  }
+}

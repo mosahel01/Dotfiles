@@ -1,0 +1,844 @@
+{
+  "Type Props": {
+    "prefix": "Type",
+    "body": [
+      "type ${1:TypeName}Props = {",
+      "  ${2:propertyName}: string",
+      "  ${4:anotherProperty}: number",
+      "  ${5:anotherProperty}?: ${6:optionalProperty} // Optional property",
+      "};"
+    ],
+    "description": "PropTypes for React Component"
+  },
+  // Deprecated, use "Type Props" instead
+  // "Default Props": {
+  //   "prefix": "DefaultProps",
+  //   "body": [
+  //     "${1:TypeName}.defaultProps = {",
+  //     "  ${2:propertyName}: 'default value',",
+  //     "  ${3:anotherProperty}: 42,",
+  //     "};"
+  //   ],
+  //   "description": "Default Props for React Component"
+  // },
+  "TypeScript React Component": {
+    "prefix": "rfceProps",
+    "body": [
+      "import React from 'react';",
+      "",
+      "type ${1:ComponentName}Props = {",
+      "  ${2:propertyName}: string;",
+      "  ${3:anotherProperty}?: number;", // Optional property
+      "};",
+      "",
+      "const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = ({",
+      "  ${2:propertyName},",
+      "  ${3:anotherProperty},",
+      "}) => {",
+      "return (",
+      "    <>",
+      "    <div>",
+      "      Hello There",
+      "    </div>",
+      "    {${2:propertyName}}",
+      "    </>",
+      ");",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "TypeScript React Functional Component with Props"
+  },
+  "React Function Component with TypeScript": {
+    "prefix": "rfce",
+    "body": [
+      "const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = () => {",
+      "  return (",
+      "    <>",
+      "      <div className=\"${2:className}\">",
+      "        Hello world",
+      "      </div>",
+      "    </>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React Arrow Function Component with TypeScript"
+  },
+  "React Arrow Function Component with TypeScript": {
+    "prefix": "rafce",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "type ${1:ComponentName}Props = {",
+      "  ${2:propertyName}: string; ",
+      "  ${3:anotherProperty}?: number;", // Optional property
+      "}",
+      "",
+      "const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = () => {",
+      "  return (",
+      "    <>",
+      "      <div className=\"${2:className}\">",
+      "        Hello world",
+      "      </div>",
+      "    </>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React Arrow Function Component with TypeScript"
+  },
+  "Export Defaults": {
+    "prefix": "exp",
+    "body": [
+      "export default ${1:ComponentName};"
+    ]
+  },
+  "Named Imports": {
+    "prefix": "imr",
+    "body": [
+      "import { ${1:ComponentName} } from 'react';"
+    ]
+  },
+  "Import Modules": {
+    "prefix": "imp",
+    "body": [
+      "import ${1:moduleName} from '${2:modulePath}';"
+    ]
+  },
+  "Map Function": {
+    "prefix": "map",
+    "body": [
+      "${1:array}.map((${2:item}: ${3:ItemType}) => {",
+      "  return ${4:item};",
+      "})"
+    ]
+  },
+  "Complex Map Function": {
+    "prefix": "map.complex",
+    "body": [
+      "${1:array}.map((${2:item}: ${3:ItemType}) => {",
+      "  return (",
+      "    <div key={${2:item}.id}>",
+      "      {${2:item}.name}",
+      "    </div>",
+      "  );",
+      "});"
+    ]
+  },
+  "Filter Function": {
+    "prefix": "filter",
+    "body": [
+      "${1:array}.filter((${2:item}: ${3:ItemType}) => {",
+      "  return ${4:condition};",
+      "})"
+    ]
+  },
+  "Filter * Map Function": {
+    "prefix": "filter.map",
+    "body": [
+      "${1:array}",
+      "  .filter((${2:item}: ${3:ItemType}) => ${2:item}.condition)",
+      "  .map((${2:item}: ${3:ItemType}) => (",
+      "    <div key={${2:item}.id}>{${2:item}.name}</div>",
+      "  ));"
+    ]
+  },
+  "Reduce Function": {
+    "prefix": "reduce",
+    "body": [
+      "${1:array}.reduce((",
+      "  accumulator: ${3:AccumulatorType}, ",
+      "  ${2:item}: ${4:ItemType}",
+      ") => {",
+      "  return ${5:accumulator} + ${2:item};",
+      "}, ${6:initialValue});"
+    ]
+  },
+  "useState Hook": {
+    "prefix": "ush",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState<${2:StateType}>(${3:initialValue});"
+    ]
+  },
+  "useEffect Hook": {
+    "prefix": "ueh",
+    "body": [
+      "useEffect(() => {",
+      "  ${1:// effect code here}",
+      "}, [${2:dependencies}]);"
+    ],
+    "description": "React useEffect Hook"
+  },
+  "useCallback Hook": {
+    "prefix": "ucb",
+    "body": [
+      "const ${1:callbackName} = useCallback(() => {",
+      "  ${2:// callback code here}",
+      "}, [${3:dependencies}]);"
+    ],
+    "description": "React useCallback Hook"
+  },
+  "useContext Hook": {
+    "prefix": "ucx",
+    "body": [
+      "const ${1:contextName} = useContext<${2:ContextType}>(${3:Context});"
+    ],
+    "description": "React useContext Hook"
+  },
+  "Custom Hook": {
+    "prefix": "usecustom",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "interface ${1:CustomHook}Return {",
+      "  ${2:state}: ${3:StateType};",
+      "  set${2/(.*)/${2:/capitalize}/}: React.Dispatch<React.SetStateAction<${3:StateType}>>;",
+      "}",
+      "",
+      "const use${1:CustomHook} = (): ${1:CustomHook}Return => {",
+      "  const [${2:state}, set${2/(.*)/${2:/capitalize}/}] = useState<${3:StateType}>(${4:initialValue});",
+      "",
+      "  useEffect(() => {",
+      "    ${5:// effect code here}",
+      "  }, [${6:dependencies}]);",
+      "",
+      "  return { ${2:state}, set${2/(.*)/${2:/capitalize}/} };",
+      "};",
+      "",
+      "export default use${1:CustomHook};"
+    ]
+  },
+  "Console log": {
+    "prefix": "log",
+    "body": [
+      "console.log(${1:message});"
+    ],
+    "description": "Console log statement"
+  },
+  "Try Catch Block": {
+    "prefix": "trycatch",
+    "body": [
+      "try {",
+      "  ${1:// code to try}",
+      "} catch (error) {",
+      "  if (error instanceof Error) {",
+      "    console.error(error.message);",
+      "  }",
+      "}"
+    ],
+    "description": "Try Catch Block"
+  },
+  "Arrow Function": {
+    "prefix": "af",
+    "body": [
+      "const ${1:functionName} = (${2:params}: ${3:ParamType}): ${4:ReturnType} => {",
+      "  ${5:// function body}",
+      "};"
+    ],
+    "description": "Arrow Function Definition"
+  },
+  "Async Arrow Function": {
+    "prefix": "aaf",
+    "body": [
+      "const ${1:functionName} = async (${2:params}: ${3:ParamType}): Promise<${4:ReturnType}> => {",
+      "  try {",
+      "    ${5:// async code here}",
+      "  } catch (error) {",
+      "    if (error instanceof Error) {",
+      "      console.error(error.message);",
+      "    }",
+      "    throw error;",
+      "  }",
+      "};"
+    ],
+    "description": "Async Arrow Function Definition"
+  },
+  "Promise": {
+    "prefix": "promise",
+    "body": [
+      "const ${1:promiseName} = new Promise<${2:ReturnType}>((resolve, reject) => {",
+      "  ${3:// async operation}",
+      "  if (${4:condition}) {",
+      "    resolve(${5:value});",
+      "  } else {",
+      "    reject(new Error(${6:errorMessage}));",
+      "  }",
+      "});"
+    ],
+    "description": "Promise Definition"
+  },
+  "Async/Await": {
+    "prefix": "asyncawait",
+    "body": [
+      "const ${1:functionName} = async (${2:params}: ${3:ParamType}): Promise<${4:ReturnType}> => {",
+      "  try {",
+      "    const result = await ${5:promise};",
+      "    return result;",
+      "  } catch (error) {",
+      "    if (error instanceof Error) {",
+      "      console.error(error.message);",
+      "    }",
+      "    throw error;",
+      "  }",
+      "};"
+    ],
+    "description": "Async/Await Function Definition"
+  },
+  "Event Handler": {
+    "prefix": "const handle",
+    "body": [
+      "handle${1:Event} = (e: React.${2:EventType}) => {",
+      "  e.preventDefault();",
+      "  ${3:// event handling code}",
+      "};"
+    ],
+    "description": "Event Handler Function"
+  },
+  "useRef Hook": {
+    "prefix": "uref",
+    "body": [
+      "const ${1:refName} = useRef<${2:RefType}>(${3:initialValue});"
+    ],
+    "description": "React useRef Hook"
+  },
+  "ReactContext": {
+    "prefix": "rtcx",
+    "body": [
+      "import React, { createContext, useContext, useState, ReactNode } from 'react';",
+      "",
+      "interface ${1:ContextName}ContextType {",
+      "  ${2:state}: ${3:StateType};",
+      "  set${2/(.*)/${2:/capitalize}/}: React.Dispatch<React.SetStateAction<${3:StateType}>>;",
+      "}",
+      "",
+      "const ${1:ContextName} = createContext<${1:ContextName}ContextType | undefined>(undefined);",
+      "",
+      "interface ${1:ContextName}ProviderProps {",
+      "  children: ReactNode;",
+      "}",
+      "",
+      "export const ${1:ContextName}Provider: React.FC<${1:ContextName}ProviderProps> = ({ children }) => {",
+      "  const [${2:state}, set${2/(.*)/${2:/capitalize}/}] = useState<${3:StateType}>(${4:initialValue});",
+      "",
+      "  return (",
+      "    <${1:ContextName}.Provider value={{ ${2:state}, set${2/(.*)/${2:/capitalize}/} }}>",
+      "      {children}",
+      "    </${1:ContextName}.Provider>",
+      "  );",
+      "};",
+      "",
+      "export const use${1:ContextName} = (): ${1:ContextName}ContextType => {",
+      "  const context = useContext(${1:ContextName});",
+      "  if (context === undefined) {",
+      "    throw new Error(`use${1:ContextName} must be used within a ${1:ContextName}Provider`);",
+      "  }",
+      "  return context;",
+      "};"
+    ],
+    "description": "React Context API with TypeScript"
+  },
+  "useImperativeHandle Hook": {
+    "prefix": "uih",
+    "body": [
+      "import { useImperativeHandle, forwardRef, useRef } from 'react';",
+      "",
+      "interface ${1:ComponentName}Props {}",
+      "",
+      "export interface ${1:ComponentName}Ref {",
+      "  ${3:methodName}: () => void;",
+      "}",
+      "",
+      "const ${1:ComponentName} = forwardRef<${1:ComponentName}Ref, ${1:ComponentName}Props>((props, ref) => {",
+      "  const ${2:localRef} = useRef<${4:ElementType}>(null);",
+      "",
+      "  useImperativeHandle(ref, () => ({",
+      "    ${3:methodName}: () => {",
+      "      // method implementation",
+      "    },",
+      "  }));",
+      "",
+      "  return (",
+      "    <div ref={${2:localRef}} className=\"${5:className}\">",
+      "      ${6:content}",
+      "    </div>",
+      "  );",
+      "});",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React useImperativeHandle Hook with TypeScript"
+  },
+  "Custom Hook with Local Storage": {
+    "prefix": "useLocalStorage",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "const useLocalStorage = <T>(",
+      "  key: string, ",
+      "  initialValue: T",
+      "): [T, (value: T | ((val: T) => T)) => void] => {",
+      "  const [storedValue, setStoredValue] = useState<T>(() => {",
+      "    try {",
+      "      const item = window.localStorage.getItem(key);",
+      "      return item ? JSON.parse(item) : initialValue;",
+      "    } catch (error) {",
+      "      console.error(error);",
+      "      return initialValue;",
+      "    }",
+      "  });",
+      "",
+      "  const setValue = (value: T | ((val: T) => T)) => {",
+      "    try {",
+      "      const valueToStore = value instanceof Function ? value(storedValue) : value;",
+      "      setStoredValue(valueToStore);",
+      "      window.localStorage.setItem(key, JSON.stringify(valueToStore));",
+      "    } catch (error) {",
+      "      console.error(error);",
+      "    }",
+      "  };",
+      "",
+      "  useEffect(() => {",
+      "    const handleStorageChange = (e: StorageEvent) => {",
+      "      if (e.key === key) {",
+      "        setStoredValue(JSON.parse(e.newValue || ''));",
+      "      }",
+      "    };",
+      "",
+      "    window.addEventListener('storage', handleStorageChange);",
+      "    return () => window.removeEventListener('storage', handleStorageChange);",
+      "  }, [key]);",
+      "",
+      "  return [storedValue, setValue];",
+      "};",
+      "",
+      "export default useLocalStorage;"
+    ],
+    "description": "Custom Hook for Local Storage with TypeScript"
+  },
+  "Fetch API Call": {
+    "prefix": "fettchh",
+    "body": [
+      "const fetch${1:Data} = async (${2:url}: string): Promise<${3:DataType}> => {",
+      "  try {",
+      "    const response = await fetch(${2:url});",
+      "    if (!response.ok) {",
+      "      throw new Error(`HTTP error! status: ${response.status}`);",
+      "    }",
+      "    const data: ${3:DataType} = await response.json();",
+      "    return data;",
+      "  } catch (error) {",
+      "    if (error instanceof Error) {",
+      "      console.error('Fetch error:', error.message);",
+      "    }",
+      "    throw error;",
+      "  }",
+      "};"
+    ],
+    "description": "Fetch API Call with TypeScript"
+  },
+  "Form with useState": {
+    "prefix": "formusestate",
+    "body": [
+      "import React, { useState, FormEvent } from 'react';",
+      "",
+      "interface FormData {",
+      "  ${3:name}: string;",
+      "  ${4:email}: string;",
+      "}",
+      "",
+      "const ${1:FormComponent} = () => {",
+      "  const [${2:formData}, set${2/(.*)/${2:/capitalize}/}] = useState<FormData>({",
+      "    ${3:name}: '',",
+      "    ${4:email}: '',",
+      "  });",
+      "",
+      "  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {",
+      "    const { name, value } = e.target;",
+      "    set${2/(.*)/${2:/capitalize}/}({ ...${2:formData}, [name]: value });",
+      "  };",
+      "",
+      "  const handleSubmit = (e: FormEvent) => {",
+      "    e.preventDefault();",
+      "    console.log(${2:formData});",
+      "  };",
+      "",
+      "  return (",
+      "    <form onSubmit={handleSubmit}>",
+      "      <input",
+      "        type=\"text\"",
+      "        name=\"${3:name}\"",
+      "        value={${2:formData}.${3:name}}",
+      "        onChange={handleChange}",
+      "        placeholder=\"Name\"",
+      "      />",
+      "      <input",
+      "        type=\"email\"",
+      "        name=\"${4:email}\"",
+      "        value={${2:formData}.${4:email}}",
+      "        onChange={handleChange}",
+      "        placeholder=\"Email\"",
+      "      />",
+      "      <button type=\"submit\">Submit</button>",
+      "    </form>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:FormComponent};"
+    ],
+    "description": "React Form with useState Hook"
+  },
+  "Input Field with Labels": {
+    "prefix": "inputWithLabel",
+    "body": [
+      "<div>",
+      "  <label htmlFor=\"${1:inputId}\">${2:Label}</label>",
+      "  <input",
+      "    type=\"${3:text}\"",
+      "    id=\"${1:inputId}\"",
+      "    name=\"${4:inputName}\"",
+      "    value={${5:value}}",
+      "    onChange={(${6:e}: React.ChangeEvent<HTMLInputElement>) => ${7:handleChange}}",
+      "    placeholder=\"${8:Placeholder}\"",
+      "  />",
+      "</div>"
+    ],
+    "description": "Input Field with Label"
+  },
+  "Select Dropdown": {
+    "prefix": "selectDropdown",
+    "body": [
+      "<div>",
+      "  <label htmlFor=\"${1:selectId}\">${2:Label}</label>",
+      "  <select",
+      "    id=\"${1:selectId}\"",
+      "    name=\"${3:selectName}\"",
+      "    value={${4:selectedValue}}",
+      "    onChange={(${5:e}: React.ChangeEvent<HTMLSelectElement>) => ${6:handleSelectChange}}",
+      "  >",
+      "    <option value=\"\">${7:Select an option}</option>",
+      "    {${8:options}.map((option) => (",
+      "      <option key={option.value} value={option.value}>",
+      "        {option.label}",
+      "      </option>",
+      "    ))}",
+      "  </select>",
+      "</div>"
+    ],
+    "description": "Select Dropdown with Options"
+  },
+  "TypeScript For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:i}: number = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript for loop"
+  },
+  "TypeScript For...of Loop": {
+    "prefix": "forof",
+    "body": [
+      "for (const ${1:item} of ${2:array}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript for...of loop"
+  },
+  "TypeScript For...in Loop": {
+    "prefix": "forin",
+    "body": [
+      "for (const ${1:key} in ${2:object}) {",
+      "  if (${2:object}.hasOwnProperty(${1:key})) {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "TypeScript for...in loop"
+  },
+  "TypeScript While Loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript while loop"
+  },
+  "TypeScript Function Declaration": {
+    "prefix": "function",
+    "body": [
+      "function ${1:functionName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript function declaration"
+  },
+  "TypeScript Object Literal": {
+    "prefix": "object",
+    "body": [
+      "const ${1:objectName}: ${2:ObjectType} = {",
+      "  ${3:key}: ${4:value},",
+      "  ${5:anotherKey}: ${6:anotherValue}",
+      "};"
+    ],
+    "description": "TypeScript object literal"
+  },
+  "TypeScript Array Literal": {
+    "prefix": "arr",
+    "body": [
+      "const ${1:arrayName}: ${2:string}[] = [${3:value1}, ${4:value2}, ${5:value3}];"
+    ],
+    "description": "TypeScript array literal"
+  },
+  "TypeScript Object Destructuring": {
+    "prefix": "dest",
+    "body": [
+      "const { ${1:property1}, ${2:property2} }: ${3:ObjectType} = ${4:object};"
+    ],
+    "description": "TypeScript object destructuring"
+  },
+  "TypeScript Array Destructuring": {
+    "prefix": "desta",
+    "body": [
+      "const [${1:first}, ${2:second}]: ${3:string}[] = ${4:array};"
+    ],
+    "description": "TypeScript array destructuring"
+  },
+  "TypeScript Class Declaration": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "  private ${2:property}: ${3:string};",
+      "",
+      "  constructor(${2:property}: ${3:string}) {",
+      "    this.${2:property} = ${2:property};",
+      "  }",
+      "",
+      "  public ${4:methodName}(): ${5:void} {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "TypeScript class declaration"
+  },
+  "TypeScript Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:InterfaceName} {",
+      "  ${2:property}: ${3:string};",
+      "  ${4:optionalProperty}?: ${5:number};",
+      "  ${6:method}(${7:param}: ${8:string}): ${9:void};",
+      "}"
+    ],
+    "description": "TypeScript interface"
+  },
+  "TypeScript Abstract Class": {
+    "prefix": "abstract",
+    "body": [
+      "abstract class ${1:AbstractClassName} {",
+      "  protected ${2:property}: ${3:string};",
+      "",
+      "  constructor(${2:property}: ${3:string}) {",
+      "    this.${2:property} = ${2:property};",
+      "  }",
+      "",
+      "  abstract ${4:abstractMethod}(): ${5:void};",
+      "",
+      "  protected ${6:concreteMethod}(): ${7:void} {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "TypeScript abstract class"
+  },
+  "TypeScript Class Method": {
+    "prefix": "method",
+    "body": [
+      "public ${1:methodName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript class method"
+  },
+  "TypeScript Private Method": {
+    "prefix": "private",
+    "body": [
+      "private ${1:methodName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript private method"
+  },
+  "TypeScript Protected Method": {
+    "prefix": "protected",
+    "body": [
+      "protected ${1:methodName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript protected method"
+  },
+  "TypeScript Static Method": {
+    "prefix": "static",
+    "body": [
+      "static ${1:methodName}(${2:param}: ${3:string}): ${4:void} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "TypeScript static method"
+  },
+  "TypeScript Getter": {
+    "prefix": "get",
+    "body": [
+      "get ${1:propertyName}(): ${2:string} {",
+      "  return this.${3:_propertyName};",
+      "}"
+    ],
+    "description": "TypeScript getter"
+  },
+  "TypeScript Setter": {
+    "prefix": "set",
+    "body": [
+      "set ${1:propertyName}(${2:value}: ${3:string}) {",
+      "  this.${4:_propertyName} = ${2:value};",
+      "}"
+    ],
+    "description": "TypeScript setter"
+  },
+  "TypeScript Array Type": {
+    "prefix": "arrtype",
+    "body": [
+      "${1:string}[]"
+    ],
+    "description": "TypeScript array type"
+  },
+  "TypeScript Generic Array": {
+    "prefix": "array",
+    "body": [
+      "Array<${1:string}>"
+    ],
+    "description": "TypeScript generic array"
+  },
+  "TypeScript Object Type": {
+    "prefix": "objtype",
+    "body": [
+      "{ ${1:key}: ${2:string} }"
+    ],
+    "description": "TypeScript object type"
+  },
+  "TypeScript Function Type": {
+    "prefix": "functionType",
+    "body": [
+      "(${1:param}: ${2:string}) => ${3:void}"
+    ],
+    "description": "TypeScript function type"
+  },
+  "TypeScript Optional Property": {
+    "prefix": "optional",
+    "body": [
+      "${1:property}?: ${2:string}"
+    ],
+    "description": "TypeScript optional property"
+  },
+  "TypeScript Readonly Property": {
+    "prefix": "readonly",
+    "body": [
+      "readonly ${1:property}: ${2:string}"
+    ],
+    "description": "TypeScript readonly property"
+  },
+  "TypeScript Index Signature": {
+    "prefix": "index",
+    "body": [
+      "[${1:key}: ${2:string}]: ${3:any}"
+    ],
+    "description": "TypeScript index signature"
+  },
+  "TypeScript Extends": {
+    "prefix": "extends",
+    "body": [
+      "extends ${1:BaseClass}"
+    ],
+    "description": "TypeScript extends"
+  },
+  "TypeScript Implements": {
+    "prefix": "implements",
+    "body": [
+      "implements ${1:Interface}"
+    ],
+    "description": "TypeScript implements"
+  },
+  "TypeScript Keyof": {
+    "prefix": "keyof",
+    "body": [
+      "keyof ${1:Type}"
+    ],
+    "description": "TypeScript keyof operator"
+  },
+  "TypeScript In": {
+    "prefix": "in",
+    "body": [
+      "${1:K} in ${2:Type}"
+    ],
+    "description": "TypeScript in operator"
+  },
+  "TypeScript Typeof": {
+    "prefix": "typeof",
+    "body": [
+      "typeof ${1:variable}"
+    ],
+    "description": "TypeScript typeof operator"
+  },
+  "TypeScript As": {
+    "prefix": "as",
+    "body": [
+      "${1:value} as ${2:Type}"
+    ],
+    "description": "TypeScript type assertion"
+  },
+  "TypeScript Is": {
+    "prefix": "is",
+    "body": [
+      "${1:param} is ${2:Type}"
+    ],
+    "description": "TypeScript type predicate"
+  },
+  "TypeScript Never": {
+    "prefix": "never",
+    "body": [
+      "never"
+    ],
+    "description": "TypeScript never type"
+  },
+  "TypeScript Unknown": {
+    "prefix": "unknown",
+    "body": [
+      "unknown"
+    ],
+    "description": "TypeScript unknown type"
+  },
+  "TypeScript Void": {
+    "prefix": "void",
+    "body": [
+      "void"
+    ],
+    "description": "TypeScript void type"
+  },
+  "TypeScript Any": {
+    "prefix": "any",
+    "body": [
+      "any"
+    ],
+    "description": "TypeScript any type"
+  },
+  "TypeScript Const Assertion": {
+    "prefix": "const",
+    "body": [
+      "${1:value} as const"
+    ],
+    "description": "TypeScript const assertion"
+  }
+}

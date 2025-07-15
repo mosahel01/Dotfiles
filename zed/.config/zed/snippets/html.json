@@ -1,0 +1,703 @@
+{
+  "HTML5 Document": {
+    "prefix": "!",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"${1:en}\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>${2:Document}</title>",
+      "</head>",
+      "<body>",
+      "  ${0}",
+      "</body>",
+      "</html>"
+    ],
+    "description": "HTML5 document template"
+  },
+  "HTML Document": {
+    "prefix": "html",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html>",
+      "<head>",
+      "  <title>${1:Document}</title>",
+      "</head>",
+      "<body>",
+      "  ${0}",
+      "</body>",
+      "</html>"
+    ],
+    "description": "Basic HTML document"
+  },
+  "Div Element": {
+    "prefix": "div",
+    "body": [
+      "<div${1: class=\"${2:className}\"}>",
+      "  ${0}",
+      "</div>"
+    ],
+    "description": "Div element"
+  },
+  "Div with ID": {
+    "prefix": "divid",
+    "body": [
+      "<div id=\"${1:id}\">",
+      "  ${0}",
+      "</div>"
+    ],
+    "description": "Div with ID"
+  },
+  "Div with Class": {
+    "prefix": "divc",
+    "body": [
+      "<div class=\"${1:className}\">",
+      "  ${0}",
+      "</div>"
+    ],
+    "description": "Div with class"
+  },
+  "Span Element": {
+    "prefix": "span",
+    "body": [
+      "<span class=\"${2:className}\"}>${0}</span>"
+    ],
+    "description": "Span element"
+  },
+  "Paragraph": {
+    "prefix": "p",
+    "body": [
+      "<p class=\"${2:className}\"}>${0}</p>"
+    ],
+    "description": "Paragraph element"
+  },
+  "Anchor Link": {
+    "prefix": "a",
+    "body": [
+      "<a href=\"${1:url}\"${2: target=\"${3:_blank}\"}>${0}</a>"
+    ],
+    "description": "Anchor link"
+  },
+  "Image": {
+    "prefix": "img",
+    "body": [
+      "<img src=\"${1:src}\" alt=\"${2:alt}\"${3: class=\"${4:className}\"}>"
+    ],
+    "description": "Image element"
+  },
+  "Heading 1": {
+    "prefix": "h1",
+    "body": [
+      "<h1 class=\"${2:className}\"}>${0}</h1>"
+    ],
+    "description": "Heading 1"
+  },
+  "Heading 2": {
+    "prefix": "h2",
+    "body": [
+      "<h2 class=\"${2:className}\"}>${0}</h2>"
+    ],
+    "description": "Heading 2"
+  },
+  "Heading 3": {
+    "prefix": "h3",
+    "body": [
+      "<h3 class=\"${2:className}\"}>${0}</h3>"
+    ],
+    "description": "Heading 3"
+  },
+  "Heading 4": {
+    "prefix": "h4",
+    "body": [
+      "<h4 class=\"${2:className}\"}>${0}</h4>"
+    ],
+    "description": "Heading 4"
+  },
+  "Heading 5": {
+    "prefix": "h5",
+    "body": [
+      "<h5 class=\"${2:className}\"}>${0}</h5>"
+    ],
+    "description": "Heading 5"
+  },
+  "Heading 6": {
+    "prefix": "h6",
+    "body": [
+      "<h6 class=\"${2:className}\"}>${0}</h6>"
+    ],
+    "description": "Heading 6"
+  },
+  "Unordered List": {
+    "prefix": "ul",
+    "body": [
+      "<ul class=\"${2:className}\">",
+      "  <li>${0}</li>",
+      "</ul>"
+    ],
+    "description": "Unordered list"
+  },
+  "Ordered List": {
+    "prefix": "ol",
+    "body": [
+      "<ol class=\"${2:className}\">",
+      "  <li>${0}</li>",
+      "</ol>"
+    ],
+    "description": "Ordered list"
+  },
+  "List Item": {
+    "prefix": "li",
+    "body": [
+      "<li class=\"${2:className}\"}>${0}</li>"
+    ],
+    "description": "List item"
+  },
+  "Form": {
+    "prefix": "form",
+    "body": [
+      "<form action=\"${2:action}\"${3: method=\"${4:post}\"}>",
+      "  ${0}",
+      "</form>"
+    ],
+    "description": "Form element"
+  },
+  "Input Text": {
+    "prefix": "input",
+    "body": [
+      "<input type=\"${1:text}\" name=\"${2:name}\" id=\"${3:id}\"${4: placeholder=\"${5:placeholder}\"}${6: class=\"${7:className}\"}>"
+    ],
+    "description": "Input element"
+  },
+  "Input with Label": {
+    "prefix": "inputlabel",
+    "body": [
+      "<label for=\"${1:id}\">${2:Label}</label>",
+      "<input type=\"${3:text}\" name=\"${4:name}\" id=\"${1:id}\"${5: placeholder=\"${6:placeholder}\"}${7: class=\"${8:className}\"}>"
+    ],
+    "description": "Input with label"
+  },
+  "Textarea": {
+    "prefix": "textarea",
+    "body": [
+      "<textarea name=\"${1:name}\" id=\"${2:id}\"${3: rows=\"${4:4}\" cols=\"${5:50}\"}${6: placeholder=\"${7:placeholder}\"}${8: class=\"${9:className}\"}>${0}</textarea>"
+    ],
+    "description": "Textarea element"
+  },
+  "Button": {
+    "prefix": "button",
+    "body": [
+      "<button type=\"${1:button}\"${2: class=\"${3:className}\"}>${0}</button>"
+    ],
+    "description": "Button element"
+  },
+  "Submit Button": {
+    "prefix": "submit",
+    "body": [
+      "<input type=\"submit\" value=\"${1:Submit}\"${2: class=\"${3:className}\"}>"
+    ],
+    "description": "Submit button"
+  },
+  "Select Dropdown": {
+    "prefix": "select",
+    "body": [
+      "<select name=\"${1:name}\" id=\"${2:id}\"${3: class=\"${4:className}\">",
+      "  <option value=\"${5:value}\">${6:Option}</option>",
+      "  ${0}",
+      "</select>"
+    ],
+    "description": "Select dropdown"
+  },
+  "Option": {
+    "prefix": "option",
+    "body": [
+      "<option value=\"${1:value}\">${2:Option}</option>"
+    ],
+    "description": "Select option"
+  },
+  "Checkbox": {
+    "prefix": "checkbox",
+    "body": [
+      "<input type=\"checkbox\" name=\"${1:name}\" id=\"${2:id}\" value=\"${3:value}\"${4: class=\"${5:className}\"}>"
+    ],
+    "description": "Checkbox input"
+  },
+  "Radio Button": {
+    "prefix": "radio",
+    "body": [
+      "<input type=\"radio\" name=\"${1:name}\" id=\"${2:id}\" value=\"${3:value}\"${4: class=\"${5:className}\"}>"
+    ],
+    "description": "Radio button"
+  },
+  "Table": {
+    "prefix": "table",
+    "body": [
+      "<table${1: class=\"${2:className}\">",
+      "  <thead>",
+      "    <tr>",
+      "      <th>${3:Header}</th>",
+      "      ${4}",
+      "    </tr>",
+      "  </thead>",
+      "  <tbody>",
+      "    <tr>",
+      "      <td>${5:Data}</td>",
+      "      ${6}",
+      "    </tr>",
+      "    ${0}",
+      "  </tbody>",
+      "</table>"
+    ],
+    "description": "Table element"
+  },
+  "Table Row": {
+    "prefix": "tr",
+    "body": [
+      "<tr${1: class=\"${2:className}\">",
+      "  <td>${0}</td>",
+      "</tr>"
+    ],
+    "description": "Table row"
+  },
+  "Table Data": {
+    "prefix": "td",
+    "body": [
+      "<td${1: class=\"${2:className}\"}>${0}</td>"
+    ],
+    "description": "Table data cell"
+  },
+  "Table Header": {
+    "prefix": "th",
+    "body": [
+      "<th${1: class=\"${2:className}\"}>${0}</th>"
+    ],
+    "description": "Table header cell"
+  },
+  "Header": {
+    "prefix": "header",
+    "body": [
+      "<header${1: class=\"${2:className}\">",
+      "  ${0}",
+      "</header>"
+    ],
+    "description": "Header element"
+  },
+  "Navigation": {
+    "prefix": "nav",
+    "body": [
+      "<nav${1: class=\"${2:className}\">",
+      "  ${0}",
+      "</nav>"
+    ],
+    "description": "Navigation element"
+  },
+  "Main": {
+    "prefix": "main",
+    "body": [
+      "<main${1: class=\"${2:className}\">",
+      "  ${0}",
+      "</main>"
+    ],
+    "description": "Main element"
+  },
+  "Section": {
+    "prefix": "section",
+    "body": [
+      "<section${1: class=\"${2:className}\">",
+      "  ${0}",
+      "</section>"
+    ],
+    "description": "Section element"
+  },
+  "Article": {
+    "prefix": "article",
+    "body": [
+      "<article${1: class=\"${2:className}\">",
+      "  ${0}",
+      "</article>"
+    ],
+    "description": "Article element"
+  },
+  "Aside": {
+    "prefix": "aside",
+    "body": [
+      "<aside${1: class=\"${2:className}\">",
+      "  ${0}",
+      "</aside>"
+    ],
+    "description": "Aside element"
+  },
+  "Footer": {
+    "prefix": "footer",
+    "body": [
+      "<footer${1: class=\"${2:className}\">",
+      "  ${0}",
+      "</footer>"
+    ],
+    "description": "Footer element"
+  },
+  "Figure": {
+    "prefix": "figure",
+    "body": [
+      "<figure${1: class=\"${2:className}\">",
+      "  <img src=\"${3:src}\" alt=\"${4:alt}\">",
+      "  <figcaption>${5:Caption}</figcaption>",
+      "</figure>"
+    ],
+    "description": "Figure element with image and caption"
+  },
+  "Video": {
+    "prefix": "video",
+    "body": [
+      "<video${1: controls}${2: width=\"${3:640}\" height=\"${4:480}\"}>",
+      "  <source src=\"${5:video.mp4}\" type=\"video/mp4\">",
+      "  Your browser does not support the video tag.",
+      "</video>"
+    ],
+    "description": "Video element"
+  },
+  "Audio": {
+    "prefix": "audio",
+    "body": [
+      "<audio${1: controls}>",
+      "  <source src=\"${2:audio.mp3}\" type=\"audio/mpeg\">",
+      "  Your browser does not support the audio element.",
+      "</audio>"
+    ],
+    "description": "Audio element"
+  },
+  "Canvas": {
+    "prefix": "canvas",
+    "body": [
+      "<canvas id=\"${1:canvas}\" width=\"${2:800}\" height=\"${3:600}\"${4: class=\"${5:className}\"}>${0}</canvas>"
+    ],
+    "description": "Canvas element"
+  },
+  "Iframe": {
+    "prefix": "iframe",
+    "body": [
+      "<iframe src=\"${1:src}\" width=\"${2:800}\" height=\"${3:600}\"${4: title=\"${5:title}\"}${6: class=\"${7:className}\"}></iframe>"
+    ],
+    "description": "Iframe element"
+  },
+  "Meta Tag": {
+    "prefix": "meta",
+    "body": [
+      "<meta name=\"${1:name}\" content=\"${2:content}\">"
+    ],
+    "description": "Meta tag"
+  },
+  "Meta Viewport": {
+    "prefix": "viewport",
+    "body": [
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+    ],
+    "description": "Meta viewport tag"
+  },
+  "Meta Description": {
+    "prefix": "description",
+    "body": [
+      "<meta name=\"description\" content=\"${1:Page description}\">"
+    ],
+    "description": "Meta description tag"
+  },
+  "Meta Keywords": {
+    "prefix": "keywords",
+    "body": [
+      "<meta name=\"keywords\" content=\"${1:keyword1, keyword2, keyword3}\">"
+    ],
+    "description": "Meta keywords tag"
+  },
+  "Link Stylesheet": {
+    "prefix": "link",
+    "body": [
+      "<link rel=\"stylesheet\" href=\"${1:style.css}\">"
+    ],
+    "description": "Link to stylesheet"
+  },
+  "Script": {
+    "prefix": "script",
+    "body": [
+      "<script${1: src=\"${2:script.js}\"}>${0}</script>"
+    ],
+    "description": "Script tag"
+  },
+  "Script Source": {
+    "prefix": "scriptsrc",
+    "body": [
+      "<script src=\"${1:script.js}\"></script>"
+    ],
+    "description": "Script tag with source"
+  },
+  "Strong": {
+    "prefix": "strong",
+    "body": [
+      "<strong>${0}</strong>"
+    ],
+    "description": "Strong emphasis"
+  },
+  "Emphasis": {
+    "prefix": "em",
+    "body": [
+      "<em>${0}</em>"
+    ],
+    "description": "Emphasis"
+  },
+  "Bold": {
+    "prefix": "b",
+    "body": [
+      "<b>${0}</b>"
+    ],
+    "description": "Bold text"
+  },
+  "Italic": {
+    "prefix": "i",
+    "body": [
+      "<i>${0}</i>"
+    ],
+    "description": "Italic text"
+  },
+  "Underline": {
+    "prefix": "u",
+    "body": [
+      "<u>${0}</u>"
+    ],
+    "description": "Underlined text"
+  },
+  "Small": {
+    "prefix": "small",
+    "body": [
+      "<small>${0}</small>"
+    ],
+    "description": "Small text"
+  },
+  "Mark": {
+    "prefix": "mark",
+    "body": [
+      "<mark>${0}</mark>"
+    ],
+    "description": "Marked text"
+  },
+  "Delete": {
+    "prefix": "del",
+    "body": [
+      "<del>${0}</del>"
+    ],
+    "description": "Deleted text"
+  },
+  "Insert": {
+    "prefix": "ins",
+    "body": [
+      "<ins>${0}</ins>"
+    ],
+    "description": "Inserted text"
+  },
+  "Blockquote": {
+    "prefix": "blockquote",
+    "body": [
+      "<blockquote${1: cite=\"${2:source}\"}>",
+      "  ${0}",
+      "</blockquote>"
+    ],
+    "description": "Blockquote element"
+  },
+  "Code": {
+    "prefix": "code",
+    "body": [
+      "<code>${0}</code>"
+    ],
+    "description": "Code element"
+  },
+  "Pre": {
+    "prefix": "pre",
+    "body": [
+      "<pre>${0}</pre>"
+    ],
+    "description": "Preformatted text"
+  },
+  "Abbreviation": {
+    "prefix": "abbr",
+    "body": [
+      "<abbr title=\"${1:full text}\">${0}</abbr>"
+    ],
+    "description": "Abbreviation"
+  },
+  "Definition List": {
+    "prefix": "dl",
+    "body": [
+      "<dl${1: class=\"${2:className}\">",
+      "  <dt>${3:Term}</dt>",
+      "  <dd>${4:Definition}</dd>",
+      "  ${0}",
+      "</dl>"
+    ],
+    "description": "Definition list"
+  },
+  "Definition Term": {
+    "prefix": "dt",
+    "body": [
+      "<dt>${0}</dt>"
+    ],
+    "description": "Definition term"
+  },
+  "Definition Description": {
+    "prefix": "dd",
+    "body": [
+      "<dd>${0}</dd>"
+    ],
+    "description": "Definition description"
+  },
+  "Details": {
+    "prefix": "details",
+    "body": [
+      "<details${1: open}>",
+      "  <summary>${2:Summary}</summary>",
+      "  ${0}",
+      "</details>"
+    ],
+    "description": "Details element"
+  },
+  "Summary": {
+    "prefix": "summary",
+    "body": [
+      "<summary>${0}</summary>"
+    ],
+    "description": "Summary element"
+  },
+  "Progress": {
+    "prefix": "progress",
+    "body": [
+      "<progress value=\"${1:50}\" max=\"${2:100}\">${0}</progress>"
+    ],
+    "description": "Progress element"
+  },
+  "Meter": {
+    "prefix": "meter",
+    "body": [
+      "<meter value=\"${1:50}\" min=\"${2:0}\" max=\"${3:100}\">${0}</meter>"
+    ],
+    "description": "Meter element"
+  },
+  "Time": {
+    "prefix": "time",
+    "body": [
+      "<time datetime=\"${1:2023-01-01}\">${0}</time>"
+    ],
+    "description": "Time element"
+  },
+  "Address": {
+    "prefix": "address",
+    "body": [
+      "<address>",
+      "  ${0}",
+      "</address>"
+    ],
+    "description": "Address element"
+  },
+  "Horizontal Rule": {
+    "prefix": "hr",
+    "body": [
+      "<hr${1: class=\"${2:className}\"}>"
+    ],
+    "description": "Horizontal rule"
+  },
+  "Line Break": {
+    "prefix": "br",
+    "body": [
+      "<br>"
+    ],
+    "description": "Line break"
+  },
+  "Fieldset": {
+    "prefix": "fieldset",
+    "body": [
+      "<fieldset${1: class=\"${2:className}\">",
+      "  <legend>${3:Legend}</legend>",
+      "  ${0}",
+      "</fieldset>"
+    ],
+    "description": "Fieldset with legend"
+  },
+  "Legend": {
+    "prefix": "legend",
+    "body": [
+      "<legend>${0}</legend>"
+    ],
+    "description": "Legend element"
+  },
+  "Label": {
+    "prefix": "label",
+    "body": [
+      "<label for=\"${1:id}\">${0}</label>"
+    ],
+    "description": "Label element"
+  },
+  "Output": {
+    "prefix": "output",
+    "body": [
+      "<output name=\"${1:name}\" for=\"${2:for}\">${0}</output>"
+    ],
+    "description": "Output element"
+  },
+  "Datalist": {
+    "prefix": "datalist",
+    "body": [
+      "<datalist id=\"${1:id}\">",
+      "  <option value=\"${2:value}\">${3:Option}</option>",
+      "  ${0}",
+      "</datalist>"
+    ],
+    "description": "Datalist element"
+  },
+  "Optgroup": {
+    "prefix": "optgroup",
+    "body": [
+      "<optgroup label=\"${1:Group Label}\">",
+      "  <option value=\"${2:value}\">${3:Option}</option>",
+      "  ${0}",
+      "</optgroup>"
+    ],
+    "description": "Option group"
+  },
+  "Comment": {
+    "prefix": "comment",
+    "body": [
+      "<!-- ${0} -->"
+    ],
+    "description": "HTML comment"
+  },
+  "Doctype": {
+    "prefix": "doctype",
+    "body": [
+      "<!DOCTYPE html>"
+    ],
+    "description": "HTML5 doctype"
+  },
+  "Favicon": {
+    "prefix": "favicon",
+    "body": [
+      "<link rel=\"icon\" type=\"image/x-icon\" href=\"${1:/favicon.ico}\">"
+    ],
+    "description": "Favicon link"
+  },
+  "Open Graph": {
+    "prefix": "og",
+    "body": [
+      "<meta property=\"og:title\" content=\"${1:Title}\">",
+      "<meta property=\"og:description\" content=\"${2:Description}\">",
+      "<meta property=\"og:image\" content=\"${3:image.jpg}\">",
+      "<meta property=\"og:url\" content=\"${4:https://example.com}\">"
+    ],
+    "description": "Open Graph meta tags"
+  },
+  "Twitter Card": {
+    "prefix": "twitter",
+    "body": [
+      "<meta name=\"twitter:card\" content=\"${1:summary}\">",
+      "<meta name=\"twitter:title\" content=\"${2:Title}\">",
+      "<meta name=\"twitter:description\" content=\"${3:Description}\">",
+      "<meta name=\"twitter:image\" content=\"${4:image.jpg}\">"
+    ],
+    "description": "Twitter Card meta tags"
+  }
+}

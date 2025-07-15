@@ -1,0 +1,1407 @@
+{
+  "React Function Component with JavaScript": {
+    "prefix": "rfce",
+    "body": [
+      "const ${1:ComponentName} = () => {",
+      "  return (",
+      "    <>",
+      "    <div className=\"${2:className}\">",
+      "    Hello world",
+      "    </div>",
+      "    </>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React Arrow Function Component with JavaScript"
+  },
+  "React Arrow Function Component with JavaScript": {
+    "prefix": "rafce",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "const ${1:ComponentName} = () => {",
+      "  return (",
+      "    <>",
+      "    <div className=\"${2:className}\">",
+      "    Hello world",
+      "    </div>",
+      "    </>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React Arrow Function Component with JavaScript"
+  },
+  "Export Defaults": {
+    "prefix": "exp",
+    "body": [
+      "export default ${1:ComponentName};"
+    ]
+  },
+  "Named Imports": {
+    "prefix": "imr",
+    "body": [
+      "import { ${1:ComponentName} } from 'React';"
+    ]
+  },
+  "Import Modules": {
+    "prefix": "imp",
+    "body": [
+      "import ${1:moduleName} from '${2:modulePath}';"
+    ]
+  },
+  "Map Function": {
+    "prefix": "map",
+    "body": [
+      "${1:array}.map(${2:item} => {",
+      " return ${3:item};",
+      "})"
+    ]
+  },
+  "Complex Map Function": {
+    "prefix": "map.complex",
+    "body": [
+      "${1:array}.map(${2:item} => {",
+      "  return (",
+      "    <div key={${2:item}.id}>",
+      "      ${2:item}.name",
+      "    </div>",
+      "  );",
+      "});"
+    ]
+  },
+  "Filter Function": {
+    "prefix": "filter",
+    "body": [
+      "${1:array}.filter((${2:item}) => {",
+      " return ${3:condition};",
+      "})"
+    ]
+  },
+  "Filter * Map Function": {
+    "prefix": "filter.map",
+    "body": [
+      "${1:array}.filter(${2:item} => ${2:item}.condition).map(${2:item} => {",
+      "  return (",
+      "    <div key={${2:item}.id}>",
+      "      ${2:item}.name",
+      "    </div>",
+      "  );",
+      "});"
+    ]
+  },
+  "Reduce Function": {
+    "prefix": "reduce",
+    "body": [
+      "${1:array}.reduce((accumulator, ${2:item}) => {",
+      "  return ${3:accumulator} + ${2:item};",
+      "}, ${4:initialValue})"
+    ]
+  },
+  "useState Hook": {
+    "prefix": "ush",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialValue});"
+    ]
+  },
+  "useEffect Hook": {
+    "prefix": "ueh",
+    "body": [
+      "useEffect(() => {",
+      "  ${1:// effect code here}",
+      "}, [${2:dependencies}]);"
+    ],
+    "description": "React useEffect Hook"
+  },
+  "useCallback Hook": {
+    "prefix": "ucb",
+    "body": [
+      "const ${1:callbackName} = useCallback(() => {",
+      "  ${2:// callback code here}",
+      "}, [${3:dependencies}]);"
+    ],
+    "description": "React useCallback Hook"
+  },
+  "useContext Hook": {
+    "prefix": "ucx",
+    "body": [
+      "const ${1:contextName} = useContext(${2:Context});"
+    ],
+    "description": "React useContext Hook"
+  },
+  "Custom Hook": {
+    "prefix": "usecustom",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "const use${1:CustomHook} = () => {",
+      "  const [${2:state}, set${2/(.*)/${2:/capitalize}/}] = useState(${3:initialValue});",
+      "",
+      "  useEffect(() => {",
+      "    ${4:// effect code here}",
+      "  }, [${5:dependencies}]);",
+      "",
+      "  return { ${2:state}, set${2/(.*)/${2:/capitalize}/} };",
+      "};",
+      "",
+      "export default use${1:CustomHook};"
+    ]
+  },
+  "Console log": {
+    "prefix": "log",
+    "body": [
+      "console.log(${1:message});"
+    ],
+    "description": "Console log statement"
+  },
+  "Try Catch Block": {
+    "prefix": "trycatch",
+    "body": [
+      "try {",
+      "  ${1:// code to try}",
+      "} catch (error) {",
+      "  console.error(error);",
+      "}"
+    ],
+    "description": "Try Catch Block"
+  },
+  "Arrow Function": {
+    "prefix": "af",
+    "body": [
+      "const ${1:functionName} = (${2:params}) => {",
+      "  ${3:// function body}",
+      "};"
+    ],
+    "description": "Arrow Function Definition"
+  },
+  "Async Arrow Function": {
+    "prefix": "aaf",
+    "body": [
+      "const ${1:functionName} = async (${2:params}) => {",
+      "  try {",
+      "    ${3:// async code here}",
+      "  } catch (error) {",
+      "    console.error(error);",
+      "  }",
+      "};"
+    ],
+    "description": "Async Arrow Function Definition"
+  },
+  "Promise": {
+    "prefix": "promise",
+    "body": [
+      "const ${1: }Promise = new Promise((resolve, reject) => {",
+      "  ${2:// async operation}",
+      "  if (${3:condition}) {",
+      "    resolve(${4:value});",
+      "  } else {",
+      "    reject(${5:error});",
+      "  }",
+      "});"
+    ],
+    "description": "Promise Definition"
+  },
+  "Async/Await": {
+    "prefix": "asyncawait",
+    "body": [
+      "const ${1:functionName} = async (${2:params}) => {",
+      "  try {",
+      "    const result = await ${3:promise};",
+      "    return result;",
+      "  } catch (error) {",
+      "    console.error(error);",
+      "  }",
+      "};"
+    ],
+    "description": "Async/Await Function Definition"
+  },
+  "Event Handler": {
+    "prefix": "const handle",
+    "body": [
+      "handle${1:Event} = (${2:event}) => {",
+      "   event.preventDefault();",
+      "  ${3:// event handling code}",
+      "};"
+    ],
+    "description": "Event Handler Function"
+  },
+  "useRef Hook": {
+    "prefix": "uref",
+    "body": [
+      "const ${1:refName} = useRef(${2:initialValue});",
+      "",
+      "// Usage example",
+      "${1:refName}.current = ${3:value};"
+    ],
+    "description": "React useRef Hook"
+  },
+  "ReactContext": {
+    "prefix": "rtcx",
+    "body": [
+      "import React, { createContext, useContext, useState } from 'react';",
+      "",
+      "const ${1:ContextName} = createContext();",
+      "",
+      "export const ${1:ContextName}Provider = ({ children }) => {",
+      "  const [${2:state}, set${2/(.*)/${2:/capitalize}/}] = useState(${3:initialValue});",
+      "",
+      "  return (",
+      "    <${1:ContextName}.Provider value={{ ${2:state}, set${2/(.*)/${2:/capitalize}/} }}>",
+      "      {children}",
+      "    </${1:ContextName}.Provider>",
+      "  );",
+      "};",
+      "",
+      "export const use${1:ContextName} = () => useContext(${1:ContextName});"
+    ],
+    "description": "React Context API"
+  },
+  "useImperativeHandle Hook": {
+    "prefix": "uih",
+    "body": [
+      "import { useImperativeHandle, forwardRef } from 'react';",
+      "",
+      "const ${1:ComponentName} = forwardRef((props, ref) => {",
+      "  const ${2:localRef} = useRef();",
+      "",
+      "  useImperativeHandle(ref, () => ({",
+      "    ${3:methodName}: () => {",
+      "      // method implementation",
+      "    },",
+      "  }));",
+      "",
+      "  return (",
+      "    <div ref={${2:localRef}} className=\"${4:className}\">",
+      "      ${5:content}",
+      "    </div>",
+      "  );",
+      "});",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React useImperativeHandle Hook"
+  },
+  "Custom Hook with Local Storage": {
+    "prefix": "useLocalStorage",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "const useLocalStorage = (key, initialValue) => {",
+      "  const [storedValue, setStoredValue] = useState(() => {",
+      "    try {",
+      "      const item = window.localStorage.getItem(key);",
+      "      return item ? JSON.parse(item) : initialValue;",
+      "    } catch (error) {",
+      "      console.error(error);",
+      "      return initialValue;",
+      "    }",
+      "  });",
+      "",
+      "  const setValue = value => {",
+      "    try {",
+      "      const valueToStore = value instanceof Function ? value(storedValue) : value;",
+      "      setStoredValue(valueToStore);",
+      "      window.localStorage.setItem(key, JSON.stringify(valueToStore));",
+      "    } catch (error) {",
+      "      console.error(error);",
+      "    }",
+      "  };",
+      "",
+      "  return [storedValue, setValue];",
+      "};",
+      "",
+      "export default useLocalStorage;"
+    ],
+    "description": "Custom Hook for Local Storage"
+  },
+  "Fetch API Call": {
+    "prefix": "fetch",
+    "body": [
+      "const fetch${1:Data} = async (${2:url}) => {",
+      "  try {",
+      "    const response = await fetch(${2:url});",
+      "    if (!response.ok) {",
+      "      throw new Error('Network response was not ok');",
+      "    }",
+      "    const data = await response.json();",
+      "    return data;",
+      "  } catch (error) {",
+      "    console.error('Fetch error:', error);",
+      "  }",
+      "};"
+    ],
+    "description": "Fetch API Call"
+  },
+  "Form with useState": {
+    "prefix": "form",
+    "body": [
+      "import React, { useState } from 'react';",
+      "",
+      "const ${1:FormComponent} = () => {",
+      "  const [${2:formData}, set${2/(.*)/${2:/capitalize}/}] = useState({",
+      "    ${3:name}: '',",
+      "    ${4:email}: '',",
+      "  });",
+      "",
+      "  const handleChange = (e) => {",
+      "    const { name, value } = e.target;",
+      "    set${2/(.*)/${2:/capitalize}/}({ ...${2:formData}, [name]: value });",
+      "  };",
+      "",
+      "  const handleSubmit = (e) => {",
+      "    e.preventDefault();",
+      "    console.log(${2:formData});",
+      "  };",
+      "",
+      "  return (",
+      "    <form onSubmit={handleSubmit}>",
+      "      <input type=\"text\" name=\"${3:name}\" value={${2:formData}.${3:name}} onChange={handleChange} placeholder=\"Name\" />",
+      "      <input type=\"email\" name=\"${4:email}\" value={${2:formData}.${4:email}} onChange={handleChange} placeholder=\"Email\" />",
+      "      <button type=\"submit\">Submit</button>",
+      "    </form>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:FormComponent};"
+    ],
+    "description": "React Form with useState Hook"
+  },
+  "Input Field with Labels": {
+    "prefix": "inputWithLabel",
+    "body": [
+      // "<div>",
+      "  <label htmlFor=\"${1:inputId}\">${2:Label}</label>",
+      " <input",
+      "      type=\"${3:text}\"",
+      "      id=\"${1:inputId}\"",
+      "      name=\"${1:inputName}\"",
+      "      value={${4:value}}",
+      "      onChange={${5:handleChange}}",
+      "      placeholder=\"${6:Placeholder}\"",
+      "  />"
+    ],
+    "description": "Input Field with Label"
+  },
+  "Select Dropdown": {
+    "prefix": "selectDropdown",
+    "body": [
+      "<label htmlFor=\"${1:selectId}\">${2:Label}</label>",
+      "<select id=\"${1:selectId}\" name=\"${3:selectName}\" value={${4:selectedValue}} onChange={${5:handleSelectChange}}>",
+      "  <option value=\"\">${6:Select an option}</option>",
+      "  ${7:options.map(option => (",
+      "    <option key={option.value} value={option.value}>",
+      "      {option.label}",
+      "    </option>",
+      "  ))}",
+      "</select>"
+    ],
+    "description": "Select Dropdown with Options"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "For...of Loop": {
+    "prefix": "forof",
+    "body": [
+      "for (const ${1:item} of ${2:array}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "For...of loop"
+  },
+  "For...in Loop": {
+    "prefix": "forin",
+    "body": [
+      "for (const ${1:key} in ${2:object}) {",
+      "  if (${2:object}.hasOwnProperty(${1:key})) {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "For...in loop"
+  },
+  "ForEach Loop": {
+    "prefix": "foreach",
+    "body": [
+      "${1:array}.forEach(${2:item} => {",
+      "  ${0}",
+      "});"
+    ],
+    "description": "forEach loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "Do While Loop": {
+    "prefix": "dowhile",
+    "body": [
+      "do {",
+      "  ${0}",
+      "} while (${1:condition});"
+    ],
+    "description": "Do...while loop"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition}) {",
+      "  ${2}",
+      "} else {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "If...else statement"
+  },
+  "If Else If Statement": {
+    "prefix": "ifelseif",
+    "body": [
+      "if (${1:condition}) {",
+      "  ${2}",
+      "} else if (${3:condition}) {",
+      "  ${4}",
+      "} else {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "If...else if...else statement"
+  },
+  "Switch Statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "  case ${2:value}:",
+      "    ${3}",
+      "    break;",
+      "  case ${4:value}:",
+      "    ${5}",
+      "    break;",
+      "  default:",
+      "    ${0}",
+      "    break;",
+      "}"
+    ],
+    "description": "Switch statement"
+  },
+  "Function Declaration": {
+    "prefix": "function",
+    "body": [
+      "function ${1:functionName}(${2:params}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Function declaration"
+  },
+  "Anonymous Function": {
+    "prefix": "anonymousfunction",
+    "body": [
+      "function(${1:params}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Anonymous function"
+  },
+  "Object Literal": {
+    "prefix": "obj",
+    "body": [
+      "const ${1:objectName} = {",
+      "  ${2:key}: ${3:value},",
+      "  ${4:anotherKey}: ${5:anotherValue}",
+      "};"
+    ],
+    "description": "Object literal"
+  },
+  "Array Literal": {
+    "prefix": "arr",
+    "body": [
+      "const ${1:arr} = [${2:value1}, ${3:value2}, ${4:value3}];"
+    ],
+    "description": "Array literal"
+  },
+  "Object Destructuring": {
+    "prefix": "dest",
+    "body": [
+      "const { ${1:property1}, ${2:property2} } = ${3:object};"
+    ],
+    "description": "Object destructuring"
+  },
+  "Array Destructuring": {
+    "prefix": "desta",
+    "body": [
+      "const [${1:first}, ${2:second}] = ${3:array};"
+    ],
+    "description": "Array destructuring"
+  },
+  "Spread Operator": {
+    "prefix": "spread",
+    "body": [
+      "...${1:array}"
+    ],
+    "description": "Spread operator"
+  },
+  "Rest Parameters": {
+    "prefix": "rest",
+    "body": [
+      "function ${1:functionName}(...${2:args}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Rest parameters"
+  },
+  "Template Literal": {
+    "prefix": "templateLiteral",
+    "body": [
+      "`${1:text} ${${2:variable}} ${3:more text}`"
+    ],
+    "description": "Template literal"
+  },
+  "Class Declaration": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "  constructor(${2:params}) {",
+      "    ${3:this.property = params;}",
+      "  }",
+      "",
+      "  ${4:methodName}() {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "Class declaration"
+  },
+  "Class Constructor": {
+    "prefix": "constructor",
+    "body": [
+      "constructor(${1:params}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Class constructor"
+  },
+  "Class Method": {
+    "prefix": "method",
+    "body": [
+      "${1:methodName}(${2:params}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Class method"
+  },
+  "SetTimeout": {
+    "prefix": "settimeout",
+    "body": [
+      "setTimeout(() => {",
+      "  ${0}",
+      "}, ${1:1000});"
+    ],
+    "description": "setTimeout"
+  },
+  "SetInterval": {
+    "prefix": "setinterval",
+    "body": [
+      "const ${1:intervalId} = setInterval(() => {",
+      "  ${0}",
+      "}, ${2:1000});"
+    ],
+    "description": "setInterval"
+  },
+  "JSON Parse": {
+    "prefix": "jsonparse",
+    "body": [
+      "JSON.parse(${1:jsonString})"
+    ],
+    "description": "JSON.parse"
+  },
+  "JSON Stringify": {
+    "prefix": "jsonstring",
+    "body": [
+      "JSON.stringify(${1:object})"
+    ],
+    "description": "JSON.stringify"
+  },
+  "LocalStorage Set": {
+    "prefix": "localstorageSet",
+    "body": [
+      "localStorage.setItem('${1:key}', JSON.stringify(${2:value}));"
+    ],
+    "description": "localStorage.setItem"
+  },
+  "LocalStorage Get": {
+    "prefix": "localstorageGet",
+    "body": [
+      "const ${1:value} = JSON.parse(localStorage.getItem('${2:key}'));"
+    ],
+    "description": "localStorage.getItem"
+  },
+  "Regular Expression": {
+    "prefix": "regex",
+    "body": [
+      "const ${1:regex} = /${2:pattern}/${3:flags};"
+    ],
+    "description": "Regular expression"
+  },
+  "String Match": {
+    "prefix": "string.match",
+    "body": [
+      "${1:string}.match(/${2:pattern}/${3:flags})"
+    ],
+    "description": "String match"
+  },
+  "String Replace": {
+    "prefix": "string.replace",
+    "body": [
+      "${1:string}.replace(/${2:pattern}/${3:flags}, '${4:replacement}')"
+    ],
+    "description": "String replace"
+  },
+  "Array Find": {
+    "prefix": "array.find",
+    "body": [
+      "${1:array}.find(${2:item} => ${3:condition})"
+    ],
+    "description": "Array find"
+  },
+  "Array FindIndex": {
+    "prefix": "array.findindex",
+    "body": [
+      "${1:array}.findIndex(${2:item} => ${3:condition})"
+    ],
+    "description": "Array findIndex"
+  },
+  "Array Some": {
+    "prefix": "array.some",
+    "body": [
+      "${1:array}.some(${2:item} => ${3:condition})"
+    ],
+    "description": "Array some"
+  },
+  "Array Every": {
+    "prefix": "array.every",
+    "body": [
+      "${1:array}.every(${2:item} => ${3:condition})"
+    ],
+    "description": "Array every"
+  },
+  "Array Sort": {
+    "prefix": "array.sort",
+    "body": [
+      "${1:array}.sort((${2:a}, ${3:b}) => ${4:a - b})"
+    ],
+    "description": "Array sort"
+  },
+  "Array Reverse": {
+    "prefix": "array.reverse",
+    "body": [
+      "${1:array}.reverse()"
+    ],
+    "description": "Array reverse"
+  },
+  "Array Join": {
+    "prefix": "array.join",
+    "body": [
+      "${1:array}.join('${2:separator}')"
+    ],
+    "description": "Array join"
+  },
+  "Array Slice": {
+    "prefix": "array.slice",
+    "body": [
+      "${1:array}.slice(${2:start}, ${3:end})"
+    ],
+    "description": "Array slice"
+  },
+  "Array Splice": {
+    "prefix": "array.splice",
+    "body": [
+      "${1:array}.splice(${2:start}, ${3:deleteCount}, ${4:item1})"
+    ],
+    "description": "Array splice"
+  },
+  "Object Keys": {
+    "prefix": "object.keys",
+    "body": [
+      "Object.keys(${1:object})"
+    ],
+    "description": "Object.keys"
+  },
+  "Object Values": {
+    "prefix": "object.values",
+    "body": [
+      "Object.values(${1:object})"
+    ],
+    "description": "Object.values"
+  },
+  "Object Entries": {
+    "prefix": "object.entries",
+    "body": [
+      "Object.entries(${1:object})"
+    ],
+    "description": "Object.entries"
+  },
+  "Object Assign": {
+    "prefix": "object.assign",
+    "body": [
+      "Object.assign({}, ${1:object1}, ${2:object2})"
+    ],
+    "description": "Object.assign"
+  },
+  "Math Random": {
+    "prefix": "math.random",
+    "body": [
+      "Math.random()"
+    ],
+    "description": "Math.random"
+  },
+  "Math Floor": {
+    "prefix": "math.floor",
+    "body": [
+      "Math.floor(${1:number})"
+    ],
+    "description": "Math.floor"
+  },
+  "Math Ceil": {
+    "prefix": "math.ceil",
+    "body": [
+      "Math.ceil(${1:number})"
+    ],
+    "description": "Math.ceil"
+  },
+  "Math Round": {
+    "prefix": "math.round",
+    "body": [
+      "Math.round(${1:number})"
+    ],
+    "description": "Math.round"
+  },
+  "Math Max": {
+    "prefix": "math.max",
+    "body": [
+      "Math.max(${1:numbers})"
+    ],
+    "description": "Math.max"
+  },
+  "Math Min": {
+    "prefix": "math.min",
+    "body": [
+      "Math.min(${1:numbers})"
+    ],
+    "description": "Math.min"
+  },
+  "Date Now": {
+    "prefix": "date.now",
+    "body": [
+      "new Date()"
+    ],
+    "description": "new Date()"
+  },
+  "Date Timestamp": {
+    "prefix": "timestamp",
+    "body": [
+      "Date.now()"
+    ],
+    "description": "Date.now()"
+  },
+  "ParseInt": {
+    "prefix": "parseint",
+    "body": [
+      "parseInt(${1:string}, ${2:10})"
+    ],
+    "description": "parseInt"
+  },
+  "ParseFloat": {
+    "prefix": "parsefloat",
+    "body": [
+      "parseFloat(${1:string})"
+    ],
+    "description": "parseFloat"
+  },
+  "IsNaN": {
+    "prefix": "isnan",
+    "body": [
+      "isNaN(${1:value})"
+    ],
+    "description": "isNaN"
+  },
+  "Typeof": {
+    "prefix": "typeof",
+    "body": [
+      "typeof ${1:variable}"
+    ],
+    "description": "typeof operator"
+  },
+  "Instanceof": {
+    "prefix": "instanceof",
+    "body": [
+      "${1:object} instanceof ${2:Constructor}"
+    ],
+    "description": "instanceof operator"
+  },
+  // HTML / JSX snippets
+  "Heading 1": {
+    "prefix": "h1",
+    "body": [
+      "<h1 class=\"${1:className}\">${0}</h1>"
+    ],
+    "description": "Heading 1"
+  },
+  "Heading 2": {
+    "prefix": "h2",
+    "body": [
+      "<h2 class=\"${1:className}\">${0}</h2>"
+    ],
+    "description": "Heading 2"
+  },
+  "Heading 3": {
+    "prefix": "h3",
+    "body": [
+      "<h3 class=\"${1:className}\">${0}</h3>"
+    ],
+    "description": "Heading 3"
+  },
+  "Heading 4": {
+    "prefix": "h4",
+    "body": [
+      "<h4 class=\"${1:className}\">${0}</h4>"
+    ],
+    "description": "Heading 4"
+  },
+  "Heading 5": {
+    "prefix": "h5",
+    "body": [
+      "<h5 class=\"${1:className}\">${0}</h5>"
+    ],
+    "description": "Heading 5"
+  },
+  "Heading 6": {
+    "prefix": "h6",
+    "body": [
+      "<h6 class=\"${1:className}\">${0}</h6>"
+    ],
+    "description": "Heading 6"
+  },
+  "JSX Div": {
+    "prefix": "divjsx",
+    "body": [
+      "<div className=\"${1:className}\">",
+      "  ${0}",
+      "</div>"
+    ],
+    "description": "JSX div element"
+  },
+  "JSX Div with ID": {
+    "prefix": "divid",
+    "body": [
+      "<div id=\"${1:id}\" className=\"${2:className}\">",
+      "  ${0}",
+      "</div>"
+    ],
+    "description": "JSX div with ID"
+  },
+  "JSX Button": {
+    "prefix": "button",
+    "body": [
+      "<button",
+      "  type=\"${1:button}\"",
+      "  className=\"${2:className}\"",
+      "  onClick={${3:handleClick}}",
+      ">",
+      "  ${0}",
+      "</button>"
+    ],
+    "description": "JSX button with onClick"
+  },
+  "JSX Input": {
+    "prefix": "input",
+    "body": [
+      "<input",
+      "  type=\"${1:text}\"",
+      "  name=\"${2:name}\"",
+      "  value={${3:value}}",
+      "  onChange={${4:handleChange}}",
+      "  placeholder=\"${5:placeholder}\"",
+      "  className=\"${6:className}\"",
+      "/>"
+    ],
+    "description": "JSX input element"
+  },
+  "JSX Input with Label": {
+    "prefix": "input.label",
+    "body": [
+      "<div className=\"${1:inputGroup}\">",
+      "  <label htmlFor=\"${2:id}\" className=\"${3:labelClass}\">",
+      "    ${4:Label}",
+      "  </label>",
+      "  <input",
+      "    type=\"${5:text}\"",
+      "    id=\"${2:id}\"",
+      "    name=\"${6:name}\"",
+      "    value={${7:value}}",
+      "    onChange={${8:handleChange}}",
+      "    placeholder=\"${9:placeholder}\"",
+      "    className=\"${10:inputClass}\"",
+      "  />",
+      "</div>"
+    ],
+    "description": "JSX input with label"
+  },
+  "JSX Textarea": {
+    "prefix": "textarea",
+    "body": [
+      "<textarea",
+      "  name=\"${1:name}\"",
+      "  value={${2:value}}",
+      "  onChange={${3:handleChange}}",
+      "  placeholder=\"${4:placeholder}\"",
+      "  rows={${5:4}}",
+      "  className=\"${6:className}\"",
+      "/>"
+    ],
+    "description": "JSX textarea element"
+  },
+  "JSX Select": {
+    "prefix": "select",
+    "body": [
+      "<select",
+      "  name=\"${1:name}\"",
+      "  value={${2:value}}",
+      "  onChange={${3:handleChange}}",
+      "  className=\"${4:className}\"",
+      ">",
+      "  <option value=\"\">${5:Select an option}</option>",
+      "  {${6:options}.map(option => (",
+      "    <option key={option.value} value={option.value}>",
+      "      {option.label}",
+      "    </option>",
+      "  ))}",
+      "</select>"
+    ],
+    "description": "JSX select dropdown"
+  },
+  "JSX Checkbox": {
+    "prefix": "checkbox",
+    "body": [
+      "<input",
+      "  type=\"input.checkbox\"",
+      "  name=\"${1:name}\"",
+      "  checked={${2:checked}}",
+      "  onChange={${3:handleChange}}",
+      "  className=\"${4:className}\"",
+      "/>"
+    ],
+    "description": "JSX checkbox input"
+  },
+  "JSX Radio": {
+    "prefix": "input.radio",
+    "body": [
+      "<input",
+      "  type=\"radio\"",
+      "  name=\"${1:name}\"",
+      "  value=\"${2:value}\"",
+      "  checked={${3:checked}}",
+      "  onChange={${4:handleChange}}",
+      "  className=\"${5:className}\"",
+      "/>"
+    ],
+    "description": "JSX radio input"
+  },
+  "JSX Form": {
+    "prefix": "form",
+    "body": [
+      "<form onSubmit={${1:handleSubmit}} className=\"${2:className}\">",
+      "  ${0}",
+      "</form>"
+    ],
+    "description": "JSX form element"
+  },
+  "JSX Image": {
+    "prefix": "image",
+    "body": [
+      "<img",
+      "  src={${1:src}}",
+      "  alt=\"${2:alt}\"",
+      "  className=\"${3:className}\"",
+      "  ${4:onClick={${5:handleClick}}}",
+      "/>"
+    ],
+    "description": "JSX image element"
+  },
+  "JSX Link": {
+    "prefix": "a.link",
+    "body": [
+      "<a",
+      "  href={${1:href}}",
+      "  className=\"${2:className}\"",
+      "  ${3:target=\"_blank\"}",
+      "  ${4:rel=\"noopener noreferrer\"}",
+      "  ${5:onClick={${6:handleClick}}}",
+      ">",
+      "  ${0}",
+      "</a>"
+    ],
+    "description": "JSX anchor link"
+  },
+  "JSX Unordered List": {
+    "prefix": "ul",
+    "body": [
+      "<ul className=\"${1:className}\">",
+      "  {${2:items}.map((${3:item}, ${4:index}) => (",
+      "    <li key={${5:item.id || index}} className=\"${6:itemClass}\">",
+      "      {${7:item.text}}",
+      "    </li>",
+      "  ))}",
+      "</ul>"
+    ],
+    "description": "JSX unordered list with map"
+  },
+  "JSX Ordered List": {
+    "prefix": "ol",
+    "body": [
+      "<ol className=\"${1:className}\">",
+      "  {${2:items}.map((${3:item}, ${4:index}) => (",
+      "    <li key={${5:item.id || index}} className=\"${6:itemClass}\">",
+      "      {${7:item.text}}",
+      "    </li>",
+      "  ))}",
+      "</ol>"
+    ],
+    "description": "JSX ordered list with map"
+  },
+  "JSX Table": {
+    "prefix": "table",
+    "body": [
+      "<table className=\"${1:className}\">",
+      "  <thead>",
+      "    <tr>",
+      "      <th className=\"${2:headerClass}\">${3:Header 1}</th>",
+      "      <th className=\"${2:headerClass}\">${4:Header 2}</th>",
+      "    </tr>",
+      "  </thead>",
+      "  <tbody>",
+      "    {${5:data}.map((${6:row}, ${7:index}) => (",
+      "      <tr key={${8:row.id || index}} className=\"${9:rowClass}\">",
+      "        <td className=\"${10:cellClass}\">{${11:row.column1}}</td>",
+      "        <td className=\"${10:cellClass}\">{${12:row.column2}}</td>",
+      "      </tr>",
+      "    ))}",
+      "  </tbody>",
+      "</table>"
+    ],
+    "description": "JSX table with dynamic rows"
+  },
+  "JSX Header": {
+    "prefix": "header",
+    "body": [
+      "<header className=\"${1:className}\">",
+      "  ${0}",
+      "</header>"
+    ],
+    "description": "JSX header element"
+  },
+  "JSX Navbar": {
+    "prefix": "nav",
+    "body": [
+      "<nav className=\"${1:className}\">",
+      "</nav>"
+    ]
+  },
+  "JSX Nav": {
+    "prefix": "navbar",
+    "body": [
+      "<nav className=\"${1:className}\">",
+      "  <ul className=\"${2:navList}\">",
+      "    {${3:navItems}.map((${4:item}, ${5:index}) => (",
+      "      <li key={${6:item.id || index}} className=\"${7:navItem}\">",
+      "        <a href={${8:item.href}} className=\"${9:navLink}\">",
+      "          {${10:item.text}}",
+      "        </a>",
+      "      </li>",
+      "    ))}",
+      "  </ul>",
+      "</nav>"
+    ],
+    "description": "JSX navigation with dynamic items"
+  },
+  "JSX Section": {
+    "prefix": "section",
+    "body": [
+      "<section className=\"${1:className}\">",
+      "  ${0}",
+      "</section>"
+    ],
+    "description": "JSX section element"
+  },
+  "JSX Article": {
+    "prefix": "article",
+    "body": [
+      "<article className=\"${1:className}\">",
+      "  ${0}",
+      "</article>"
+    ],
+    "description": "JSX article element"
+  },
+  "JSX Footer": {
+    "prefix": "footer",
+    "body": [
+      "<footer className=\"${1:className}\">",
+      "  ${0}",
+      "</footer>"
+    ],
+    "description": "JSX footer element"
+  },
+  "JSX Card": {
+    "prefix": "card",
+    "body": [
+      "<div className=\"${1:card}\">",
+      "  <div className=\"${2:cardHeader}\">",
+      "    <h3 className=\"${3:cardTitle}\">${4:Title}</h3>",
+      "  </div>",
+      "  <div className=\"${5:cardBody}\">",
+      "    ${0}",
+      "  </div>",
+      "  <div className=\"${6:cardFooter}\">",
+      "    <button className=\"${7:cardButton}\" onClick={${8:handleClick}}>",
+      "      ${9:Action}",
+      "    </button>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "JSX card component"
+  },
+  "JSX Modal": {
+    "prefix": "modal",
+    "body": [
+      "{${1:isOpen} && (",
+      "  <div className=\"${2:modalOverlay}\" onClick={${3:handleClose}}>",
+      "    <div className=\"${4:modalContent}\" onClick={e => e.stopPropagation()}>",
+      "      <div className=\"${5:modalHeader}\">",
+      "        <h2 className=\"${6:modalTitle}\">${7:Modal Title}</h2>",
+      "        <button className=\"${8:closeButton}\" onClick={${3:handleClose}}>",
+      "          ×",
+      "        </button>",
+      "      </div>",
+      "      <div className=\"${9:modalBody}\">",
+      "        ${0}",
+      "      </div>",
+      "    </div>",
+      "  </div>",
+      ")}"
+    ],
+    "description": "JSX modal component"
+  },
+  "JSX Grid": {
+    "prefix": "grid",
+    "body": [
+      "<div className=\"${1:grid}\">",
+      "  {${2:items}.map((${3:item}, ${4:index}) => (",
+      "    <div key={${5:item.id || index}} className=\"${6:gridItem}\">",
+      "      ${0}",
+      "    </div>",
+      "  ))}",
+      "</div>"
+    ],
+    "description": "JSX grid layout"
+  },
+  "JSX Loading": {
+    "prefix": "loading",
+    "body": [
+      "{${1:isLoading} ? (",
+      "  <div className=\"${2:loadingContainer}\">",
+      "    <div className=\"${3:spinner}\"></div>",
+      "    <p className=\"${4:loadingText}\">${5:Loading...}</p>",
+      "  </div>",
+      ") : (",
+      "  ${0}",
+      ")}"
+    ],
+    "description": "JSX loading state"
+  },
+  "JSX Error": {
+    "prefix": "error",
+    "body": [
+      "{${1:error} && (",
+      "  <div className=\"${2:errorContainer}\">",
+      "    <p className=\"${3:errorMessage}\">{${1:error}.message}</p>",
+      "    <button className=\"${4:retryButton}\" onClick={${5:handleRetry}}>",
+      "      ${6:Retry}",
+      "    </button>",
+      "  </div>",
+      ")}"
+    ],
+    "description": "JSX error display"
+  },
+  "JSX Tabs": {
+    "prefix": "tabs",
+    "body": [
+      "<div className=\"${1:tabsContainer}\">",
+      "  <div className=\"${2:tabList}\">",
+      "    {${3:tabs}.map((${4:tab}, ${5:index}) => (",
+      "      <button",
+      "        key={${6:tab.id || index}}",
+      "        className={`${7:tabButton} ${${8:activeTab} === ${9:tab.id} ? '${10:active}' : ''}`}",
+      "        onClick={() => ${11:setActiveTab}(${9:tab.id})}",
+      "      >",
+      "        {${12:tab.label}}",
+      "      </button>",
+      "    ))}",
+      "  </div>",
+      "  <div className=\"${13:tabContent}\">",
+      "    ${0}",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "JSX tabs component"
+  },
+  "JSX Accordion": {
+    "prefix": "accordion",
+    "body": [
+      "<div className=\"${1:accordion}\">",
+      "  <div className=\"${2:accordionHeader}\" onClick={${3:handleToggle}}>",
+      "    <h3 className=\"${4:accordionTitle}\">${5:Title}</h3>",
+      "    <span className={`${6:accordionIcon} ${${7:isOpen} ? '${8:open}' : ''}`}>",
+      "      ${9:▼}",
+      "    </span>",
+      "  </div>",
+      "  {${7:isOpen} && (",
+      "    <div className=\"${10:accordionContent}\">",
+      "      ${0}",
+      "    </div>",
+      "  )}",
+      "</div>"
+    ],
+    "description": "JSX accordion component"
+  },
+  "JSX Tooltip": {
+    "prefix": "tooltip",
+    "body": [
+      "<div className=\"${1:tooltipContainer}\">",
+      "  <div",
+      "    className=\"${2:tooltipTrigger}\"",
+      "    onMouseEnter={${3:handleMouseEnter}}",
+      "    onMouseLeave={${4:handleMouseLeave}}",
+      "  >",
+      "    ${5:Hover me}",
+      "  </div>",
+      "  {${6:showTooltip} && (",
+      "    <div className=\"${7:tooltip}\">",
+      "      ${0}",
+      "    </div>",
+      "  )}",
+      "</div>"
+    ],
+    "description": "JSX tooltip component"
+  },
+  "JSX Dropdown": {
+    "prefix": "dropdown",
+    "body": [
+      "<div className=\"${1:dropdownContainer}\">",
+      "  <button",
+      "    className=\"${2:dropdownTrigger}\"",
+      "    onClick={${3:handleToggle}}",
+      "  >",
+      "    ${4:Dropdown}",
+      "  </button>",
+      "  {${5:isOpen} && (",
+      "    <div className=\"${6:dropdownMenu}\">",
+      "      {${7:options}.map((${8:option}, ${9:index}) => (",
+      "        <button",
+      "          key={${10:option.id || index}}",
+      "          className=\"${11:dropdownItem}\"",
+      "          onClick={() => ${12:handleSelect}(${8:option})}",
+      "        >",
+      "          {${13:option.label}}",
+      "        </button>",
+      "      ))}",
+      "    </div>",
+      "  )}",
+      "</div>"
+    ],
+    "description": "JSX dropdown component"
+  },
+  "JSX Pagination": {
+    "prefix": "pagination",
+    "body": [
+      "<div className=\"${1:pagination}\">",
+      "  <button",
+      "    className=\"${2:paginationButton}\"",
+      "    onClick={${3:handlePrevious}}",
+      "    disabled={${4:currentPage} === 1}",
+      "  >",
+      "    Previous",
+      "  </button>",
+      "  <span className=\"${5:pageInfo}\">",
+      "    Page {${4:currentPage}} of {${6:totalPages}}",
+      "  </span>",
+      "  <button",
+      "    className=\"${2:paginationButton}\"",
+      "    onClick={${7:handleNext}}",
+      "    disabled={${4:currentPage} === ${6:totalPages}}",
+      "  >",
+      "    Next",
+      "  </button>",
+      "</div>"
+    ],
+    "description": "JSX pagination component"
+  },
+  "JSX Search": {
+    "prefix": "input.search",
+    "body": [
+      "<div className=\"${1:searchContainer}\">",
+      "  <input",
+      "    type=\"text\"",
+      "    className=\"${2:searchInput}\"",
+      "    placeholder=\"${3:Search...}\"",
+      "    value={${4:searchTerm}}",
+      "    onChange={${5:handleSearch}}",
+      "  />",
+      "  <button className=\"${6:searchButton}\" onClick={${7:handleSubmit}}>",
+      "    🔍",
+      "  </button>",
+      "</div>"
+    ],
+    "description": "JSX search component"
+  },
+  "JSX Badge": {
+    "prefix": "span.badge",
+    "body": [
+      "<span className=\"${1:badge} ${2:badgeVariant}\">${0}</span>"
+    ],
+    "description": "JSX badge component"
+  },
+  "JSX Alert": {
+    "prefix": "alert",
+    "body": [
+      "<div className=\"${1:alert} ${2:alertType}\">",
+      "  <span className=\"${3:alertIcon}\">${4:ⓘ}</span>",
+      "  <span className=\"${5:alertMessage}\">${0}</span>",
+      "  <button className=\"${6:alertClose}\" onClick={${7:handleClose}}>",
+      "    ×",
+      "  </button>",
+      "</div>"
+    ],
+    "description": "JSX alert component"
+  }
+}

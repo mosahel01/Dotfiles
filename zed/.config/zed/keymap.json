@@ -1,0 +1,43 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      ", e": "file_finder::Toggle"
+    }
+  },
+  {
+    // "context": "Editor",
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      ";": "command_palette::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // "j k": "vim::SwitchToNormalMode"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-b": null,
+      "alt-e": "workspace::ToggleRightDock", // closes right dock
+      "alt-t": "workspace::ToggleBottomDock",
+      "alt-g": "workspace::ToggleLeftDock",
+      "alt-z": "workspace::ToggleCenteredLayout", // zen mode
+      "ctrl-k ctrl-e": "project_panel::ToggleFocus",
+      "ctrl-alt-i": "agent::ExpandMessageEditor",
+      "ctrl-i": "agent::ToggleFocus",
+      ", f": "editor::Format"
+      // "ctrl-i": "agent::NewThread",
+      // ";": "command_palette::Toggle",  // does not support vim_mode==normal
+    }
+  }
+]
