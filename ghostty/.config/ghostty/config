@@ -1,4 +1,4 @@
-font-family = "Monaspace Argon"
+# font-family = "Monaspace Argon"
 font-size = 13
 background-opacity = 0.80
 # theme = catppuccin-mocha
