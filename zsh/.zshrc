@@ -7,38 +7,44 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
 export VISUAL="nvim"
-export SUDO_EDITOR="nvim"
+export SUDO_EDITOR="$EDITOR"
+export PGHOST="/var/run/postgresql"
 export QT_QPA_PLATFORM=wayland
+export NVIM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # ========================
 # Theme Configuration
 # ========================
-# ZSH_THEME="robbyrussell"  # You can change this to "agnoster" or any other theme if needed
+ZSH_THEME="robbyrussell"  # You can change this to "agnoster" or any other theme if needed
 # ZSH_THEME="agnoster"  # You can change this to "agnoster" or any other theme if needed
 # ZSH_THEME="daveverwer"  # You can change this to "agnoster" or any other theme if needed
 # ZSH_THEME="fishy"  # You can change this to "agnoster" or any other theme if needed
-ZSH_THEME="frontcube"  # You can change this to "agnoster" or any other theme if needed
+# ZSH_THEME="frontcube"  # You can change this to "agnoster" or any other theme if needed
 # ZSH_THEME="nanotech"  # You can change this to "agnoster" or any other theme if needed
 
 # ========================
 # Add Plugin Paths
 # ========================
-fpath+=("/usr/share/zsh/plugins/zsh-autosuggestions")
-fpath+=("/usr/share/zsh/plugins/zsh-syntax-highlighting")  # Ensure this is correct after installation
+# fpath+=("/usr/share/zsh/plugins/zsh-autosuggestions")
+# fpath+=("/usr/share/zsh/plugins/zsh-syntax-highlighting")  # Ensure this is correct after installation
 
 # ========================
 # Plugins
 # ========================
 # Use this when Git Cloning Plugins
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions )
+plugins=(git )
 
 # Load Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
 # Load plugins
 # Use these when Installing with Pacman
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # Ensure this path is correct
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # Ensure this path is correct
 # source /usr/share/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh # Add more below to add plugins
 
 bindkey '^w' autosuggest-execute
@@ -110,6 +116,7 @@ alias cat='bat'
 alias grep="grep --color=auto"
 alias mkdir="mkdir -pv"
 alias SS="sudo systemctl "
+alias commandCount="history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10"
 
 # Pain in ASS
 alias whatsapp="QT_QPA_PLATFORM=wayland whatsie"
@@ -127,10 +134,10 @@ alias y='yazi'
 # Package management
 alias ps='sudo pacman -S'
 alias pss='pacman -Ss'
-alias ys='yay -S'
-alias yss='yay -Ss'
 alias prunsc='sudo pacman -Rns'
-alias yrunsc='yay -Rns'
+alias ys='paru -S'
+alias yss='paru -Ss'
+alias yrunsc='paru -Rns'
 
 alias H="cd ~/.config/hypr/ && nvim ."
 alias yt="yt-dlp *bestvideo" # Not complete
