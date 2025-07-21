@@ -1,0 +1,111 @@
+" Basic settings from set.lua
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set nohlsearch
+set incsearch
+set scrolloff=4
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+
+" Enable IdeaVim plugins
+set surround
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set multiple-cursors
+
+
+" Leader key configuration
+let mapleader = " "
+
+" File explorer
+map <leader>pv <Action>(ActivateProjectToolWindow)
+
+" Window navigation
+map <C-h> <Action>(PreviousTab)
+map <C-l> <Action>(NextTab)
+map <C-j> <Action>(MoveDown)
+map <C-k> <Action>(MoveUp)
+
+" Search improvements
+map n nzz
+map N Nzz
+
+" Formatting and diagnostics
+map <leader>f <Action>(ReformatCode)
+map <leader>q <Action>(ShowErrorDescription)
+
+" Commenting (with commentary plugin)
+Plug 'tpope/vim-commentary'
+nmap gcc <Plug>CommentaryLine
+xmap gc <Plug>Commentary
+
+" Yank improvements
+Plug 'machakann/vim-highlightedyank'
+map <leader>y "+y
+map <leader>Y "+Y
+
+" Special mappings
+map ; :
+map <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+map <leader>d "_d
+nmap Q <nop>
+
+" Insert mode escape
+imap <C-c> <Esc>
+
+" Quickfix navigation
+map <C-k> <Action>(GotoNextError)
+map <C-j> <Action>(GotoPreviousError)
+
+" IDE-specific enhancements
+map <leader><leader> <Action>(Rerun)
+map <leader>tf <Action>(RunContextConfiguration)
+map <leader>zig <Action>(RestartIde)
+
+" Window management
+map <c-\> <Action>(SplitVertically)
+map <c--> <Action>(SplitHorizontally)
+
+" Disable arrow keys (optional)
+"noremap <Up> <Nop>
+"noremap <Down> <Nop>
+"noremap <Left> <Nop>
+"noremap <Right> <Nop>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
