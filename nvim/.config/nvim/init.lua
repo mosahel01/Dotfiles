@@ -1,4 +1,4 @@
-require("theprimeagen")
+require("mosvim")
 
 -- hello fem
 
