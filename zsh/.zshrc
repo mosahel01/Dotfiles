@@ -117,6 +117,8 @@ alias grep="grep --color=auto"
 alias mkdir="mkdir -pv"
 alias SS="sudo systemctl "
 alias commandCount="history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10"
+# Special Note : git pull ri problem ra hal 'git config pull.rebase true' fer 'git pull' to hoga
+
 
 # Pain in ASS
 alias whatsapp="QT_QPA_PLATFORM=wayland whatsie"
