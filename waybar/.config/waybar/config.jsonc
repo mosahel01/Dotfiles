@@ -52,12 +52,12 @@
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d/%m/%Y - %H:%M}"
+    "format": "{:%d/%m %a %I:%M }"
     // "format": "{:%d/%m/%Y - %H:%M:%S}"
   },
   "network": {
     "format-wifi": "󰤢 ",
-    "format-ethernet": "󰈀 ",
+    "format-ethernet": "Khan: 󰈀 ",
     "format-disconnected": "󰤠 ",
     "interval": 5,
     "tooltip": false
