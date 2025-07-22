@@ -11,6 +11,7 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				svelte = { "prettier" },
+        java = { "google-java-format" },
 			},
 			-- format_on_save = {
 			-- 	timeout_ms = 500,
