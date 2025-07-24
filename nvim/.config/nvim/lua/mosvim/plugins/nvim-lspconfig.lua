@@ -66,6 +66,7 @@ return {
 
 
     -- Java
+    -- i miss neovim for java but lets get going with intellij
 
 
 
