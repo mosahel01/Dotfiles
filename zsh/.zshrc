@@ -100,6 +100,7 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 # ========================
 # Aliases
 # ========================
+# --long => -l , same ya doni
 alias l="eza -l --icons --git -a"
 alias ll='eza  -ls --icons--git -h'
 alias la='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a'

@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>svwm", function()
     require("vim-with-me").StopVimWithMe()
 end)
 
--- greatest remap ever
+-- better paste
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
@@ -59,6 +59,22 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+
+
+
+
+vim.keymap.set('v', '<', '<gv', { desc = "Stay in indent" } )
+vim.keymap.set('v', '>', '>gv', { desc = "Stay in indent" } )
+
+
+
+vim.keymap.set('n', '<leader>e', '$', { desc = "$ replacement" } )
+
+
+
+
+
 
 -- -- Database keymaps
 -- vim.keymap.set("n", "<leader>db", "<cmd>DBUIToggle<CR>", { desc = "Toggle Database UI" })
