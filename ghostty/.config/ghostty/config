@@ -1,9 +1,9 @@
-# font-family = "Monaspace Argon"
-font-size = 11
+font-family = "Monaspace Argon"
+font-size = 12
 background = #212122
-background-opacity = 0.80
+background-opacity = 0.95
 # theme = catppuccin-mocha
-# window-padding-x = 0
-# window-padding-y = 0
+window-padding-x = 30
+window-padding-y = 30
 
 confirm-close-surface=false

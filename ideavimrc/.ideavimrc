@@ -1,106 +1,92 @@
-" Basic settings from set.lua
-set number
-set relativenumber
-set ignorecase
-set smartcase
-set nohlsearch
-set incsearch
-set scrolloff=4
-set clipboard+=unnamed
+source ~/.config/nvim/init.lua
+let mapleader=" "
+
+" Use system clipboard for all yank, delete, paste
+set clipboard+=unnamedplus
 set clipboard+=ideaput
 
+" Move selected lines down with Shift-J
+vnoremap J :move '>+1<CR>gv=gv
 
-" Enable IdeaVim plugins
-set surround
-set commentary
-set argtextobj
-set easymotion
-set textobj-entire
-set multiple-cursors
+" Move selected lines up with Shift-K
+vnoremap K :move '<-2<CR>gv=gv
 
+" Enable popular Vim emulation plugins
+set surround          " vim-surround
+set commentary        " vim-commentary
 
-" Leader key configuration
-let mapleader = " "
+" Basic editing options
+" set number            " show line numbers
+" set relativenumber    " relative line numbers
+" set ignorecase
+" set smartcase
+" set incsearch
+set scrolloff=8
 
-" File explorer
-map <leader>pv <Action>(ActivateProjectToolWindow)
+" Remap ; to : for command mode
+nnoremap ; :
 
-" Window navigation
-map <C-h> <Action>(PreviousTab)
-map <C-l> <Action>(NextTab)
-map <C-j> <Action>(MoveDown)
-map <C-k> <Action>(MoveUp)
+" Disable Ex mode (Q)
+nnoremap Q <nop>
 
-" Search improvements
-map n nzz
-map N Nzz
+" Tab navigation with Ctrl-h / Ctrl-l
+nnoremap <C-h> :action PreviousTab<CR>
+nnoremap <C-l> :action NextTab<CR>
 
-" Formatting and diagnostics
-map <leader>f <Action>(ReformatCode)
-map <leader>q <Action>(ShowErrorDescription)
+" Completion/snippet navigation with Ctrl-n / Ctrl-p
+" inoremap <C-n> <Down>
+" inoremap <C-p> <Up>
 
-" Commenting (with commentary plugin)
-Plug 'tpope/vim-commentary'
-nmap gcc <Plug>CommentaryLine
-xmap gc <Plug>Commentary
-
-" Yank improvements
-Plug 'machakann/vim-highlightedyank'
-map <leader>y "+y
-map <leader>Y "+Y
-
-" Special mappings
-map ; :
-map <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
-map <leader>d "_d
-nmap Q <nop>
-
-" Insert mode escape
-imap <C-c> <Esc>
-
-" Quickfix navigation
-map <C-k> <Action>(GotoNextError)
-map <C-j> <Action>(GotoPreviousError)
-
-" IDE-specific enhancements
-map <leader><leader> <Action>(Rerun)
-map <leader>tf <Action>(RunContextConfiguration)
-map <leader>zig <Action>(RestartIde)
-
-" Window management
-map <c-\> <Action>(SplitVertically)
-map <c--> <Action>(SplitHorizontally)
-
-" Disable arrow keys (optional)
-"noremap <Up> <Nop>
-"noremap <Down> <Nop>
-"noremap <Left> <Nop>
-"noremap <Right> <Nop>
+" Enhanced Rename
+nmap <leader>rn :action RenameElement<CR>
 
 
 
 
+" Navigate completion/snippets with Ctrl-N / Ctrl-P
+             inoremap <silent> <C-n> <Down>
+inoremap <silent> <C-p> <Up>
+
+" Show the quick-doc popup (same as pressing Ctrl-Q) on Shift-K
+nnoremap <silent> K :action QuickJavaDoc<CR>
+inoremap <silent> <S-K> <C-q>
+
+
+
+" Normie Keymappings
+nnoremap <leader> r :action RenameElement<CR>
+nnoremap <leader>f  :action ReformatCode<CR>
+nnoremap <leader><leader> :action ReRun<CR>
+nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+nnoremap < <gv
+nnoremap > >gv
 
 
 
 
+set incsearch
+"nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotToDeclaration<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>nnoremap 
+
+nnoremap <M-h> :action JumpToLastWindow<CR>
+nnoremap <M-j> :action HideAllWindows<CR>
+nnoremap <leader>z :action ToggleZenMode<CR>
+nnoremap <leader>p :action TogglePresentationMode<CR>
+nnoremap <leader>aa ggVg
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+nnoremap ,r :action ContextRun<CR>
+nnoremap ,c :action RunClass<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+nnoremap ,t :action ActivateRunToolWindow<CR>
+nnoremap ,u :action Rerun<CR>
 
 
 

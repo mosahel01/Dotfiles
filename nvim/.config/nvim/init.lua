@@ -1,4 +1,0 @@
-require("mosvim")
-
--- hello fem
-

@@ -1,5 +1,0 @@
-{
-  "my_postgres": {
-    "url": "postgres://username:password@localhost:5432/dbname"
-  }
-}
