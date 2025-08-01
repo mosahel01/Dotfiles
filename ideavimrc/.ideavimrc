@@ -54,16 +54,17 @@ inoremap <silent> <S-K> <C-q>
 
 
 " Normie Keymappings
-nnoremap <leader> r :action RenameElement<CR>
+nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>f  :action ReformatCode<CR>
-nnoremap <leader><leader> :action ReRun<CR>
+ nnoremap <leader><leader> :action ReRun<CR>
+
 nnoremap <C-z> :action ToggleDistractionFreeMode<CR>
+
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+
 nnoremap < <gv
 nnoremap > >gv
-
-
 
 
 set incsearch
@@ -75,8 +76,6 @@ nnoremap gt :action GotoTest<CR>
 nnoremap gb :action Back<CR>
 nnoremap gf :action Forward<CR>nnoremap 
 
-nnoremap <M-h> :action JumpToLastWindow<CR>
-nnoremap <M-j> :action HideAllWindows<CR>
 nnoremap <leader>z :action ToggleZenMode<CR>
 nnoremap <leader>p :action TogglePresentationMode<CR>
 nnoremap <leader>aa ggVg
