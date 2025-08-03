@@ -184,10 +184,11 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- SOME CUSTOM KEYMAPPINGS
+-- SOME CUSTOM KEYMAPPINGS       {{{{{{{{{{{{
 vim.o.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
 vim.o.shiftwidth = 4 -- Number of spaces used for each step of (auto)indent
 vim.o.expandtab = true -- Use spaces instead of tabs
+vim.o.wrap = false
 
 if vim.g.neovide then
   vim.keymap.set({ 'n', 'v' }, '<C-+>', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>')
@@ -224,7 +225,15 @@ vim.keymap.set('n', '<leader>e', '$', { desc = '$ replacement' })
 -- do nothing
 vim.keymap.set('n', 'Q', '<nop>')
 
--- TILL HERE
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+-- vim.keymap.set('n', '<leader>tmux', function()
+--   local session_name = vim.fn.input 'Session Name: '
+--   vim.cmd('silent !tmux new-session -d -s ' .. session_name .. ' && tmux attach-session -t ' .. session_name)
+-- end, { desc = 'Create and attach tmux session' })
+
+vim.keymap.set('n', 'db', 'vb"_d', { desc = 'Delete word backwards without yanking' })
+
+-- TILL HERE }}}}}}}}}
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
