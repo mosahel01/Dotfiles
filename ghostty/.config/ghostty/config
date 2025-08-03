@@ -1,7 +1,8 @@
 # font-family = "Monaspace Argon"
 font-size = 12
 background = #212122
-background-opacity = 0.95
+# background-opacity = 0.95
+background-blur-radius = 20
 # theme = catppuccin-mocha
 theme = GruvboxDark
 window-padding-x = 30
