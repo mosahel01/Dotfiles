@@ -1,0 +1,25 @@
+# $HOME/.config/starship.toml
+# Robby Russell like theme from omz
+
+format = """
+$character\
+$directory\
+$git_branch\
+$git_status"""
+
+add_newline = true
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[➜](bold red) "
+
+[directory]
+truncation_length = 1
+read_only = ' 🔒'
+
+[git_branch]
+symbol = 'git'
+format = '[$symbol:\([$branch](bold red)\)](bold blue) '
+
+[git_status]
+style = "bold yellow"
