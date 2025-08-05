@@ -220,7 +220,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 vim.keymap.set('v', '<', '<gv', { desc = 'Stay in indent' })
 vim.keymap.set('v', '>', '>gv', { desc = 'Stay in indent' })
 
-vim.keymap.set('n', '<leader>e', '$', { desc = '$ replacement' })
+-- conflict with neo-tree
+-- vim.keymap.set('n', '<leader>e', '$', { desc = '$ replacement' })
 
 -- do nothing
 vim.keymap.set('n', 'Q', '<nop>')
