@@ -62,7 +62,7 @@ if [[ $# -eq 1 ]]; then
 else
     # selected=$(find ~/ /home/ ~/.config/ ~/ ~/imgs/ ~/.config  ~/.config/hypr ~/.config/nvim ~/Downloads ~/Pictures ~/Exp  ~/personal ~/personal/dev/env/.config -mindepth 1 -maxdepth 1 -type d | fzf)
 
-    selected=$(find $HOME/ $HOME/.config/ ~/Dotfiles/ ~/Programming/Java/ ~/Programming/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find /home/mos $HOME/.config/ $HOME/.config/hypr $HOME/.config/ $HOME/.config/nvim ~/Dotfiles/nvim/.config/ ~/Dotfiles/ ~/Programming/Java/ ~/Programming/ -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
