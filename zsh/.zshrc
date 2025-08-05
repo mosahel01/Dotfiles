@@ -71,4 +71,5 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 
-
+# BS
+alias windows="nitch"
