@@ -2,13 +2,11 @@
 
 
 font-size = 12
-theme = rose-pine-moon
+# theme = rose-pine
 # background = #212122
 background = #000000
 background-opacity = 0.85
 background-blur = false
-# theme = catppuccin-mocha
-# theme = GruvboxDark
 window-padding-x = 0
 window-padding-y = 0
 
