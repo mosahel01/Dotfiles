@@ -39,6 +39,7 @@ require('lazy').setup({
     require 'mos.plugins.zen-mode',
 
     -- { import = 'mos.plugins' }, -- import without having to require here manually
+
 }, {
     ui = {
         -- If you are using a Nerd Font: set icons to an empty table which will use the
