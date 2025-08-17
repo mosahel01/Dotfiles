@@ -66,6 +66,12 @@ alias H="cd ~/.config/hypr && nvim ."
 alias N="cd ~/.config/nvim && nvim ."
 alias Z="nvim ~/.bashrc && source ~/.bashrc"
 
+# TMUX
+alias gs="git status"
+alias gm="git commit -m "
+alias ga="git add "
+alias gp="git push -u origin main"
+
 # Optional: vim mode
 set -o vi
 
