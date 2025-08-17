@@ -37,11 +37,12 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 
 # Aliases for quick commands
 alias l='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first'
-alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
-alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -l --git -h'
+# alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
+alias ls='eza --group --long --group-directories-first --icons --header --time-style long-iso'
+alias ll='eza --color=always --long --all --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -l --git -h'
 alias la='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a'
 alias lt='eza --tree --level=2 --long --icons --git'
-alias ltree='eza --tree --level=2 --icons --git'
+alias ltree='eza --tree --all --level=3 --long --icons --git'
 alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a -l --git -h'
 
 alias cat='bat'
@@ -62,6 +63,7 @@ alias prunsc='sudo pacman -Rns'
 alias yrunsc='paru -Rns'
 
 alias H="cd ~/.config/hypr && nvim ."
+alias Z="nvim ~/.bashrc && source ~/.bashrc"
 
 # Optional: vim mode
 set -o vi
