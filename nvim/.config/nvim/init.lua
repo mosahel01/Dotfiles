@@ -27,7 +27,7 @@ require('lazy').setup({
     require 'mos.plugins.lint',
     require 'mos.plugins.luasnip',
     require 'mos.plugins.markdown',
-    require 'mos.plugins.neo-tree',
+    -- require 'mos.plugins.neo-tree',
     require 'mos.plugins.nvim-lspconfig',
     require 'mos.plugins.nvim-treesitter',
     require 'mos.plugins.oil',
@@ -39,7 +39,6 @@ require('lazy').setup({
     require 'mos.plugins.zen-mode',
 
     -- { import = 'mos.plugins' }, -- import without having to require here manually
-
 }, {
     ui = {
         -- If you are using a Nerd Font: set icons to an empty table which will use the
