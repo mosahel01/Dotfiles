@@ -63,6 +63,7 @@ alias prunsc='sudo pacman -Rns'
 alias yrunsc='paru -Rns'
 
 alias H="cd ~/.config/hypr && nvim ."
+alias N="cd ~/.config/nvim && nvim ."
 alias Z="nvim ~/.bashrc && source ~/.bashrc"
 
 # Optional: vim mode
