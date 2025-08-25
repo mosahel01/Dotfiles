@@ -3,12 +3,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="$EDITOR"
-export GTK_THEME=Adwaita:dark
 
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-
 
 # The following lines were added by compinstall
 
