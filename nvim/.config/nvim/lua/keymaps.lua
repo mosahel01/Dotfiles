@@ -51,10 +51,10 @@ vim.keymap.set('n', 'Q', '<nop>')
 
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 -- do not need
--- vim.keymap.set('n', '<leader>tmux', function()
---   local session_name = vim.fn.input 'Session Name: '
---   vim.cmd('silent !tmux new-session -d -s ' .. session_name .. ' && tmux attach-session -t ' .. session_name)
--- end, { desc = 'Create and attach tmux session' })
+vim.keymap.set('n', '<leader>tmux', function()
+    local session_name = vim.fn.input 'Session Name: '
+    vim.cmd('silent !tmux new-session -d -s ' .. session_name .. ' && tmux attach-session -t ' .. session_name)
+end, { desc = 'Create and attach tmux session' })
 
 vim.keymap.set('n', 'db', 'vb"_d', { desc = 'Delete word backwards without yanking' })
 
