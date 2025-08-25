@@ -1,4 +1,4 @@
-general.import = [ "~/Dotfiles/themes/current/theme/alacritty.toml" ]
+# general.import = [ "~/Dotfiles/themes/catppuccin/alacritty.toml" ]
 
 [env]
 TERM = "xterm-256color"
@@ -9,12 +9,19 @@ bold.family = "Jetbrains mono "
 italic.family = "Jetbrains mono "
 bold_italic.family = "Jetbrains mono "
 size = 12
+offset.x = 0
+offset.y = 1
 
 [window]
+dynamic_padding = true
 padding.x = 14
 padding.y = 14
 decorations = "None"
 opacity = 0.98
+
+[scrolling]
+history = 10000
+multiplier = 3
 
 [keyboard]
 bindings = [
