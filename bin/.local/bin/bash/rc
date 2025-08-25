@@ -1,0 +1,9 @@
+source ~/Dotfiles/bin/.local/bin/bash/aliases
+source ~/Dotfiles/bin/.local/bin/bash/envs
+source ~/Dotfiles/bin/.local/bin/bash/functions
+source ~/Dotfiles/bin/.local/bin/bash/init
+# source ~/Dotfiles/bash/bash/inputrc
+source ~/Dotfiles/bin/.local/bin/bash/prompt
+source ~/Dotfiles/bin/.local/bin/bash/shell
+[[ $- == *i* ]] && bind -f ~/Dotfiles/bin/.local/bin/bash/inputrc
+

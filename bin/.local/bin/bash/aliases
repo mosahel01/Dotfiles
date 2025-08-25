@@ -1,0 +1,66 @@
+# File system
+alias ls='eza'
+
+alias l='ls -l'
+alias la='ls -a'
+alias ll='ls -al'
+alias lt='ls --tree --level=2 '
+alias ltree='ls --tree --level=3 '
+
+
+alias ff="fzf --preview 'bat --style=numbers --color=always {}' --bind 'enter:become(nvim {})'"
+
+# open file.pdf → opens with default PDF viewer.
+open() {
+    xdg-open "$@" >/dev/null 2>&1 &
+}
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Tools
+# alias g='git'
+# alias d='docker'
+# alias r='rails'
+alias v='nvim'
+alias c='clear'
+alias e='exit'
+alias y='yazi'
+alias cat='bat'
+alias mkdir='mkdir -pv'
+alias grep="grep --color=auto"
+alias cp="cp -i"
+
+alias H="cd ~/.config/hypr && nvim ."
+alias N="cd ~/.config/nvim && nvim ."
+alias J="cd ~/Documents/Java && nvim ."
+alias Z="nvim ~/.bashrc && source ~/.bashrc"
+
+alias bash="nvim ~/Dotfiles/bin/.local/bin/bash/ . && source ~/.bashrc"
+
+n() { if [ "$#" -eq 0 ]; then nvim .; else nvim "$@"; fi; }
+
+# Git
+alias gs='git status'
+alias gm='git commit -m'
+alias ga='git add'
+alias gp='git push -u origin main'
+
+# Tmux
+alias tn='tmux new -s '    # start a new session with a name
+alias ta='tmux attach'    # attach to the most recent session
+alias tt='tmux attach -t ' # attach to a specific session
+alias ts='tmux ls'        # list running sessions
+alias tk='tmux kill-session -t '  # kill a session by name
+
+# Pacman
+alias ps='sudo pacman -S'
+alias pss='pacman -Ss'
+alias prns='sudo pacman -Rns'
+
+# AUR
+alias ys='paru -S'
+alias yss='paru -Ss'
+alias yrns='paru -Rns'
