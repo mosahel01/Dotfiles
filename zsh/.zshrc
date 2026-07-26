@@ -1,11 +1,11 @@
 # --- environment & paths ---
-export EDITOR="nvim"
-export SUDO_EDITOR="nvim"
-export TERM="xterm-256color"
+# export EDITOR="nvim"
+# export SUDO_EDITOR="nvim"
+# export TERM="xterm-256color"
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
-# export GOPATH="$HOME/.go"
-# export PATH="$HOME/.go/bin:$PATH"
-# export GROFF_NO_SGR=1
+export GOPATH="$HOME/.go"
+export PATH="$HOME/.go/bin:$PATH"
+export GROFF_NO_SGR=1
 
 # --- xdg & config ---
 xdg_config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
@@ -22,6 +22,8 @@ HISTSIZE=10000
 setopt append_history
 setopt share_history
 setopt extended_history
+unsetopt prompt_cr
+unsetopt prompt_sp
 
 # --- vi mode ---
 export KEYTIMEOUT=1
@@ -33,17 +35,29 @@ bindkey -M vicmd v edit-command-line
 # add this to see the mode printed (useful for debugging)
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]]; then
-    echo -ne '\e[1 q'
-    # optional: print "normal" in the right corner
-    # RPROMPT='%F{yellow}normal%f'
-    RPROMPT='%F{yellow}%f'
+    printf '\e[1 q'
+    RPROMPT=''
   else
-    echo -ne '\e[5 q'
+    printf '\e[5 q'
     RPROMPT=''
   fi
   zle reset-prompt
 }
 zle -N zle-keymap-select
+
+# function zle-keymap-select {
+#   if [[ ${KEYMAP} == vicmd ]]; then
+#     echo -ne '\e[1 q'
+#     # optional: print "normal" in the right corner
+#     # RPROMPT='%F{yellow}normal%f'
+#     RPROMPT='%F{yellow}%f'
+#   else
+#     echo -ne '\e[5 q'
+#     RPROMPT=''
+#   fi
+#   zle reset-prompt
+# }
+# zle -N zle-keymap-select
 
 # --- shell options & completion ---
 setopt auto_cd
