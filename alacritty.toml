@@ -18,15 +18,18 @@ style = "italic"
 family = "JetBrainsMono Nerd Font"
 style = "bold_italic"
 
-[window.padding]
-x = 0
-y = 0
+[window]
+# padding.x = 0
+# padding.y = 0
+opacity = 0.95
+blur = true
 
 [selection]
 save_to_clipboard = true
 
 [colors.primary]
-background = "#212122"
+background = "#000000"
+# background = "#212122"
 # foreground = "#ffffff"
 
 [scrolling]
