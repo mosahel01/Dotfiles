@@ -19,6 +19,10 @@ echo "✓ symlinked zsh"
 ln -sfn "$DOTFILES/nvim" "$HOME/.config/nvim"
 echo "✓ symlinked neovim"
 
+# tmux
+ln -sfn "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
+echo "✓ symlinked tmux"
+
 # fonts
 mkdir -p "$HOME/.config/fontconfig"
 ln -sfn "$DOTFILES/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
