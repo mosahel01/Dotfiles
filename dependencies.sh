@@ -102,20 +102,20 @@ DEV_PACKAGES=(
     rust-analyzer
 
     luarocks
-    lua-language-server
-    bash-language-server
-    yaml-language-server
+    # lua-language-server
+    # bash-language-server
+    # yaml-language-server
 
     tree-sitter
-    shellcheck
-    shfmt
+    # shellcheck
+    # shfmt
 )
 
 AUR_PACKAGES=(
     zen-browser-bin
-    brave-bin
-    pycharm
-    visual-studio-code-bin
+    # brave-bin
+    # pycharm
+    # visual-studio-code-bin
 )
 EXISTING_PACKAGES=()
 INSTALLED_PACKAGES=()
