@@ -3,21 +3,24 @@
 set -eo pipefail
 
 declare -a __archlinux_deps=(
-    "zsh"
-    "git"
-    "eza"
-    "which"
+    "starship" # important
     "bat"
+    "eza"
+    "git"
     "tmux"
-	"starship" # important
+    "which"
+    "zsh"
+    "zsh-syntax-highlighting" # Added for cool syntax highlighting out-of-the-box
+    "zsh-autosuggestions"     # Added for fish-like history completions
 )
 
 declare -a __plugins=(
     "https://github.com/zsh-users/zsh-autosuggestions"
+    "https://github.com/zsh-users/zsh-syntax-highlighting"
 )
 
 function install() {
-    log INFO "Setting up ZSH"
+    log INFO "Setting up ZSH with syntax highlighting & autosuggestions"
     log INFO "Starting dependency installation..."
 
     install_arch_deps
@@ -45,18 +48,22 @@ function install_arch_deps() {
 }
 
 function clone_plugins() {
-    local plugins_dir=".plugins"
-    log INFO "Cloning ZSH plugins..."
+    local plugins_dir="$HOME/.config/zsh/.plugins"
+    log INFO "Cloning ZSH plugins into $plugins_dir..."
     mkdir -p "$plugins_dir"
 
     for plugin_url in "${__plugins[@]}"; do
         local plugin_name=$(basename "$plugin_url" .git)
-        log INFO "Cloning $plugin_name..."
-        git -C "$plugins_dir" clone "$plugin_url" || {
-            log WARN "Skipping $plugin_name as it already exists."
-        }
+        local target_path="$plugins_dir/$plugin_name"
+        
+        if [[ -d "$target_path" ]]; then
+            log WARN "Skipping $plugin_name as it already exists at $target_path."
+        else
+            log INFO "Cloning $plugin_name..."
+            git clone "$plugin_url" "$target_path"
+        fi
     done
-    log SUCCESS "Plugins cloned successfully."
+    log SUCCESS "Plugins verified and cloned successfully."
 }
 
 function symlink_zshrc() {
