@@ -12,23 +12,23 @@ style = "Bold"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
-style = "italic"
+style = "Regular"
 
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font"
 style = "bold_italic"
 
-[window]
+# [window]
 # padding.x = 0
 # padding.y = 0
-opacity = 0.95
-blur = true
+# opacity = 0.95
+# blur = true
 
 [selection]
 save_to_clipboard = true
 
-[colors.primary]
-background = "#000000"
+# [colors.primary]
+# background = "#000000"
 # background = "#212122"
 # foreground = "#ffffff"
 
