@@ -1,11 +1,11 @@
 # --- environment & paths ---
-# export EDITOR="nvim"
-# export SUDO_EDITOR="nvim"
-# export TERM="xterm-256color"
+export EDITOR="vim"
+export SUDO_EDITOR="vim"
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
-export GOPATH="$HOME/.go"
-export PATH="$HOME/.go/bin:$PATH"
-export GROFF_NO_SGR=1
+export PYTHONDONTWRITEBYTECODE=1
+# export GOPATH="$HOME/.go"
+# export PATH="$HOME/.go/bin:$PATH"
+# export GROFF_NO_SGR=1
 
 # --- xdg & config ---
 xdg_config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
@@ -32,44 +32,45 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# add this to see the mode printed (useful for debugging)
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]]; then
-    printf '\e[1 q'
+    printf '\e[1 q' # Steady block cursor for Normal mode
+    # RPROMPT='%F{yellow}[NORMAL]%f'
     RPROMPT=''
   else
-    printf '\e[5 q'
+    printf '\e[5 q' # Steady underline cursor (or bar) for Insert mode
     RPROMPT=''
   fi
   zle reset-prompt
 }
 zle -N zle-keymap-select
 
-# function zle-keymap-select {
-#   if [[ ${KEYMAP} == vicmd ]]; then
-#     echo -ne '\e[1 q'
-#     # optional: print "normal" in the right corner
-#     # RPROMPT='%F{yellow}normal%f'
-#     RPROMPT='%F{yellow}%f'
-#   else
-#     echo -ne '\e[5 q'
-#     RPROMPT=''
-#   fi
-#   zle reset-prompt
-# }
-# zle -N zle-keymap-select
-
 # --- shell options & completion ---
 setopt auto_cd
 autoload -U compinit && compinit -C
 
+# Load advanced completions if available
+zstyle ':completion:*' completer_expand _complete _ignored _approximate
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} m:{A-Z}={a-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 bindkey '^[[Z' reverse-menu-complete
+
+# Enable caching for faster completions
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$HOME/.local/share/zsh/cache"
 
 # --- plugins & sources ---
 source "$xdg_config_dir/aliases.zsh"
 source "$xdg_config_dir/functions.zsh"
 source "$xdg_config_dir/.plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-# . "$HOME/.local/share/../bin/env" 
+# Load syntax-highlighting (Must be sourced AFTER autosuggestions and near the end)
+if [[ -f "$xdg_config_dir/.plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+    source "$xdg_config_dir/.plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+# If docker completion isn't loaded by default, you can generate/load it:
+if (( $+commands[docker] )); then
+  source <(docker completion zsh)
+fi
