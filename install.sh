@@ -15,14 +15,6 @@ echo "✓ symlinked alacritty"
 ln -sfn "$DOTFILES/zsh" "$HOME/.config/zsh"
 echo "✓ symlinked zsh"
 
-# neovim
-ln -sfn "$DOTFILES/nvim" "$HOME/.config/nvim"
-echo "✓ symlinked neovim"
-
-# tmux
-ln -sfn "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
-echo "✓ symlinked tmux"
-
 # fonts
 mkdir -p "$HOME/.config/fontconfig"
 ln -sfn "$DOTFILES/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
