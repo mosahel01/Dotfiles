@@ -1,28 +1,28 @@
 [font]
-size = 14.3
+size = 13.0
 offset = { x = -1, y = 1 } # x: line spacing, y: letter spacing
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Regular"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font"
 style = "bold_italic"
 
-# [window]
-# padding.x = 0
-# padding.y = 0
-# opacity = 0.95
-# blur = true
+[window]
+padding.x = 0
+padding.y = 0
+opacity = 1.00
+blur = true
 
 [selection]
 save_to_clipboard = true
