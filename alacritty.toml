@@ -3,19 +3,19 @@ size = 13.0
 offset = { x = -1, y = 1 } # x: line spacing, y: letter spacing
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "CaskaydiaMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "CaskaydiaMono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "CaskaydiaMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
+family = "CaskaydiaMono Nerd Font Mono"
 style = "bold_italic"
 
 [window]
@@ -23,9 +23,20 @@ padding.x = 0
 padding.y = 0
 opacity = 1.00
 blur = true
+dynamic_padding = true
+decorations = "None"
 
 [selection]
 save_to_clipboard = true
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[cursor]
+style = { shape = "Underline", blinking = "Off" }
+unfocused_hollow = true
+thickness = 0.15
 
 # [colors.primary]
 # background = "#000000"
@@ -35,7 +46,3 @@ save_to_clipboard = true
 [scrolling]
 history = 10000
 multiplier = 10
-
-[env]
-TERM = "xterm-256color"
-
