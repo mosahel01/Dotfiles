@@ -1,6 +1,6 @@
 [font]
 size = 13.0
-offset = { x = -1, y = 1 } # x: line spacing, y: letter spacing
+# offset = { x = -1, y = 1 } # x: line spacing, y: letter spacing
 
 [font.normal]
 family = "CaskaydiaMono Nerd Font Mono"
@@ -21,7 +21,7 @@ style = "bold_italic"
 [window]
 padding.x = 0
 padding.y = 0
-opacity = 1.00
+# opacity = 0.80
 blur = true
 dynamic_padding = true
 decorations = "None"
