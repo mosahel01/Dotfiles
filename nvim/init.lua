@@ -33,6 +33,9 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
+vim.keymap.set("n", "<leader>cn", ":cnext<CR>zz")
+vim.keymap.set("n", "<leader>cp", ":cprevious<CR>zz")
+
 vim.keymap.set("n", "<A-h>", "<C-w>h")
 vim.keymap.set("n", "<A-j>", "<C-w>j")
 vim.keymap.set("n", "<A-k>", "<C-w>k")
@@ -41,12 +44,15 @@ vim.keymap.set("n", "<A-l>", "<C-w>l")
 vim.pack.add({
     "https://github.com/Mofiqul/vscode.nvim",
     "https://github.com/nvim-tree/nvim-web-devicons",
+    "https://github.com/catgoose/nvim-colorizer.lua",
     "https://github.com/akinsho/bufferline.nvim",
     "https://github.com/nvim-tree/nvim-tree.lua",
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-telescope/telescope.nvim",
     "https://github.com/nvim-treesitter/nvim-treesitter",
-    "https://github.com/numToStr/Comment.nvim",
+    "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+    -- "https://github.com/numtostr/comment.nvim",
+    "https://github.com/echasnovski/mini.comment",
     "https://github.com/folke/todo-comments.nvim",
     "https://github.com/williamboman/mason.nvim",
     "https://github.com/williamboman/mason-lspconfig.nvim",
@@ -55,6 +61,7 @@ vim.pack.add({
     "https://github.com/stevearc/Oil.nvim",
     "https://github.com/ThePrimeagen/harpoon",
     -- "https://github.com/windwp/nvim-autopairs",
+    "https://github.com/linux-cultist/venv-selector.nvim",
     "https://github.com/hrsh7th/nvim-cmp",
     "https://github.com/hrsh7th/cmp-nvim-lsp",
     "https://github.com/hrsh7th/cmp-buffer",
@@ -89,9 +96,8 @@ require("nvim-tree").setup({
         },
     }
 })
-vim.keymap.set("n", "<leader>ee", vim.cmd.NvimTreeToggle)
-
-
+-- vim.keymap.set("n", "<leader>ee", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "\\", vim.cmd.NvimTreeToggle)
 
 -- safe loading
 -- local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
@@ -104,9 +110,12 @@ require("nvim-treesitter").setup({
     ensure_installed = {
         "bash",
         "python",
+        "toml",
         "lua",
         "vim",
         "vimdoc",
+        "markdown",
+        "markdown_inline",
     },
     highlight = {
         enable = true,
@@ -116,8 +125,27 @@ require("nvim-treesitter").setup({
     },
 })
 
+require("render-markdown").setup({
+    heading = {
+        enabled = true,
+        icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+    },
+    code = {
+        style = "full", -- Highlights code block background & borders
+    },
+})
+
+require("colorizer").setup({})
+
+require("mini.comment").setup({
+    options = {
+        custom_commentstring = nil,
+        ignore_blank_line = false,
+        start_of_line = false,
+        pad_comment_parts = true,
+    },
+})
 require("todo-comments").setup()
-require("Comment").setup()
 
 -- local status_ok, builtin = pcall(require,"telescope.builtin")
 -- if status_ok then
@@ -132,7 +160,7 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers)
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
-        "pyright",
+        "basedpyright",
         "lua_ls",
     },
 })
@@ -155,23 +183,49 @@ require("mason-lspconfig").setup({
 -- 	}
 -- })
 
-
+require("venv-selector").setup({
+    name = {
+        "venv",
+        ".venv",
+    },
+    auto_refresh = false,
+    search = false,
+    search_workspace = true,
+    search_venv_managers = true,
+})
+vim.keymap.set("n", "<leader>vs", ":VenvSelect<CR>")
+vim.keymap.set("n", "<leader>vc", ":VenvSelectCached<CR>")
+vim.keymap.set("n", "<leader>vi", ":VenvSelectCurrent<CR>")
 
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-vim.lsp.config.pyright = {
+vim.lsp.config("basedpyright", {
     capabilities = capabilities,
-}
-vim.lsp.config.lua_ls = {
+    settings = {
+        basedpyright = {
+            analysis = {
+                typeCheckingMode = "standard", -- "strict"
+                diagnosticMode = "openFilesOnly",
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+            },
+        },
+    },
+})
+
+vim.lsp.config("lua_ls", {
     capabilities = capabilities,
     settings = {
         Lua = {
-            diagnostics = { globals = { "vim" } }
-        }
-    }
-}
-vim.lsp.enable("pyright")
+            diagnostics = {
+                globals = { "vim" },
+            },
+        },
+    },
+})
+
+vim.lsp.enable("basedpyright")
 vim.lsp.enable("lua_ls")
 
 
