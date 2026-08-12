@@ -14,7 +14,9 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 vim.o.expandtab = true
+vim.o.autoindent = true
 vim.o.smartindent = true
+vim.o.breakindent = true
 
 vim.o.hlsearch = true
 vim.o.smartcase = true
@@ -24,6 +26,62 @@ vim.o.ignorecase = true
 vim.o.termguicolors = true
 vim.o.clipboard = "unnamedplus"
 
+-- autocmds
+vim.api.nvim_create_autocmd("Filetype", {
+    pattern = {
+        "python",
+        "sql",
+        "postgres",
+        "yaml",
+        "json",
+        "toml",
+    },
+    callback = function()
+        vim.bo.expandtab = true
+    end
+})
+vim.api.nvim_create_autocmd('TextYankPost', {
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 150,
+        })
+    end,
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(event)
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        local buf = event.buf
+        local function lmap(mode, lhs, rhs, desc)
+            vim.keymap.set(mode, lhs, rhs, { buffer = buf, silent = true, desc = desc, })
+        end
+        lmap("n", "grd", vim.lsp.buf.definition, "Go to definition")
+        lmap("n", "grD", vim.lsp.buf.declaration, "Go to declaration")
+        lmap("n", "gri", vim.lsp.buf.implementation, "Go to implementation")
+        lmap("n", "grr", vim.lsp.buf.references, "References")
+        lmap("n", "grt", vim.lsp.buf.type_definition, "Type definition")
+        lmap("n", "K", vim.lsp.buf.hover, "Hover documentation")
+        lmap("n", "<C-k>", vim.lsp.buf.signature_help, "Signature help")
+        lmap("n", "gra", vim.lsp.buf.code_action, "Code action")
+        lmap("n", "grn", vim.lsp.buf.rename, "Rename")
+        lmap("n", "<leader>lf",
+            function()
+                require("conform").format({ async = true, lsp_format = "fallback", })
+            end, "Format buffer")
+        lmap("n", "<leader>gd", vim.diagnostic.open_float, "Line diagnostics")
+        lmap("n", "[d", vim.diagnostic.goto_prev, "Previous diagnostic")
+        lmap("n", "]d", vim.diagnostic.goto_next, "Next diagnostic")
+        -- Inlay hints where supported
+        if client and client.server_capabilities.inlayHintProvider then
+            vim.lsp.inlay_hint.enable(false, { bufnr = buf })
+            lmap("n", "<leader>th",
+                function()
+                    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = buf }), { bufnr = buf })
+                end, "Toggle inlay hints")
+        end
+    end,
+})
 
 
 -- keymaps
@@ -33,13 +91,16 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
-vim.keymap.set("n", "<leader>cn", ":cnext<CR>zz")
-vim.keymap.set("n", "<leader>cp", ":cprevious<CR>zz")
+vim.keymap.set("n", "<C-n>", ":cnext<CR>zz")
+vim.keymap.set("n", "<C-p>", ":cprevious<CR>zz")
 
 vim.keymap.set("n", "<A-h>", "<C-w>h")
 vim.keymap.set("n", "<A-j>", "<C-w>j")
 vim.keymap.set("n", "<A-k>", "<C-w>k")
 vim.keymap.set("n", "<A-l>", "<C-w>l")
+
+vim.keymap.set("n", "<", "<gv")
+vim.keymap.set("n", ">", ">gv")
 
 vim.pack.add({
     "https://github.com/Mofiqul/vscode.nvim",
@@ -116,6 +177,12 @@ require("nvim-treesitter").setup({
         "vimdoc",
         "markdown",
         "markdown_inline",
+        "json",
+        "yaml",
+        "sql",
+        "http",
+        "javascript",
+        "typescript",
     },
     highlight = {
         enable = true,
@@ -154,6 +221,9 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files)
 vim.keymap.set("n", "<leader>fg", builtin.grep_string)
 vim.keymap.set("n", "<leader>fw", builtin.live_grep)
 vim.keymap.set("n", "<leader>fb", builtin.buffers)
+vim.keymap.set("n", "<leader>f'", builtin.registers)
+vim.keymap.set("n", "<leader>fo", builtin.oldfiles)
+vim.keymap.set("n", "<leader>fm", builtin.man_pages)
 
 
 -- mason & lsp
@@ -205,9 +275,10 @@ vim.lsp.config("basedpyright", {
     settings = {
         basedpyright = {
             analysis = {
-                typeCheckingMode = "standard", -- "strict"
-                diagnosticMode = "openFilesOnly",
+                autoImportCompletions = true,
                 autoSearchPaths = true,
+                diagnosticMode = "openFilesOnly",
+                typeCheckingMode = "standard", -- "strict"
                 useLibraryCodeForTypes = true,
             },
         },
@@ -218,8 +289,20 @@ vim.lsp.config("lua_ls", {
     capabilities = capabilities,
     settings = {
         Lua = {
+            runtime = {
+                version = "LuaJIT",
+            },
             diagnostics = {
                 globals = { "vim" },
+            },
+            workspace = {
+                checkThisParty = false,
+                library = {
+                    vim.env.VIMRUNTIME,
+                },
+            },
+            telemetry = {
+                enable = false,
             },
         },
     },
@@ -229,17 +312,42 @@ vim.lsp.enable("basedpyright")
 vim.lsp.enable("lua_ls")
 
 
+vim.diagnostic.config({
+    virtual_text = {
+        spacing = 2,
+        prefix = "●",
+    },
+    signs = true,
+    underline = true,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+        source = "if_many",
+        header = "",
+        prefix = "",
+    },
+    update_in_insert = false,
+})
+
 -- format
 require("conform").setup({
     formatters_by_ft = {
         python = { "ruff_format" },
         lua = { "stylua" },
         bash = { "shfmt" },
+
+        yaml = { "prettierd" },
+        json = { "biome" },
+        jsonc = { "biome" },
+        markdown = { "prettierd" },
+
+        sql = { "sqlfluff" },
     },
     format_on_save = {
         timeout_ms = 500,
         lsp_fallback = true,
-    }
+    },
+    notify_on_error = true,
 })
 
 -- harpoon
@@ -308,6 +416,15 @@ cmp.setup({
         { name = "buffer" },
         { name = "path" },
     }),
+    -- window = {
+    --     completion = cmp.config.window.bordered({
+    --         -- border = "rounded",
+    --     }),
+    --
+    --     documentation = cmp.config.window.bordered({
+    --         -- border = "rounded",
+    --     }),
+    -- }
 })
 
 
