@@ -8,6 +8,9 @@ opt.number = true
 opt.relativenumber = true
 opt.number = true
 
+vim.opt.fillchars = { eob = " " }
+vim.opt.signcolumn = no
+
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"

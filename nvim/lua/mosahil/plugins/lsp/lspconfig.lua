@@ -83,10 +83,10 @@ return {
 		vim.lsp.enable("ts_ls")
 
 		-- configure javascript server
-		vim.lsp.config("vtsls", {
-			capabilities = capabilities,
-		})
-		vim.lsp.enable("vtsls")
+		-- vim.lsp.config("vtsls", {
+		-- 	capabilities = capabilities,
+		-- })
+		-- vim.lsp.enable("vtsls")
 
 		vim.lsp.config("eslint", {
 			capabilities = capabilities,

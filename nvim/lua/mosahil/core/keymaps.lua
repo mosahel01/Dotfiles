@@ -17,6 +17,11 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
+keymap.set("n", "<A-h>", "<C-w>h")
+keymap.set("n", "<A-j>", "<C-w>j")
+keymap.set("n", "<A-k>", "<C-w>k")
+keymap.set("n", "<A-l>", "<C-w>l")
+
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- Increment/Decrement numbers

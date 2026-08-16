@@ -45,7 +45,7 @@ return {
 		})
 
 		-- Load extensions
-		telescope.load_extension("fzf")
+		-- telescope.load_extension("fzf")
 
 		-- Keymaps for LSP features
 		local keymap = vim.keymap
