@@ -1,0 +1,30 @@
+local colors = {
+	fg = "#EAECEE",
+	alt_fg = "#5A9BFF",
+	bg = "#1A1B1E",
+	alt_bg = "#2C2E33",
+	cursorline = "#252729",
+	cursor_bg = "#5A9BFF",
+	line = "#252729",
+	_red = "#FF6B5A",
+	_white = "#FFFFFF",
+	_light_blue = "#2B69FB",
+	_blue = "#044AEf",
+	_yellow = "#FFE4B5",
+	_green = "#4ECD82",
+	_green_light = "#1E3E30",
+	_green_alt = "#60E0A8",
+	_grey_dark = "#898E92",
+	_pink = "#FF4F85",
+	_pink_light = "#3E2233",
+	_pink_alt = "#FF6BA3",
+	_pink_dark_alt = "#E83570",
+	_purple = "#C45AE8",
+	_purple_light = "#302838",
+	_orange = "#FF7A3D",
+	_orange_light = "#3E2E1E",
+	hint = "#00263E", --half_moon_blue
+	cyan = "#36526D",
+}
+
+return colors
