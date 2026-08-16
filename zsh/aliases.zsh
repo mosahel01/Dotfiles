@@ -6,7 +6,10 @@ alias remove="sudo pacman -Rns "
 alias list_systemctl="systemctl list-unit-files --state=enabled"
 alias mirror="sudo reflector --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist"
 alias jc="journalctl -xe"
-alias nvim="vim"
+# alias andrew_config="NVIM_APPNAME=andrew_config nvim"
+alias nvim-configs="NVIM_APPNAME=nvim_configs nvim"
+alias mosahil="NVIM_APPNAME=mosahil nvim"
+# alias nvim="vim"
 
 # appearance toggles
 alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' "

@@ -65,10 +65,10 @@ source "$xdg_config_dir/aliases.zsh"
 source "$xdg_config_dir/functions.zsh"
 source "$xdg_config_dir/.plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-# Load syntax-highlighting (Must be sourced AFTER autosuggestions and near the end)
-if [[ -f "$xdg_config_dir/.plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
-    source "$xdg_config_dir/.plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
+# # Load syntax-highlighting (Must be sourced AFTER autosuggestions and near the end)
+# if [[ -f "$xdg_config_dir/.plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+#     source "$xdg_config_dir/.plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# fi
 
 # If docker completion isn't loaded by default, you can generate/load it:
 if (( $+commands[docker] )); then
