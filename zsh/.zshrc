@@ -1,6 +1,6 @@
 # --- environment & paths ---
-export EDITOR="vim"
-export SUDO_EDITOR="vim"
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 # export GOPATH="$HOME/.go"
