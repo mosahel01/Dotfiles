@@ -9,7 +9,7 @@ opt.relativenumber = true
 opt.number = true
 
 vim.opt.fillchars = { eob = " " }
-vim.opt.signcolumn = no
+vim.opt.signcolumn = "no"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -21,8 +21,8 @@ opt.tabstop = 4 -- 4 space for tabs (prettier default)
 opt.shiftwidth = 4 -- 4 spaces for indent width
 opt.softtabstop = 4
 
-opt.tabstop = 2 -- 2 space for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
+opt.tabstop = 4 -- 4 space for tabs (prettier default)
+opt.shiftwidth = 4 -- 4 spaces for indent width
 
 opt.smartindent = true
 opt.expandtab = true -- expand tab to spaces
@@ -43,7 +43,7 @@ opt.incsearch = true
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
 --opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+-- opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line, or mode start of position
@@ -58,6 +58,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 vim.cmd("hi clear")
 
-vim.cmd("syntax off")
+vim.cmd("syntax on")
 
-vim.cmd("filetype off")
+vim.cmd("filetype on")
