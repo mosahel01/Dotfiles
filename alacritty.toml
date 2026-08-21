@@ -3,19 +3,19 @@ size = 13.0
 # offset = { x = -1, y = 1 } # x: line spacing, y: letter spacing
 
 [font.normal]
-family = "BerkeleyMono Nerd Font"
+family = "Comic Code"
 style = "Regular"
 
 [font.bold]
-family = "BerkeleyMono Nerd Font"
+family = "Comic Code"
 style = "Bold"
 
 [font.italic]
-family = "BerkeleyMono Nerd Font"
+family = "Comic Code"
 style = "Italic"
 
 [font.bold_italic]
-family = "BerkeleyMono Nerd Font"
+family = "Comic Code"
 style = "bold_italic"
 
 [window]
