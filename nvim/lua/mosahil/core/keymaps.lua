@@ -7,6 +7,13 @@ local keymap = vim.keymap -- for conciseness
 --keymap.set("i", "<leader>o", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "-", vim.cmd.Ex, { desc = "Netrw" })
+keymap.set("n", "<leader>sw", function()
+	local new_sw = vim.o.shiftwidth == 2 and 4 or 2
+	vim.o.shiftwidth = new_sw
+	vim.o.tabstop = new_sw
+	vim.o.softtabstop = new_sw
+	print("shiftwidth set to " .. new_sw)
+end, { desc = "Toggle shiftwidth between 2 and 4" })
 
 -- Better Center
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
