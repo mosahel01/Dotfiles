@@ -15,6 +15,10 @@ echo "✓ symlinked alacritty"
 ln -sfn "$DOTFILES/nvim" "$HOME/.config/nvim"
 echo "✓ symlinked nvim"
 
+# i3
+ln -sfn "$DOTFILES/i3" "$HOME/.config/i3"
+echo "✓ symlinked nvim"
+
 # zsh
 ln -sfn "$DOTFILES/zsh" "$HOME/.config/zsh"
 echo "✓ symlinked zsh"
