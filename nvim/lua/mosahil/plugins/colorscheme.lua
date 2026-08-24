@@ -10,6 +10,49 @@ return {
 	},
 
 	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	priority = 1000,
+	--
+	-- 	config = function()
+	-- 		require("gruvbox").setup({
+	-- 			-- Optional configuration
+	-- 			terminal_colors = true, -- add neovim terminal colors
+	-- 			undercurl = true,
+	-- 			underline = true,
+	-- 			bold = true,
+	-- 			italic = {
+	-- 				strings = false,
+	-- 				emphasis = false,
+	-- 				comments = false,
+	-- 				operators = false,
+	-- 				folds = false,
+	-- 			},
+	-- 			strikethrough = true,
+	-- 			invert_selection = false,
+	-- 			invert_signs = false,
+	-- 			invert_tabline = false,
+	-- 			invert_intend_guides = false,
+	-- 			inverse = true, -- invert background for search, diffs, statuslines and errors
+	-- 			contrast = "", -- can be "hard", "soft" or empty string
+	-- 			palette_overrides = {},
+	-- 			overrides = {
+	-- 				-- Make functions italic
+	-- 				["@function"] = { italic = false },
+	-- 				["@function.call"] = { italic = false, bold = true, fg = "#90D5FF" },
+	-- 				["@method"] = { italic = false },
+	-- 				["@method.call"] = { italic = false, bold = true },
+	-- 				["Function"] = { italic = false },
+	-- 				["@function.builtin"] = { italic = false },
+	-- 				["@constructor"] = { italic = false },
+	-- 			},
+	-- 			dim_inactive = false,
+	-- 			transparent_mode = false,
+	-- 		})
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end,
+	-- },
+
+	-- {
 	-- 	dir = "~/.config/nvim/lua/colors/homegrown/themes/midnight-coder/midnight-coder.lua",
 	-- 	name = "midnight-coder",
 	-- 	priority = 1000,

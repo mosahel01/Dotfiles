@@ -66,3 +66,9 @@ keymap.set("v", ">", ">gv", { desc = "Indent right in visual mode." })
 keymap.set("n", "<leader>ip", "<cmd>ImagePreview<CR>", { desc = "[I]mage [P]review" })
 keymap.set("n", "<leader>iw", "<cmd>ImagePreviewWeb<CR>", { desc = "[I]mage preview [W]eb" })
 keymap.set("n", "<leader>it", "<cmd>ImagePreviewTerminal<CR>", { desc = "[I]mage preview [T]erminal" })
+
+-- keymap.set("n", "<leader>nt", function()
+-- 	-- Opens a tmux popup on the far right (30% width) editing a persistent notes file
+-- 	-- The popup automatically closes when you exit this nested Neovim instance (using :q)
+-- 	vim.fn.system([[tmux display-popup -E -w 30% -h 100% -x 100% -y 0 "nvim ~/quick-notes.md"]])
+-- end, { desc = "Tmux Quick Notes" })

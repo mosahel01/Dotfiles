@@ -9,33 +9,13 @@ local state = {
 	},
 }
 
--- Move the notes window to the right side of the screen
-function M.move_right()
-	if not vim.api.nvim_win_is_valid(state.notes.win) then
-		vim.notify("Floating notes window is not open", vim.log.levels.WARN)
-		return
-	end
-	local new_width = math.floor(vim.o.columns * 0.3)
-	local new_height = vim.o.lines - 2
-	local new_col = vim.o.columns - new_width
-	local new_row = 0
-
-	local cfg = vim.api.nvim_win_get_config(state.notes.win)
-	cfg.width = new_width
-	cfg.height = new_height
-	cfg.col = new_col
-	cfg.row = new_row
-	vim.api.nvim_win_set_config(state.notes.win, cfg)
-end
-
--- Create or reuse a scratch buffer in a floating window
-local function open_floating_notes(opts)
-	opts = opts or {}
-
-	local width = opts.width or math.floor(vim.o.columns * 0.2)
-	local height = opts.height or math.floor(vim.o.lines * 1)
-	local col = math.floor((vim.o.columns - width) / 2)
-	local row = math.floor((vim.o.lines - height) / 2 - 1)
+-- Create or reuse a scratch buffer in a floating window on the RIGHT
+local function open_floating_notes()
+	-- Calculate dimensions for the right-hand side (30% width, full height)
+	local width = math.floor(vim.o.columns * 0.3)
+	local height = vim.o.lines - 2
+	local col = vim.o.columns - width
+	local row = 0
 
 	-- If the buffer is valid, reuse it; otherwise create a new one
 	local buf
@@ -43,8 +23,8 @@ local function open_floating_notes(opts)
 		buf = state.notes.buf
 	else
 		buf = vim.api.nvim_create_buf(false, true) -- create a scratch buffer
-		vim.api.nvim_buf_set_option(buf, "bufhidden", "hide")
-		vim.api.nvim_buf_set_option(buf, "filetype", "markdown") -- optional, for syntax highlighting
+		vim.api.nvim_set_option_value("bufhidden", "hide", { buf = buf })
+		vim.api.nvim_set_option_value("filetype", "markdown", { buf = buf })
 	end
 
 	-- Configure the floating window
@@ -58,11 +38,13 @@ local function open_floating_notes(opts)
 		border = "rounded",
 	}
 	local win = vim.api.nvim_open_win(buf, true, win_configs)
-	vim.api.nvim_win_set_option(win, "number", true)
-	vim.api.nvim_win_set_option(win, "relativenumber", true)
 
-	vim.api.nvim_set_hl(0, "MyFloatBG", { bg = "#1e222a" }) -- Your custom background color
-	vim.api.nvim_set_hl(0, "MyFloatBorder", { fg = "#ff0000" }) -- Your custom border color
+	vim.api.nvim_set_option_value("number", true, { win = win })
+	vim.api.nvim_set_option_value("relativenumber", true, { win = win })
+
+	vim.api.nvim_set_hl(0, "MyFloatBG", { bg = "#1e222a" })
+	vim.api.nvim_set_hl(0, "MyFloatBorder", { fg = "#ff0000" })
+
 	return buf, win
 end
 
@@ -74,9 +56,6 @@ function M.toggle_notes()
 		state.notes.buf = buf
 		state.notes.win = win
 		state.notes.visible = true
-
-	-- Optionally jump straight into insert mode if you want:
-	-- vim.cmd("startinsert")
 	else
 		-- If it's visible, hide it
 		vim.api.nvim_win_hide(state.notes.win)
@@ -84,31 +63,26 @@ function M.toggle_notes()
 	end
 end
 
--- Move the notes window to center
-function M.move_center()
-	if not vim.api.nvim_win_is_valid(state.notes.win) then
-		vim.notify("Floating notes window is not open", vim.log.levels.WARN)
-		return
-	end
-	local new_width = math.floor(vim.o.columns * 0.8)
-	local new_height = math.floor(vim.o.lines * 0.8)
-	local new_col = math.floor((vim.o.columns - new_width) / 2)
-	local new_row = math.floor((vim.o.lines - new_height) / 2 - 1)
+-- -- Move the notes window to center (kept for utility)
+-- function M.move_center()
+-- 	if not vim.api.nvim_win_is_valid(state.notes.win) then
+-- 		vim.notify("Floating notes window is not open", vim.log.levels.WARN)
+-- 		return
+-- 	end
+-- 	local new_width = math.floor(vim.o.columns * 0.8)
+-- 	local new_height = math.floor(vim.o.lines * 0.8)
+-- 	local new_col = math.floor((vim.o.columns - new_width) / 2)
+-- 	local new_row = math.floor((vim.o.lines - new_height) / 2 - 1)
+--
+-- 	local cfg = vim.api.nvim_win_get_config(state.notes.win)
+-- 	cfg.width = new_width
+-- 	cfg.height = new_height
+-- 	cfg.col = new_col
+-- 	cfg.row = new_row
+-- 	vim.api.nvim_win_set_config(state.notes.win, cfg)
+-- end
 
-	local cfg = vim.api.nvim_win_get_config(state.notes.win)
-	cfg.width = new_width
-	cfg.height = new_height
-	cfg.col = new_col
-	cfg.row = new_row
-	vim.api.nvim_win_set_config(state.notes.win, cfg)
-end
-
--- this function is just used for going back and forth between notes and the actual code
-
+-- Keymaps
 vim.keymap.set("n", "<leader>nn", M.toggle_notes, { desc = "[F]loating [N]otes" })
--- Keys to move the notes window around
-vim.keymap.set("n", "<leader>nr", M.move_right, { desc = "Move floating notes to the right" })
-vim.keymap.set("n", "<leader>nc", M.move_center, { desc = "Center floating notes window" })
 
--- Return empty plugin spec since this is just a utility module
 return {}
