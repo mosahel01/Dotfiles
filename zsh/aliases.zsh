@@ -6,7 +6,6 @@ alias remove="sudo pacman -Rns "
 alias list_systemctl="systemctl list-unit-files --state=enabled"
 alias mirror="sudo reflector --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist"
 alias jc="journalctl -xe"
-# alias andrew_config="NVIM_APPNAME=andrew_config nvim"
 alias nvim-configs="NVIM_APPNAME=nvim_configs nvim"
 alias mosahil="NVIM_APPNAME=mosahil nvim"
 # alias nvim="vim"
@@ -71,7 +70,8 @@ alias gp='echo "Use Lazygit"'
 alias c='clear'
 alias e='exit'
 alias hg="history | rg"
-alias copypath="pwd | wl-copy"
+# alias copypath="pwd | wl-copy"
+alias xcopy="xclip -selection clipboard"
 alias speed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python'
 
 # media (yt-dlp)
