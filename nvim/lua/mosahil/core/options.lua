@@ -17,24 +17,24 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- tabs & indentations
-opt.tabstop = 4 -- 4 space for tabs (prettier default)
+opt.tabstop = 4    -- 4 space for tabs (prettier default)
 opt.shiftwidth = 4 -- 4 spaces for indent width
 opt.softtabstop = 4
 
-opt.tabstop = 4 -- 4 space for tabs (prettier default)
+opt.tabstop = 4    -- 4 space for tabs (prettier default)
 opt.shiftwidth = 4 -- 4 spaces for indent width
 
 opt.smartindent = true
-opt.expandtab = true -- expand tab to spaces
+opt.expandtab = true  -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
-opt.scrolloff = 20 -- Centers the text when you  type outside of the vertical bounds
+opt.scrolloff = 20    -- Centers the text when you  type outside of the vertical bounds
 opt.sidescrolloff = 8 -- Centers the text when you type outside of the horizontal bounds
 
 opt.wrap = false
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in search, assumes you want case-sensitmart/ve
+opt.smartcase = true  -- if you include mixed case in search, assumes you want case-sensitmart/ve
 opt.cursorline = true
 opt.hlsearch = true
 opt.incsearch = true
