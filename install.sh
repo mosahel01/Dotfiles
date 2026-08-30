@@ -6,9 +6,13 @@ DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
 echo "Installing Dotfiles..."
 
-# alacritty
-mkdir -p "$HOME/.config/alacritty"
-ln -sfn "$DOTFILES/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+# # alacritty
+# mkdir -p "$HOME/.config/alacritty"
+# ln -sfn "$DOTFILES/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+# echo "✓ symlinked alacritty"
+
+# zsh
+ln -sfn "$DOTFILES/alacritty/" "$HOME/.config/"
 echo "✓ symlinked alacritty"
 
 # nvim
