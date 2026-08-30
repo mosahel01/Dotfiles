@@ -1,0 +1,11 @@
+[colors.primary]
+background = "#ffffff"
+foreground = "#000000"
+
+[colors.cursor]
+text = "#ffffff"
+cursor = "#000000"
+
+[colors.selection]
+text = "#000000"
+background = "#cccccc"

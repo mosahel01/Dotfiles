@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+CONFIG="$HOME/.config/alacritty/current-theme.toml"
+
+case "$(gsettings get org.gnome.desktop.interface color-scheme)" in
+    *prefer-dark*)
+        THEME="$HOME/.config/alacritty/dark.toml"
+        ;;
+    *prefer-light*)
+        THEME="$HOME/.config/alacritty/light.toml"
+        ;;
+    *)
+        THEME="$HOME/.config/alacritty/dark.toml"
+        ;;
+esac
+
+# Generate a temporary config combining your main config + theme
+cat "$CONFIG" "$THEME" > "$CONFIG"
