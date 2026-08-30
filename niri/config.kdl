@@ -34,7 +34,7 @@ output "HDMI-A-1" {
 }
 
 layout {
-    gaps 12
+    gaps 18
 
     center-focused-column "never"
 
@@ -54,17 +54,20 @@ layout {
 
     border {
         width 4
-        active-color "#ffffff"
-        inactive-color "#000000"
+        active-color "#000000"
+        inactive-color "#010101"
         urgent-color "#9b0000"
+        // active-color "#ffffff"
+        // inactive-color "#000000"
+        // urgent-color "#9b0000"
     }
 
     shadow {
         on
         softness 20
-        spread 2
+        spread 8
         offset x=0 y=4
-        color "#0006"
+        color "#000000"
     }
 }
 

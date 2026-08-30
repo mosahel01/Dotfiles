@@ -11,10 +11,8 @@ alias mosahil="NVIM_APPNAME=mosahil nvim"
 # alias nvim="vim"
 
 # appearance toggles
-# alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' "
-# alias light="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' "
-alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' ; ~/.config/alacritty/toggle-theme"
-alias light="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' ; ~/.config/alacritty/toggle-theme"
+alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' "
+alias light="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' "
 
 # window manager and terminal helpers
 alias hyprland='start-hyprland'
@@ -72,8 +70,8 @@ alias gp='echo "Use Lazygit"'
 alias c='clear'
 alias e='exit'
 alias hg="history | rg"
-# alias copypath="pwd | wl-copy"
-alias xcopy="xclip -selection clipboard"
+alias copypath="pwd | wl-copy"
+# alias xcopy="xclip -selection clipboard"
 alias speed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python'
 
 # media (yt-dlp)
