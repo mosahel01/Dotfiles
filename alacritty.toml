@@ -1,5 +1,10 @@
+[general]
+import = [
+    "~/.config/alacritty/current-theme.toml"
+]
+
 [font]
-size = 16.0
+size = 13.3
 offset = { x = -1, y = 1 } # x: line spacing, y: letter spacing
 
 [font.normal]
@@ -21,10 +26,8 @@ style = "bold_italic"
 [window]
 padding.x = 0
 padding.y = 0
-# opacity = 0.80
-blur = true
-dynamic_padding = true
-decorations = "None"
+# dynamic_padding = true
+# decorations = "None"
 
 [selection]
 save_to_clipboard = true
@@ -38,11 +41,7 @@ style = { shape = "Underline", blinking = "Off" }
 unfocused_hollow = true
 thickness = 0.15
 
-# [colors.primary]
-# background = "#000000"
-# background = "#212122"
-# foreground = "#ffffff"
-
 [scrolling]
 history = 10000
 multiplier = 10
+
