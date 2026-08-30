@@ -2,6 +2,7 @@
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
+export PATH=$PATH:$HOME/.local/opt/go/bin
 export PYTHONDONTWRITEBYTECODE=1
 # export GOPATH="$HOME/.go"
 # export PATH="$HOME/.go/bin:$PATH"
@@ -74,3 +75,6 @@ source "$xdg_config_dir/.plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 if (( $+commands[docker] )); then
   source <(docker completion zsh)
 fi
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

@@ -11,8 +11,10 @@ alias mosahil="NVIM_APPNAME=mosahil nvim"
 # alias nvim="vim"
 
 # appearance toggles
-alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' "
-alias light="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' "
+# alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' "
+# alias light="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' "
+alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' ; ~/.config/alacritty/toggle-theme"
+alias light="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light' ; ~/.config/alacritty/toggle-theme"
 
 # window manager and terminal helpers
 alias hyprland='start-hyprland'
