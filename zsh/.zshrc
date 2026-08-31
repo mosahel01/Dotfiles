@@ -71,10 +71,10 @@ source "$xdg_config_dir/.plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 #     source "$xdg_config_dir/.plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # fi
 
-# If docker completion isn't loaded by default, you can generate/load it:
-if (( $+commands[docker] )); then
-  source <(docker completion zsh)
-fi
+# # If docker completion isn't loaded by default, you can generate/load it:
+# if (( $+commands[docker] )); then
+#   source <(docker completion zsh)
+# fi
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
